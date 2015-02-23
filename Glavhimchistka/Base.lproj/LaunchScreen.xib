@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hv-2Q-qjx">
+                    <rect key="frame" x="103" y="199" width="275" height="82"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="275" id="PX2-UG-Cl3"/>
+                        <constraint firstAttribute="height" constant="82" id="RFh-mi-6yV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2014г Главхимчистка.рф" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjc-qA-ZMy">
+                    <rect key="frame" x="10" y="450" width="460" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="UNo-3f-RKq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.0078431372549019607" green="0.68235294117647061" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="8hv-2Q-qjx" secondAttribute="centerX" id="4pd-8W-Xuc"/>
+                <constraint firstAttribute="bottom" secondItem="zjc-qA-ZMy" secondAttribute="bottom" constant="10" id="Bor-Vg-pmU"/>
+                <constraint firstItem="zjc-qA-ZMy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="QHb-ZB-vgT"/>
+                <constraint firstAttribute="trailing" secondItem="zjc-qA-ZMy" secondAttribute="trailing" constant="10" id="udS-Ha-OfN"/>
+                <constraint firstAttribute="centerY" secondItem="8hv-2Q-qjx" secondAttribute="centerY" id="zfj-8o-7Ry"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="396" y="397"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="launch_logo.png" width="275" height="82"/>
+    </resources>
+</document>
