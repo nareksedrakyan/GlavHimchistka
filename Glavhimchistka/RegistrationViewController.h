@@ -8,6 +8,9 @@
 
 #import "BaseViewController.h"
 
-@interface RegistrationViewController : BaseViewController
+@interface RegistrationViewController : BaseViewController<UITextFieldDelegate>
+- (IBAction)closeKeyboard:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
+@property (weak, nonatomic) IBOutlet UITableView *registrationTableView;
 
 @end

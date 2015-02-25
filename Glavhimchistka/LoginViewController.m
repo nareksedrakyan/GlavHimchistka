@@ -7,7 +7,7 @@
 //
 #import "ForgotPasswordViewController.h"
 #import "LoginViewController.h"
-
+#import "RegistrationViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -45,12 +45,15 @@
 }
 
 
-- (IBAction)registrationAction:(UIButton *)sender {
+- (IBAction)registrationAction:(UIButton *)sender
+{
+    RegistrationViewController*rvc=[self.storyboard instantiateViewControllerWithIdentifier:@"RegistrationViewController"];
+    [self.navigationController pushViewController:rvc animated:YES];
 }
 
 - (IBAction)loginAction:(UIButton *)sender
 {
-
+    
 }
 - (IBAction)switchOrderAction:(UISwitch *)sender
 {

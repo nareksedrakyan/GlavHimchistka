@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E6944F25-C76A-4548-AECF-19F11746570D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Glavhimchistka</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>63EC93285D48D163412CB7EC294FB42B1E245ECF</key>
+		<string>https://github.com/nareksedrakyan/GlavHimchistka.git</string>
+		<key>DE1F1CCC5E9B07B55A7574B67F8BE552D95A2953</key>
+		<string>https://github.com/davitbaghdagyulyan/CityClient.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Glavhimchistka.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>63EC93285D48D163412CB7EC294FB42B1E245ECF</key>
+		<string>../..</string>
+		<key>DE1F1CCC5E9B07B55A7574B67F8BE552D95A2953</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nareksedrakyan/GlavHimchistka.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>63EC93285D48D163412CB7EC294FB42B1E245ECF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DE1F1CCC5E9B07B55A7574B67F8BE552D95A2953</string>
+			<key>IDESourceControlWCCName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>63EC93285D48D163412CB7EC294FB42B1E245ECF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Glavhimchistka</string>
+		</dict>
+	</array>
+</dict>
+</plist>

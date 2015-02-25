@@ -5,7 +5,7 @@
 //  Created by Admin on 21.02.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "LoginViewController.h"
 #import "LeftMenuViewController1.h"
 
 @interface LeftMenuViewController1 ()
@@ -79,6 +79,7 @@
     //    [self.navigationController pushViewController:infoContorller animated:NO];
     //    infoContorller.id_mail = [[mailResponseObject.mail objectAtIndex:indexPath.row] id];
     //    infoContorller.titleText = [[mailResponseObject.mail objectAtIndex:indexPath.row] getTitle];
+  
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

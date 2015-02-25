@@ -14,7 +14,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+
+
 @property (weak, nonatomic) IBOutlet UIButton *leftMenuButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *rightMenuButton;
 
 
@@ -39,4 +42,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *facebookButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *rootTableView;
+
 @end
