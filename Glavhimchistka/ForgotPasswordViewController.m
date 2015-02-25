@@ -16,12 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.recoverTextField.returnKeyType=UIReturnKeyDone;
+    self.recoverTextField.placeholder=@"E-mail адрес или телефон";
+   self.recoverTextField.delegate=self;
+
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+        [textField resignFirstResponder];
+    return YES;
 }
 
 /*
@@ -34,4 +48,6 @@
 }
 */
 
+- (IBAction)recoverButton:(UIButton *)sender {
+}
 @end

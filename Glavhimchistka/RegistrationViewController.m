@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+      self.closeKeyboardButton.hidden=YES;
     titleArray=[[NSMutableArray alloc] initWithObjects:@"Номер телефона",@"E-mail",@"Ф.И.О",@"Адрес",@"Город",@"Улица",@"Дом",@"Корпус",
                                                        @"Квартира",@"Оффис",@"Комментарий",@"Промо-код",@"Адрес промо-код",nil];
     self.registrationTableView.delegate=self;
@@ -43,7 +44,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return titleArray.count;
+    return (titleArray.count+1);
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -57,20 +58,33 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RegistrationTableViewCell" owner:self options:nil];
         cell =[nib objectAtIndex:0];
-        cell.registrationTextField.placeholder=titleArray[indexPath.row];
-        cell.registrationTextField.delegate=self;
-        cell.registrationTextField.tag=100+indexPath.row;
-        
         if (indexPath.row==(titleArray.count-1))
         {
             cell.registrationTextField.returnKeyType=UIReturnKeyDone;
         }
-    }
+        if (indexPath.row==(titleArray.count))
+        {
+                [cell.registrationTextField removeFromSuperview];
+                registrationButton = [UIButton buttonWithType:UIButtonTypeSystem];
+                registrationButton.backgroundColor=[UIColor colorWithRed:166.f/255 green:43.f/255 blue:42.f/255 alpha:1];
+                [registrationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                [registrationButton setTitle:@"Регистрироваться" forState:UIControlStateNormal];
+            registrationButton.frame=CGRectMake(0, 0, tableView.frame.size.width, 44);
+                [registrationButton addTarget:self action:@selector(registrationAction) forControlEvents:UIControlEventTouchUpInside];
+           
+                [cell addSubview:registrationButton];
+            
+        }
+        else
+        {
+            
+            cell.registrationTextField.placeholder=titleArray[indexPath.row];
+            cell.registrationTextField.delegate=self;
+            cell.registrationTextField.tag=100+indexPath.row;
 
-    
-    
-    
-    return cell;
+        }
+    }
+return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,25 +101,25 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 50;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    footerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50)];
-    registrationButton = [UIButton buttonWithType:0];
-    registrationButton.backgroundColor=[UIColor colorWithRed:166.f/255 green:43.f/255 blue:42.f/255 alpha:1];
-    [registrationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [registrationButton setTitle:@"Регистрироваться" forState:UIControlStateNormal];
-    registrationButton.frame=CGRectMake(5, 5,footerView.bounds.size.width-10,40);
-    [registrationButton addTarget:self action:@selector(registrationAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    [footerView addSubview:registrationButton];
-    return footerView;
-
-   
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return 50;
+//}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    footerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 50)];
+//    registrationButton = [UIButton buttonWithType:0];
+//    registrationButton.backgroundColor=[UIColor colorWithRed:166.f/255 green:43.f/255 blue:42.f/255 alpha:1];
+//    [registrationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [registrationButton setTitle:@"Регистрироваться" forState:UIControlStateNormal];
+//    registrationButton.frame=CGRectMake(5, 5,footerView.bounds.size.width-10,40);
+//    [registrationButton addTarget:self action:@selector(registrationAction) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [footerView addSubview:registrationButton];
+//    return footerView;
+//
+//   
+//}
 
 -(void)registrationAction
 {
@@ -130,6 +144,12 @@
             [self.registrationTableView setContentOffset:bottomOffset animated:YES];
 
         }
+        else
+        {
+            CGPoint bottomOffset = CGPointMake(0, self.registrationTableView.contentSize.height - self.registrationTableView.bounds.size.height);
+            [self.registrationTableView setContentOffset:bottomOffset animated:YES];
+           
+        }
       
     }
 
@@ -150,7 +170,7 @@
 
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
-    //isOpenKeyboard=YES;
+    self.closeKeyboardButton.hidden=NO;
     size=self.registrationTableView.contentSize;
     NSDictionary* info = [aNotification userInfo];
     keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -160,7 +180,7 @@
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-   // isOpenKeyboard=NO;
+   self.closeKeyboardButton.hidden=YES;
     self.registrationTableView.contentSize=size;
 }
 - (IBAction)closeKeyboard:(UIButton *)sender

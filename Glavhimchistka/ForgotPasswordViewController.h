@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
-@interface ForgotPasswordViewController : BaseViewController
+@interface ForgotPasswordViewController : BaseViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *recoverTextField;
+- (IBAction)recoverButton:(UIButton *)sender;
 
 @end
