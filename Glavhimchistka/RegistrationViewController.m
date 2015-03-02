@@ -5,9 +5,11 @@
 //  Created by Admin on 22.02.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "RegisterNewRequest.h"
+#import "RegisterNewResponse.h"
 #import "RegistrationViewController.h"
 #import "RegistrationTableViewCell.h"
+#import "LoginViewController.h"
 @interface RegistrationViewController ()
 {
     NSMutableArray*titleArray;
@@ -16,6 +18,9 @@
     CGSize keyboardSize;
     CGSize size;
     UITextField *currentTextField;
+    RegisterNewRequest *registerNewRequestObject;
+
+
 }
 @end
 
@@ -23,9 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+     registerNewRequestObject=[[RegisterNewRequest alloc]init];
       self.closeKeyboardButton.hidden=YES;
-    titleArray=[[NSMutableArray alloc] initWithObjects:@"Номер телефона",@"E-mail",@"Ф.И.О",@"Адрес",@"Город",@"Улица",@"Дом",@"Корпус",
+    titleArray=[[NSMutableArray alloc] initWithObjects:@"Номер телефона",@"E-mail",@"Ф.И.О",@"Город",@"Улица",@"Дом",@"Корпус",
                                                        @"Квартира",@"Оффис",@"Комментарий",@"Промо-код",@"Адрес промо-код",nil];
+    
+  
+    
     self.registrationTableView.delegate=self;
     self.registrationTableView.dataSource=self;
   
@@ -49,15 +59,20 @@
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    NSString* simpleTableIdentifier = [NSString stringWithFormat:@"SimpleTableViewCell_%ld" , (long)indexPath.row];
-    
-    RegistrationTableViewCell *cell = (RegistrationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+   NSString* simpleTableIdentifier =[NSString stringWithFormat:@"SimpleTableViewCell_%ld" , (long)indexPath.row];
     
     
-    if( cell == nil )
+     RegistrationTableViewCell *cell = (RegistrationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+   
+    if( cell==nil )
     {
+        
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RegistrationTableViewCell" owner:self options:nil];
         cell =[nib objectAtIndex:0];
+        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
+
+        
+        
         if (indexPath.row==(titleArray.count-1))
         {
             cell.registrationTextField.returnKeyType=UIReturnKeyDone;
@@ -84,6 +99,7 @@
 
         }
     }
+    
 return cell;
 }
 
@@ -101,6 +117,7 @@ return cell;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 //-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 //{
 //    return 50;
@@ -123,12 +140,12 @@ return cell;
 
 -(void)registrationAction
 {
-    
+    [self requestRegisterNew];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSInteger i=textField.tag;
-    if (i==112)
+    if (i==111)
     {
         [textField resignFirstResponder];
     }
@@ -174,7 +191,7 @@ return cell;
     size=self.registrationTableView.contentSize;
     NSDictionary* info = [aNotification userInfo];
     keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-   self.registrationTableView.contentSize=CGSizeMake(size.width,size.height+keyboardSize.height-self.buttonsView.frame.size.height);
+   self.registrationTableView.contentSize=CGSizeMake(size.width,size.height-44+keyboardSize.height-self.buttonsView.frame.size.height);
     
 }
 
@@ -195,5 +212,142 @@ return cell;
 {
     currentTextField = textField;
 }
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    switch (textField.tag) {
+        case 100:
+        {
+          
+            registerNewRequestObject.fone=textField.text;
+        }
+            break;
+        case 101:
+        {
+           
+            registerNewRequestObject.mail=textField.text;
+        }
+            break;
+        case 102:
+        {
+        
+            registerNewRequestObject.change_name=textField.text;
+        }
+            break;
+        case 103:
+        {
+      
+            registerNewRequestObject.city=textField.text;
+        }
+            break;
+        case 104:
+        {
+           
+            registerNewRequestObject.street=textField.text;
+        }
+            break;
+        case 105:
+        {
+            
+            registerNewRequestObject.house=textField.text;
+        }
+            break;
+        case 106:
+        {
+           
+            registerNewRequestObject.housing=textField.text;
+        }
+            break;
+        case 107:
+        {
+           
+            registerNewRequestObject.room=textField.text;
+        }
+            break;
+        case 108:
+        {
+            
+            registerNewRequestObject.office=textField.text;
+        }
+            break;
+        case 109:
+        {
+        
+            registerNewRequestObject.comment=textField.text;
+        }
+            break;
+        case 110:
+        {
+        
+            registerNewRequestObject.promocode=textField.text;
+        }
+            break;
+        case 111:
+        {
+          
+            registerNewRequestObject.working_address=textField.text;
+        }
+            break;
+       
+       
+        default:
+            break;
+    }
 
+}
+-(void)requestRegisterNew
+{
+   [self.view addSubview:self.loader];
+    NSString*jsons=[registerNewRequestObject toJSONString];
+//   NSDictionary*dict=[[NSDictionary alloc]init];
+    NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    encodeStr=[encodeStr stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+    NSString*urlString=[NSString stringWithFormat:@"%@%@",@"http://xn--80aafc1aaodm5cl5a2a.xn--p1ai/api/v1/restAPI/RegistrNew=",encodeStr];
+    
+    
+    NSURL* url = [NSURL URLWithString:urlString];
+   // NSError* error;
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+//                                                       options:NSJSONWritingPrettyPrinted
+//                                                         error:&error];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    //    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPBody:nil];
+    request.timeoutInterval = 30;
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!data)
+        {
+            
+            
+        }
+        NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+        
+        NSLog(@"responseString:%@",responseString);
+        RegisterNewResponse*registerNewResponseObject = [[RegisterNewResponse alloc] initWithString:responseString error:nil];
+        [self.loader removeFromSuperview];
+        if ([registerNewResponseObject.error intValue]==0)
+        {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@ "" message:registerNewResponseObject.Msg preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction*cancel = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        [alert dismissViewControllerAnimated:YES completion:nil];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+                                    }];
+            
+            [alert addAction:cancel];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else
+        {
+            [self showErrorAlertWithMessage:registerNewResponseObject.Msg];
+        }
+
+    }];
+}
 @end

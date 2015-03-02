@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeKeyboardButton;
 - (IBAction)closeKeyboard:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
-@property (weak, nonatomic) IBOutlet UITableView *registrationTableView;
+@property (strong, nonatomic) IBOutlet UITableView *registrationTableView;
 
 @end

@@ -5,13 +5,14 @@
 //  Created by Admin on 20.02.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "UIImage+animatedGIF.h"
 #import "BaseViewController.h"
 
 @interface BaseViewController ()
 {
     NSMutableArray*titleArray;
     NSMutableArray*imageArray;
+    
 }
 @end
 
@@ -20,7 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSURL*url = [[NSBundle mainBundle] URLForResource:@"loader" withExtension:@"gif"];
+    self.loader=[[UIImageView alloc] init];
+    self.loader.image = [UIImage animatedImageWithAnimatedGIFURL:url];
+    self.loader.bounds=CGRectMake(0, 0,30,30);
+    self.loader.center=self.view.center;
     [self.facebookButton setBackgroundImage:[UIImage imageNamed:@"facebook.png"] forState:UIControlStateHighlighted];
     [self.twitterButton setBackgroundImage:[UIImage imageNamed:@"twitter.png"] forState:UIControlStateHighlighted];
     [self.googlePlusButton setBackgroundImage:[UIImage imageNamed:@"google_plus.png"] forState:UIControlStateHighlighted];
@@ -114,5 +119,17 @@
 {
     
 }
-
+-(void)showErrorAlertWithMessage:(NSString*)messageText
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@ "" message:messageText preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction*cancel = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * action)
+                            {
+                                [alert dismissViewControllerAnimated:YES completion:nil];
+                            }];
+    
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 @end

@@ -15,7 +15,8 @@
 
 @interface BaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
-
+-(void)showErrorAlertWithMessage:(NSString*)messageText;
+@property(nonatomic,strong)UIImageView*loader;
 @property (weak, nonatomic) IBOutlet UIButton *leftMenuButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *rightMenuButton;

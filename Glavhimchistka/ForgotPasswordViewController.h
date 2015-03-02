@@ -9,6 +9,11 @@
 #import "BaseViewController.h"
 
 @interface ForgotPasswordViewController : BaseViewController<UITextFieldDelegate>
+- (IBAction)actionPhone:(UISwitch *)sender;
+
+- (IBAction)actionEmail:(UISwitch *)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *switch_Phone;
+@property (weak, nonatomic) IBOutlet UISwitch *switch_Email;
 @property (weak, nonatomic) IBOutlet UITextField *recoverTextField;
 - (IBAction)recoverButton:(UIButton *)sender;
 

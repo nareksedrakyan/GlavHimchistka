@@ -13,6 +13,9 @@
 		8404B0E41A9508DE00050965 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8404B0E31A9508DE00050965 /* Images.xcassets */; };
 		8404B0E71A9508DE00050965 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404B0E51A9508DE00050965 /* LaunchScreen.xib */; };
 		8404B0F31A9508DE00050965 /* GlavhimchistkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B0F21A9508DE00050965 /* GlavhimchistkaTests.m */; };
+		8415D3E11AA3922400D03001 /* LoginRequestPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E01AA3922400D03001 /* LoginRequestPhone.m */; };
+		8415D3E41AA3923F00D03001 /* LoginRequestMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E31AA3923F00D03001 /* LoginRequestMail.m */; };
+		8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E61AA3AB2C00D03001 /* NSString+Hashes.m */; };
 		8438E08B1A96556500063D43 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8438E08A1A96556500063D43 /* logo.png */; };
 		8438E08F1A96567F00063D43 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438E08E1A96567F00063D43 /* RootViewController.m */; };
 		8438E0C11A96839200063D43 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8438E0C01A96839200063D43 /* RootTableViewCell.m */; };
@@ -38,6 +41,9 @@
 		844A783B1A97C7CA0001121F /* vkontakte_on_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A78301A97C7CA0001121F /* vkontakte_on_select.png */; };
 		844A783F1A97D0010001121F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A783E1A97D0010001121F /* BaseViewController.m */; };
 		844A78431A97D61C0001121F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A78421A97D61C0001121F /* MainViewController.m */; };
+		845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */; };
+		845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */; };
+		845E18721AA4FF33001DFE1D /* RememberPasswordResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */; };
 		8482B73C1A990F79007E0C32 /* RightMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */; };
 		8482B73E1A990F87007E0C32 /* RightMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */; };
 		8482B7471A991992007E0C32 /* current_orders.png in Resources */ = {isa = PBXBuildFile; fileRef = 8482B7401A991992007E0C32 /* current_orders.png */; };
@@ -58,6 +64,22 @@
 		84AEC2691A98121500E66B95 /* RightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AEC2681A98121500E66B95 /* RightMenuViewController.m */; };
 		84AEC26C1A98139000E66B95 /* LeftMenuViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AEC26B1A98139000E66B95 /* LeftMenuViewController1.m */; };
 		84AEC26F1A9813A400E66B95 /* LeftMenuViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AEC26E1A9813A400E66B95 /* LeftMenuViewController2.m */; };
+		84B1FBE31AA0E10100DFF90E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBCC1AA0E10100DFF90E /* JSONModel.m */; };
+		84B1FBE41AA0E10100DFF90E /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBCE1AA0E10100DFF90E /* JSONModelArray.m */; };
+		84B1FBE51AA0E10100DFF90E /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBD01AA0E10100DFF90E /* JSONModelClassProperty.m */; };
+		84B1FBE61AA0E10100DFF90E /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBD21AA0E10100DFF90E /* JSONModelError.m */; };
+		84B1FBE71AA0E10100DFF90E /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBD51AA0E10100DFF90E /* NSArray+JSONModel.m */; };
+		84B1FBE81AA0E10100DFF90E /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBD91AA0E10100DFF90E /* JSONAPI.m */; };
+		84B1FBE91AA0E10100DFF90E /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBDB1AA0E10100DFF90E /* JSONHTTPClient.m */; };
+		84B1FBEA1AA0E10100DFF90E /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBDD1AA0E10100DFF90E /* JSONModel+networking.m */; };
+		84B1FBEB1AA0E10100DFF90E /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBE01AA0E10100DFF90E /* JSONKeyMapper.m */; };
+		84B1FBEC1AA0E10100DFF90E /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBE21AA0E10100DFF90E /* JSONValueTransformer.m */; };
+		84B1FBF01AA0E20600DFF90E /* RegisterNewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBEF1AA0E20600DFF90E /* RegisterNewRequest.m */; };
+		84B1FBF31AA0E22200DFF90E /* RegisterNewResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBF21AA0E22200DFF90E /* RegisterNewResponse.m */; };
+		84B1FBF91AA0EE8100DFF90E /* loginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBF61AA0EE8100DFF90E /* loginResponse.m */; };
+		84B1FBFA1AA0EE8100DFF90E /* LoginRequestOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBF81AA0EE8100DFF90E /* LoginRequestOrder.m */; };
+		84B1FBFC1AA0FD5200DFF90E /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84B1FBFB1AA0FD5200DFF90E /* loader.gif */; };
+		84B1FBFF1AA1018600DFF90E /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBFE1AA1018600DFF90E /* UIImage+animatedGIF.m */; };
 		84D8C1B51A9E45A500D21AD3 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B41A9E45A500D21AD3 /* keyboard.png */; };
 		84D8C1B71A9E5B2D00D21AD3 /* left_menu_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */; };
 		84D8C1B91A9E655E00D21AD3 /* login_forgot.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B81A9E655E00D21AD3 /* login_forgot.png */; };
@@ -91,6 +113,12 @@
 		8404B0EC1A9508DE00050965 /* GlavhimchistkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlavhimchistkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8404B0F11A9508DE00050965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8404B0F21A9508DE00050965 /* GlavhimchistkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlavhimchistkaTests.m; sourceTree = "<group>"; };
+		8415D3DF1AA3922400D03001 /* LoginRequestPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestPhone.h; sourceTree = "<group>"; };
+		8415D3E01AA3922400D03001 /* LoginRequestPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestPhone.m; sourceTree = "<group>"; };
+		8415D3E21AA3923F00D03001 /* LoginRequestMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestMail.h; sourceTree = "<group>"; };
+		8415D3E31AA3923F00D03001 /* LoginRequestMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestMail.m; sourceTree = "<group>"; };
+		8415D3E51AA3AB2C00D03001 /* NSString+Hashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hashes.h"; sourceTree = "<group>"; };
+		8415D3E61AA3AB2C00D03001 /* NSString+Hashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hashes.m"; sourceTree = "<group>"; };
 		8438E08A1A96556500063D43 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		8438E08D1A96567F00063D43 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		8438E08E1A96567F00063D43 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -121,6 +149,12 @@
 		844A783E1A97D0010001121F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		844A78411A97D61C0001121F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		844A78421A97D61C0001121F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		845E18691AA4FECC001DFE1D /* RememberPasswordRequestEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordRequestEmail.h; sourceTree = "<group>"; };
+		845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordRequestEmail.m; sourceTree = "<group>"; };
+		845E186D1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordRequestPhone.h; sourceTree = "<group>"; };
+		845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordRequestPhone.m; sourceTree = "<group>"; };
+		845E18701AA4FF33001DFE1D /* RememberPasswordResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordResponse.h; sourceTree = "<group>"; };
+		845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordResponse.m; sourceTree = "<group>"; };
 		8482B73A1A990F79007E0C32 /* RightMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuTableViewCell.h; sourceTree = "<group>"; };
 		8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuTableViewCell.m; sourceTree = "<group>"; };
 		8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +186,38 @@
 		84AEC26B1A98139000E66B95 /* LeftMenuViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController1.m; sourceTree = "<group>"; };
 		84AEC26D1A9813A400E66B95 /* LeftMenuViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuViewController2.h; sourceTree = "<group>"; };
 		84AEC26E1A9813A400E66B95 /* LeftMenuViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuViewController2.m; sourceTree = "<group>"; };
+		84B1FBCB1AA0E10100DFF90E /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		84B1FBCC1AA0E10100DFF90E /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		84B1FBCD1AA0E10100DFF90E /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		84B1FBCE1AA0E10100DFF90E /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		84B1FBCF1AA0E10100DFF90E /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		84B1FBD01AA0E10100DFF90E /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		84B1FBD11AA0E10100DFF90E /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		84B1FBD21AA0E10100DFF90E /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		84B1FBD41AA0E10100DFF90E /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		84B1FBD51AA0E10100DFF90E /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		84B1FBD61AA0E10100DFF90E /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		84B1FBD81AA0E10100DFF90E /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		84B1FBD91AA0E10100DFF90E /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		84B1FBDA1AA0E10100DFF90E /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		84B1FBDB1AA0E10100DFF90E /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		84B1FBDC1AA0E10100DFF90E /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		84B1FBDD1AA0E10100DFF90E /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		84B1FBDF1AA0E10100DFF90E /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		84B1FBE01AA0E10100DFF90E /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		84B1FBE11AA0E10100DFF90E /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		84B1FBE21AA0E10100DFF90E /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		84B1FBEE1AA0E20600DFF90E /* RegisterNewRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewRequest.h; sourceTree = "<group>"; };
+		84B1FBEF1AA0E20600DFF90E /* RegisterNewRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewRequest.m; sourceTree = "<group>"; };
+		84B1FBF11AA0E22200DFF90E /* RegisterNewResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNewResponse.h; sourceTree = "<group>"; };
+		84B1FBF21AA0E22200DFF90E /* RegisterNewResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNewResponse.m; sourceTree = "<group>"; };
+		84B1FBF51AA0EE8100DFF90E /* loginResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginResponse.h; sourceTree = "<group>"; };
+		84B1FBF61AA0EE8100DFF90E /* loginResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginResponse.m; sourceTree = "<group>"; };
+		84B1FBF71AA0EE8100DFF90E /* LoginRequestOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestOrder.h; sourceTree = "<group>"; };
+		84B1FBF81AA0EE8100DFF90E /* LoginRequestOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestOrder.m; sourceTree = "<group>"; };
+		84B1FBFB1AA0FD5200DFF90E /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
+		84B1FBFD1AA1018600DFF90E /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		84B1FBFE1AA1018600DFF90E /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		84D8C1B41A9E45A500D21AD3 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard.png; sourceTree = "<group>"; };
 		84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_menu_button.png; sourceTree = "<group>"; };
 		84D8C1B81A9E655E00D21AD3 /* login_forgot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_forgot.png; sourceTree = "<group>"; };
@@ -188,6 +254,11 @@
 		8404B0CA1A9508DE00050965 = {
 			isa = PBXGroup;
 			children = (
+				8415D3E51AA3AB2C00D03001 /* NSString+Hashes.h */,
+				8415D3E61AA3AB2C00D03001 /* NSString+Hashes.m */,
+				84B1FBFD1AA1018600DFF90E /* UIImage+animatedGIF.h */,
+				84B1FBFE1AA1018600DFF90E /* UIImage+animatedGIF.m */,
+				84B1FBC91AA0E10100DFF90E /* JSONModel */,
 				8404B0D51A9508DE00050965 /* Glavhimchistka */,
 				8404B0EF1A9508DE00050965 /* GlavhimchistkaTests */,
 				8404B0D41A9508DE00050965 /* Products */,
@@ -250,6 +321,7 @@
 		8404B0FC1A951BDA00050965 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84B1FBFB1AA0FD5200DFF90E /* loader.gif */,
 				84D8C1B81A9E655E00D21AD3 /* login_forgot.png */,
 				84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */,
 				84D8C1B41A9E45A500D21AD3 /* keyboard.png */,
@@ -342,6 +414,19 @@
 			name = MainViewController;
 			sourceTree = "<group>";
 		};
+		845E186C1AA4FEE5001DFE1D /* RememberPassword */ = {
+			isa = PBXGroup;
+			children = (
+				845E18691AA4FECC001DFE1D /* RememberPasswordRequestEmail.h */,
+				845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */,
+				845E186D1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.h */,
+				845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */,
+				845E18701AA4FF33001DFE1D /* RememberPasswordResponse.h */,
+				845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */,
+			);
+			name = RememberPassword;
+			sourceTree = "<group>";
+		};
 		8482B73F1A991992007E0C32 /* RightMenu36x36 */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,9 +508,96 @@
 			name = RightViewController;
 			sourceTree = "<group>";
 		};
+		84B1FBC91AA0E10100DFF90E /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBCA1AA0E10100DFF90E /* JSONModel */,
+				84B1FBD31AA0E10100DFF90E /* JSONModelCategories */,
+				84B1FBD61AA0E10100DFF90E /* JSONModelLib.h */,
+				84B1FBD71AA0E10100DFF90E /* JSONModelNetworking */,
+				84B1FBDE1AA0E10100DFF90E /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		84B1FBCA1AA0E10100DFF90E /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBCB1AA0E10100DFF90E /* JSONModel.h */,
+				84B1FBCC1AA0E10100DFF90E /* JSONModel.m */,
+				84B1FBCD1AA0E10100DFF90E /* JSONModelArray.h */,
+				84B1FBCE1AA0E10100DFF90E /* JSONModelArray.m */,
+				84B1FBCF1AA0E10100DFF90E /* JSONModelClassProperty.h */,
+				84B1FBD01AA0E10100DFF90E /* JSONModelClassProperty.m */,
+				84B1FBD11AA0E10100DFF90E /* JSONModelError.h */,
+				84B1FBD21AA0E10100DFF90E /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		84B1FBD31AA0E10100DFF90E /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBD41AA0E10100DFF90E /* NSArray+JSONModel.h */,
+				84B1FBD51AA0E10100DFF90E /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		84B1FBD71AA0E10100DFF90E /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBD81AA0E10100DFF90E /* JSONAPI.h */,
+				84B1FBD91AA0E10100DFF90E /* JSONAPI.m */,
+				84B1FBDA1AA0E10100DFF90E /* JSONHTTPClient.h */,
+				84B1FBDB1AA0E10100DFF90E /* JSONHTTPClient.m */,
+				84B1FBDC1AA0E10100DFF90E /* JSONModel+networking.h */,
+				84B1FBDD1AA0E10100DFF90E /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		84B1FBDE1AA0E10100DFF90E /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBDF1AA0E10100DFF90E /* JSONKeyMapper.h */,
+				84B1FBE01AA0E10100DFF90E /* JSONKeyMapper.m */,
+				84B1FBE11AA0E10100DFF90E /* JSONValueTransformer.h */,
+				84B1FBE21AA0E10100DFF90E /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		84B1FBED1AA0E1B200DFF90E /* RegisterNewRequest */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBEE1AA0E20600DFF90E /* RegisterNewRequest.h */,
+				84B1FBEF1AA0E20600DFF90E /* RegisterNewRequest.m */,
+				84B1FBF11AA0E22200DFF90E /* RegisterNewResponse.h */,
+				84B1FBF21AA0E22200DFF90E /* RegisterNewResponse.m */,
+			);
+			name = RegisterNewRequest;
+			sourceTree = "<group>";
+		};
+		84B1FBF41AA0EE6300DFF90E /* LoginRequest */ = {
+			isa = PBXGroup;
+			children = (
+				84B1FBF51AA0EE8100DFF90E /* loginResponse.h */,
+				84B1FBF61AA0EE8100DFF90E /* loginResponse.m */,
+				84B1FBF71AA0EE8100DFF90E /* LoginRequestOrder.h */,
+				84B1FBF81AA0EE8100DFF90E /* LoginRequestOrder.m */,
+				8415D3DF1AA3922400D03001 /* LoginRequestPhone.h */,
+				8415D3E01AA3922400D03001 /* LoginRequestPhone.m */,
+				8415D3E21AA3923F00D03001 /* LoginRequestMail.h */,
+				8415D3E31AA3923F00D03001 /* LoginRequestMail.m */,
+			);
+			name = LoginRequest;
+			sourceTree = "<group>";
+		};
 		84F23BC21A9A05D200FE72C5 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84B1FBF41AA0EE6300DFF90E /* LoginRequest */,
 				84F23BC31A9A064800FE72C5 /* LoginViewController.h */,
 				84F23BC41A9A064800FE72C5 /* LoginViewController.m */,
 			);
@@ -435,6 +607,7 @@
 		84F23BC61A9A066E00FE72C5 /* RegistrationViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84B1FBED1AA0E1B200DFF90E /* RegisterNewRequest */,
 				84F23BC71A9A06AB00FE72C5 /* RegistrationViewController.h */,
 				84F23BC81A9A06AB00FE72C5 /* RegistrationViewController.m */,
 				844A23901A9BC60F005335E4 /* RegistrationTableViewCell.h */,
@@ -447,6 +620,7 @@
 		84F23BCA1A9A06B300FE72C5 /* ForgotPasswordViewController */ = {
 			isa = PBXGroup;
 			children = (
+				845E186C1AA4FEE5001DFE1D /* RememberPassword */,
 				84F23BCB1A9A06F700FE72C5 /* ForgotPasswordViewController.h */,
 				84F23BCC1A9A06F700FE72C5 /* ForgotPasswordViewController.m */,
 			);
@@ -545,6 +719,7 @@
 				8438E0CE1A96855B00063D43 /* sale.png in Resources */,
 				84F23BD31A9A334000FE72C5 /* password.png in Resources */,
 				8438E0CF1A96855B00063D43 /* services_list.png in Resources */,
+				84B1FBFC1AA0FD5200DFF90E /* loader.gif in Resources */,
 				844A783A1A97C7CA0001121F /* vkontakte.png in Resources */,
 				844A78321A97C7CA0001121F /* facebook_on_selected.png in Resources */,
 				8438E0D21A96996A00063D43 /* launch_logo.png in Resources */,
@@ -588,27 +763,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B1FBE91AA0E10100DFF90E /* JSONHTTPClient.m in Sources */,
 				8404B0DC1A9508DE00050965 /* AppDelegate.m in Sources */,
+				84B1FBEA1AA0E10100DFF90E /* JSONModel+networking.m in Sources */,
 				84AEC2581A97FE8500E66B95 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				84AEC2691A98121500E66B95 /* RightMenuViewController.m in Sources */,
 				84AEC2591A97FE8500E66B95 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
+				845E18721AA4FF33001DFE1D /* RememberPasswordResponse.m in Sources */,
 				84AEC25D1A97FE8500E66B95 /* SlideNavigationController.m in Sources */,
+				84B1FBF01AA0E20600DFF90E /* RegisterNewRequest.m in Sources */,
+				8415D3E11AA3922400D03001 /* LoginRequestPhone.m in Sources */,
+				84B1FBE41AA0E10100DFF90E /* JSONModelArray.m in Sources */,
+				84B1FBFA1AA0EE8100DFF90E /* LoginRequestOrder.m in Sources */,
+				84B1FBE71AA0E10100DFF90E /* NSArray+JSONModel.m in Sources */,
 				84AEC2561A97FE8500E66B95 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				84AEC26C1A98139000E66B95 /* LeftMenuViewController1.m in Sources */,
+				8415D3E41AA3923F00D03001 /* LoginRequestMail.m in Sources */,
+				84B1FBFF1AA1018600DFF90E /* UIImage+animatedGIF.m in Sources */,
+				84B1FBE31AA0E10100DFF90E /* JSONModel.m in Sources */,
+				845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */,
 				84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */,
 				84F23BC51A9A064800FE72C5 /* LoginViewController.m in Sources */,
 				844A23921A9BC60F005335E4 /* RegistrationTableViewCell.m in Sources */,
 				84AEC25A1A97FE8500E66B95 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
+				84B1FBE61AA0E10100DFF90E /* JSONModelError.m in Sources */,
 				844A78431A97D61C0001121F /* MainViewController.m in Sources */,
 				84F23BCD1A9A06F700FE72C5 /* ForgotPasswordViewController.m in Sources */,
+				84B1FBF91AA0EE8100DFF90E /* loginResponse.m in Sources */,
 				8482B73C1A990F79007E0C32 /* RightMenuTableViewCell.m in Sources */,
 				84F23BD61A9A3A3900FE72C5 /* LabelUnderLine.m in Sources */,
+				84B1FBE51AA0E10100DFF90E /* JSONModelClassProperty.m in Sources */,
+				845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */,
+				84B1FBE81AA0E10100DFF90E /* JSONAPI.m in Sources */,
+				84B1FBEC1AA0E10100DFF90E /* JSONValueTransformer.m in Sources */,
 				84AEC26F1A9813A400E66B95 /* LeftMenuViewController2.m in Sources */,
+				84B1FBEB1AA0E10100DFF90E /* JSONKeyMapper.m in Sources */,
 				84AEC2571A97FE8500E66B95 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				844A783F1A97D0010001121F /* BaseViewController.m in Sources */,
 				8438E0C11A96839200063D43 /* RootTableViewCell.m in Sources */,
+				84B1FBF31AA0E22200DFF90E /* RegisterNewResponse.m in Sources */,
 				8404B0D91A9508DE00050965 /* main.m in Sources */,
 				8438E08F1A96567F00063D43 /* RootViewController.m in Sources */,
+				8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

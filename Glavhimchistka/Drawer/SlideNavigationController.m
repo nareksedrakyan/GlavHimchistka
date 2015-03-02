@@ -367,8 +367,9 @@ static SlideNavigationController *singletonInstance;
 	if ([self isMenuOpen])
 	{
 		[self closeMenuWithCompletion:^{
-			[super popToViewController:viewController animated:animated];
+		 [super popToViewController:viewController animated:animated];
 		}];
+       
 	}
 	else
 	{

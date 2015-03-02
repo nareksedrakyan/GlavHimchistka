@@ -38,7 +38,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="registrationTextField" destination="N14-Fu-dDN" id="Rx2-Nc-Pic"/>
+                <outlet property="registrationTextField" destination="N14-Fu-dDN" id="7Wd-HO-UwY"/>
             </connections>
             <point key="canvasLocation" x="368" y="136.5"/>
         </tableViewCell>

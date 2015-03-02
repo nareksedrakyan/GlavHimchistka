@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RegistrationTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextField *registrationTextField;
+@property (strong, nonatomic) IBOutlet UITextField *registrationTextField;
 
 @end
