@@ -44,6 +44,9 @@
 		845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */; };
 		845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */; };
 		845E18721AA4FF33001DFE1D /* RememberPasswordResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */; };
+		845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845FD5D41AACD4B50098F47D /* CustomLabel.m */; };
+		845FD5D81AACD7110098F47D /* gone.png in Resources */ = {isa = PBXBuildFile; fileRef = 845FD5D61AACD7110098F47D /* gone.png */; };
+		845FD5D91AACD7110098F47D /* gone1.png in Resources */ = {isa = PBXBuildFile; fileRef = 845FD5D71AACD7110098F47D /* gone1.png */; };
 		8482B73C1A990F79007E0C32 /* RightMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */; };
 		8482B73E1A990F87007E0C32 /* RightMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */; };
 		8482B7471A991992007E0C32 /* current_orders.png in Resources */ = {isa = PBXBuildFile; fileRef = 8482B7401A991992007E0C32 /* current_orders.png */; };
@@ -83,12 +86,22 @@
 		84D8C1B51A9E45A500D21AD3 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B41A9E45A500D21AD3 /* keyboard.png */; };
 		84D8C1B71A9E5B2D00D21AD3 /* left_menu_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */; };
 		84D8C1B91A9E655E00D21AD3 /* login_forgot.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B81A9E655E00D21AD3 /* login_forgot.png */; };
+		84EF85041AAB432700D998E4 /* ServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85031AAB432700D998E4 /* ServicesViewController.m */; };
+		84EF85081AAB4D7900D998E4 /* ServicesCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85061AAB4D7900D998E4 /* ServicesCellTableViewCell.m */; };
+		84EF85091AAB4D7900D998E4 /* ServicesCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */; };
+		84EF85131AAB760300D998E4 /* RequestPriceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85121AAB760300D998E4 /* RequestPriceList.m */; };
+		84EF85161AAB762E00D998E4 /* ResponsePriceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85151AAB762E00D998E4 /* ResponsePriceList.m */; };
 		84F23BC51A9A064800FE72C5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BC41A9A064800FE72C5 /* LoginViewController.m */; };
 		84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BC81A9A06AB00FE72C5 /* RegistrationViewController.m */; };
 		84F23BCD1A9A06F700FE72C5 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BCC1A9A06F700FE72C5 /* ForgotPasswordViewController.m */; };
 		84F23BD11A9A331100FE72C5 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BD01A9A331100FE72C5 /* login.png */; };
 		84F23BD31A9A334000FE72C5 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F23BD21A9A334000FE72C5 /* password.png */; };
 		84F23BD61A9A3A3900FE72C5 /* LabelUnderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BD51A9A3A3900FE72C5 /* LabelUnderLine.m */; };
+		84FBDB2D1AAB829F000CCED1 /* PriceElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBDB2C1AAB829F000CCED1 /* PriceElements.m */; };
+		84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E31AAC999800C1627E /* PriceListViewController.m */; };
+		84FCA0E81AACAACD00C1627E /* PriceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E61AACAACD00C1627E /* PriceListCell.m */; };
+		84FCA0E91AACAACD00C1627E /* PriceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FCA0E71AACAACD00C1627E /* PriceListCell.xib */; };
+		84FCA0EC1AACBE2500C1627E /* PriceListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0EB1AACBE2500C1627E /* PriceListObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +168,10 @@
 		845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordRequestPhone.m; sourceTree = "<group>"; };
 		845E18701AA4FF33001DFE1D /* RememberPasswordResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordResponse.h; sourceTree = "<group>"; };
 		845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordResponse.m; sourceTree = "<group>"; };
+		845FD5D31AACD4B50098F47D /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
+		845FD5D41AACD4B50098F47D /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
+		845FD5D61AACD7110098F47D /* gone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gone.png; sourceTree = "<group>"; };
+		845FD5D71AACD7110098F47D /* gone1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gone1.png; sourceTree = "<group>"; };
 		8482B73A1A990F79007E0C32 /* RightMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightMenuTableViewCell.h; sourceTree = "<group>"; };
 		8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightMenuTableViewCell.m; sourceTree = "<group>"; };
 		8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -221,6 +238,15 @@
 		84D8C1B41A9E45A500D21AD3 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard.png; sourceTree = "<group>"; };
 		84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_menu_button.png; sourceTree = "<group>"; };
 		84D8C1B81A9E655E00D21AD3 /* login_forgot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_forgot.png; sourceTree = "<group>"; };
+		84EF85021AAB432700D998E4 /* ServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesViewController.h; sourceTree = "<group>"; };
+		84EF85031AAB432700D998E4 /* ServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesViewController.m; sourceTree = "<group>"; };
+		84EF85051AAB4D7900D998E4 /* ServicesCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesCellTableViewCell.h; sourceTree = "<group>"; };
+		84EF85061AAB4D7900D998E4 /* ServicesCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesCellTableViewCell.m; sourceTree = "<group>"; };
+		84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServicesCellTableViewCell.xib; sourceTree = "<group>"; };
+		84EF85111AAB760300D998E4 /* RequestPriceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestPriceList.h; sourceTree = "<group>"; };
+		84EF85121AAB760300D998E4 /* RequestPriceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestPriceList.m; sourceTree = "<group>"; };
+		84EF85141AAB762E00D998E4 /* ResponsePriceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponsePriceList.h; sourceTree = "<group>"; };
+		84EF85151AAB762E00D998E4 /* ResponsePriceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponsePriceList.m; sourceTree = "<group>"; };
 		84F23BC31A9A064800FE72C5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		84F23BC41A9A064800FE72C5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		84F23BC71A9A06AB00FE72C5 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
@@ -231,6 +257,15 @@
 		84F23BD21A9A334000FE72C5 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		84F23BD41A9A3A3900FE72C5 /* LabelUnderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelUnderLine.h; sourceTree = "<group>"; };
 		84F23BD51A9A3A3900FE72C5 /* LabelUnderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelUnderLine.m; sourceTree = "<group>"; };
+		84FBDB2B1AAB829F000CCED1 /* PriceElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceElements.h; sourceTree = "<group>"; };
+		84FBDB2C1AAB829F000CCED1 /* PriceElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceElements.m; sourceTree = "<group>"; };
+		84FCA0E21AAC999800C1627E /* PriceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListViewController.h; sourceTree = "<group>"; };
+		84FCA0E31AAC999800C1627E /* PriceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceListViewController.m; sourceTree = "<group>"; };
+		84FCA0E51AACAACD00C1627E /* PriceListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListCell.h; sourceTree = "<group>"; };
+		84FCA0E61AACAACD00C1627E /* PriceListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceListCell.m; sourceTree = "<group>"; };
+		84FCA0E71AACAACD00C1627E /* PriceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceListCell.xib; sourceTree = "<group>"; };
+		84FCA0EA1AACBE2500C1627E /* PriceListObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListObject.h; sourceTree = "<group>"; };
+		84FCA0EB1AACBE2500C1627E /* PriceListObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceListObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +314,8 @@
 			children = (
 				84F23BD41A9A3A3900FE72C5 /* LabelUnderLine.h */,
 				84F23BD51A9A3A3900FE72C5 /* LabelUnderLine.m */,
+				845FD5D31AACD4B50098F47D /* CustomLabel.h */,
+				845FD5D41AACD4B50098F47D /* CustomLabel.m */,
 				84AEC2441A97FE8500E66B95 /* Drawer */,
 				8438E0BE1A967D5400063D43 /* ViewControllers */,
 				8404B0DA1A9508DE00050965 /* AppDelegate.h */,
@@ -321,6 +358,8 @@
 		8404B0FC1A951BDA00050965 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				845FD5D61AACD7110098F47D /* gone.png */,
+				845FD5D71AACD7110098F47D /* gone1.png */,
 				84B1FBFB1AA0FD5200DFF90E /* loader.gif */,
 				84D8C1B81A9E655E00D21AD3 /* login_forgot.png */,
 				84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */,
@@ -353,6 +392,8 @@
 		8438E0BE1A967D5400063D43 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84FCA0E11AAC994C00C1627E /* PriceListViewController */,
+				84EF85011AAB42F000D998E4 /* ServicesViewController */,
 				84F23BCA1A9A06B300FE72C5 /* ForgotPasswordViewController */,
 				84F23BC61A9A066E00FE72C5 /* RegistrationViewController */,
 				84F23BC21A9A05D200FE72C5 /* LoginViewController */,
@@ -594,6 +635,32 @@
 			name = LoginRequest;
 			sourceTree = "<group>";
 		};
+		84EF85011AAB42F000D998E4 /* ServicesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84EF85101AAB75BC00D998E4 /* RequestPriceList */,
+				84EF85021AAB432700D998E4 /* ServicesViewController.h */,
+				84EF85031AAB432700D998E4 /* ServicesViewController.m */,
+				84EF85051AAB4D7900D998E4 /* ServicesCellTableViewCell.h */,
+				84EF85061AAB4D7900D998E4 /* ServicesCellTableViewCell.m */,
+				84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */,
+			);
+			name = ServicesViewController;
+			sourceTree = "<group>";
+		};
+		84EF85101AAB75BC00D998E4 /* RequestPriceList */ = {
+			isa = PBXGroup;
+			children = (
+				84EF85111AAB760300D998E4 /* RequestPriceList.h */,
+				84EF85121AAB760300D998E4 /* RequestPriceList.m */,
+				84EF85141AAB762E00D998E4 /* ResponsePriceList.h */,
+				84EF85151AAB762E00D998E4 /* ResponsePriceList.m */,
+				84FBDB2B1AAB829F000CCED1 /* PriceElements.h */,
+				84FBDB2C1AAB829F000CCED1 /* PriceElements.m */,
+			);
+			name = RequestPriceList;
+			sourceTree = "<group>";
+		};
 		84F23BC21A9A05D200FE72C5 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,6 +692,20 @@
 				84F23BCC1A9A06F700FE72C5 /* ForgotPasswordViewController.m */,
 			);
 			name = ForgotPasswordViewController;
+			sourceTree = "<group>";
+		};
+		84FCA0E11AAC994C00C1627E /* PriceListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84FCA0E21AAC999800C1627E /* PriceListViewController.h */,
+				84FCA0E31AAC999800C1627E /* PriceListViewController.m */,
+				84FCA0E51AACAACD00C1627E /* PriceListCell.h */,
+				84FCA0E61AACAACD00C1627E /* PriceListCell.m */,
+				84FCA0E71AACAACD00C1627E /* PriceListCell.xib */,
+				84FCA0EA1AACBE2500C1627E /* PriceListObject.h */,
+				84FCA0EB1AACBE2500C1627E /* PriceListObject.m */,
+			);
+			name = PriceListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -712,6 +793,7 @@
 				844A78331A97C7CA0001121F /* google_plus.png in Resources */,
 				8482B73E1A990F87007E0C32 /* RightMenuTableViewCell.xib in Resources */,
 				8438E0CB1A96855B00063D43 /* delivery.png in Resources */,
+				84EF85091AAB4D7900D998E4 /* ServicesCellTableViewCell.xib in Resources */,
 				8482B74B1A991992007E0C32 /* right_menu_user.png in Resources */,
 				84D8C1B51A9E45A500D21AD3 /* keyboard.png in Resources */,
 				844A78341A97C7CA0001121F /* google_plus_on_selected.png in Resources */,
@@ -732,6 +814,8 @@
 				84F23BD11A9A331100FE72C5 /* login.png in Resources */,
 				8438E0CD1A96855B00063D43 /* question.png in Resources */,
 				844A783B1A97C7CA0001121F /* vkontakte_on_select.png in Resources */,
+				845FD5D81AACD7110098F47D /* gone.png in Resources */,
+				84FCA0E91AACAACD00C1627E /* PriceListCell.xib in Resources */,
 				8438E0D01A96855B00063D43 /* user_login.png in Resources */,
 				84AEC25C1A97FE8500E66B95 /* menu-button@2x.png in Resources */,
 				8404B0E21A9508DE00050965 /* Main.storyboard in Resources */,
@@ -739,6 +823,7 @@
 				844A78361A97C7CA0001121F /* instagram_on_selected.png in Resources */,
 				8482B74A1A991992007E0C32 /* order_history.png in Resources */,
 				8438E0C31A9683D600063D43 /* RootTableViewCell.xib in Resources */,
+				845FD5D91AACD7110098F47D /* gone1.png in Resources */,
 				8404B0E71A9508DE00050965 /* LaunchScreen.xib in Resources */,
 				844A78311A97C7CA0001121F /* facebook.png in Resources */,
 				844A78381A97C7CA0001121F /* twitter.png in Resources */,
@@ -767,6 +852,7 @@
 				8404B0DC1A9508DE00050965 /* AppDelegate.m in Sources */,
 				84B1FBEA1AA0E10100DFF90E /* JSONModel+networking.m in Sources */,
 				84AEC2581A97FE8500E66B95 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
+				84FCA0E81AACAACD00C1627E /* PriceListCell.m in Sources */,
 				84AEC2691A98121500E66B95 /* RightMenuViewController.m in Sources */,
 				84AEC2591A97FE8500E66B95 /* SlideNavigationContorllerAnimatorSlide.m in Sources */,
 				845E18721AA4FF33001DFE1D /* RememberPasswordResponse.m in Sources */,
@@ -775,7 +861,9 @@
 				8415D3E11AA3922400D03001 /* LoginRequestPhone.m in Sources */,
 				84B1FBE41AA0E10100DFF90E /* JSONModelArray.m in Sources */,
 				84B1FBFA1AA0EE8100DFF90E /* LoginRequestOrder.m in Sources */,
+				84FBDB2D1AAB829F000CCED1 /* PriceElements.m in Sources */,
 				84B1FBE71AA0E10100DFF90E /* NSArray+JSONModel.m in Sources */,
+				84EF85081AAB4D7900D998E4 /* ServicesCellTableViewCell.m in Sources */,
 				84AEC2561A97FE8500E66B95 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
 				84AEC26C1A98139000E66B95 /* LeftMenuViewController1.m in Sources */,
 				8415D3E41AA3923F00D03001 /* LoginRequestMail.m in Sources */,
@@ -783,15 +871,20 @@
 				84B1FBE31AA0E10100DFF90E /* JSONModel.m in Sources */,
 				845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */,
 				84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */,
+				84EF85131AAB760300D998E4 /* RequestPriceList.m in Sources */,
 				84F23BC51A9A064800FE72C5 /* LoginViewController.m in Sources */,
 				844A23921A9BC60F005335E4 /* RegistrationTableViewCell.m in Sources */,
 				84AEC25A1A97FE8500E66B95 /* SlideNavigationContorllerAnimatorSlideAndFade.m in Sources */,
 				84B1FBE61AA0E10100DFF90E /* JSONModelError.m in Sources */,
+				84EF85161AAB762E00D998E4 /* ResponsePriceList.m in Sources */,
+				84EF85041AAB432700D998E4 /* ServicesViewController.m in Sources */,
 				844A78431A97D61C0001121F /* MainViewController.m in Sources */,
 				84F23BCD1A9A06F700FE72C5 /* ForgotPasswordViewController.m in Sources */,
 				84B1FBF91AA0EE8100DFF90E /* loginResponse.m in Sources */,
 				8482B73C1A990F79007E0C32 /* RightMenuTableViewCell.m in Sources */,
+				84FCA0EC1AACBE2500C1627E /* PriceListObject.m in Sources */,
 				84F23BD61A9A3A3900FE72C5 /* LabelUnderLine.m in Sources */,
+				84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */,
 				84B1FBE51AA0E10100DFF90E /* JSONModelClassProperty.m in Sources */,
 				845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */,
 				84B1FBE81AA0E10100DFF90E /* JSONAPI.m in Sources */,
@@ -805,6 +898,7 @@
 				8404B0D91A9508DE00050965 /* main.m in Sources */,
 				8438E08F1A96567F00063D43 /* RootViewController.m in Sources */,
 				8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */,
+				845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

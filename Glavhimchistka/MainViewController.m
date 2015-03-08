@@ -7,7 +7,7 @@
 //
 #import "RootViewController.h"
 #import "MainViewController.h"
-
+#import "ServicesViewController.h"
 @interface MainViewController ()
 {
     RootViewController*rvc;
@@ -36,10 +36,15 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    infoViewController* infoContorller = [self.storyboard instantiateViewControllerWithIdentifier:@"info"];
-    //    [self.navigationController pushViewController:infoContorller animated:NO];
-    //    infoContorller.id_mail = [[mailResponseObject.mail objectAtIndex:indexPath.row] id];
-    //    infoContorller.titleText = [[mailResponseObject.mail objectAtIndex:indexPath.row] getTitle];
+    switch (indexPath.row)
+        {
+    case 4:
+        {
+            ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
+    break;
+        }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

@@ -90,7 +90,13 @@
            
         }
             break;
-            
+        case 5:
+        {
+            myClass = NSClassFromString(@"ServicesViewController");
+            identity =@"ServicesViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
         default:
             break;
     }
@@ -106,8 +112,10 @@
     {
         if ((b=[controller isKindOfClass:[aClass class]]))
         {
-           //[[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
-            [(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
+            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
+            [nvc popToViewController:controller animated:YES];
+            
+            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
 //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
 //            [allViewControllers removeObjectIdenticalTo:controller];
 //            nvc.viewControllers = allViewControllers;

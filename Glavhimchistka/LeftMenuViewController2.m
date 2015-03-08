@@ -7,11 +7,16 @@
 //
 
 #import "LeftMenuViewController2.h"
+#import "AppDelegate.h"
+#import "SlideNavigationController.h"
 
 @interface LeftMenuViewController2 ()
 {
     NSMutableArray*titleArray;
     NSMutableArray*imageArray;
+    UINavigationController*nvc;
+    Class myClass;
+    NSString*identity;
 }
 @end
 
@@ -77,11 +82,57 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    infoViewController* infoContorller = [self.storyboard instantiateViewControllerWithIdentifier:@"info"];
-    //    [self.navigationController pushViewController:infoContorller animated:NO];
-    //    infoContorller.id_mail = [[mailResponseObject.mail objectAtIndex:indexPath.row] id];
-    //    infoContorller.titleText = [[mailResponseObject.mail objectAtIndex:indexPath.row] getTitle];
+    switch (indexPath.row) {
+        case 0:
+        {
+//            myClass = NSClassFromString(@"LoginViewController");
+//            identity =@"LoginViewController";
+//            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+            
+            
+        }
+            break;
+        case 4:
+        {
+            myClass = NSClassFromString(@"ServicesViewController");
+            identity =@"ServicesViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+        default:
+            break;
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+ 
 }
 
+
+-(void)pushIfNoExistViewContrller:(Class)aClass andIdentity:(NSString*)identityString
+{
+    BOOL b=NO;
+    id vc = [self.storyboard instantiateViewControllerWithIdentifier:identityString];
+    for (id controller in nvc.viewControllers)
+    {
+        if ((b=[controller isKindOfClass:[aClass class]]))
+        {
+            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
+            [nvc popToViewController:controller animated:YES];
+            
+            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
+            //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
+            //            [allViewControllers removeObjectIdenticalTo:controller];
+            //            nvc.viewControllers = allViewControllers;
+            break;
+            
+            
+        }
+    }
+    if (!b)
+    {
+        [nvc pushViewController:vc animated:NO];
+    }
+    
+}
 @end

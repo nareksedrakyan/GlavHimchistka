@@ -8,6 +8,8 @@
 
 #import "RootViewController.h"
 #import "LoginViewController.h"
+#import "ServicesViewController.h"
+
 @interface RootViewController ()
 
 @end
@@ -39,6 +41,13 @@
         {
             LoginViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             [self.navigationController pushViewController:lvc animated:YES];
+        }
+            break;
+            
+        case 5:
+        {
+            ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];
+            [self.navigationController pushViewController:svc animated:YES];
         }
             break;
             
