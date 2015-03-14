@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "LoginViewController.h"
 #import "ServicesViewController.h"
+#import "ChatViewController.h"
 
 @interface RootViewController ()
 
@@ -38,12 +39,13 @@
     
     switch (indexPath.row) {
         case 0:
+        case 1:
         {
             LoginViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             [self.navigationController pushViewController:lvc animated:YES];
         }
             break;
-            
+        
         case 5:
         {
             ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];

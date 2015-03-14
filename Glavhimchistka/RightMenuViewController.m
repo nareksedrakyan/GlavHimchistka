@@ -12,13 +12,16 @@
 {
     NSMutableArray*titleArray;
     NSMutableArray*imageArray;
+    UILabel*messagesCountLabel;
 }
 @end
 
 @implementation RightMenuViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+   
     self.rightTableView.delegate=self;
     self.rightTableView.dataSource=self;
     titleArray=[NSMutableArray arrayWithObjects:@"Mike Tevan",@"Текущие заказы",@"История заказов",@"Моя Почта",@"Мои данные",@"Выход", nil];

@@ -82,6 +82,7 @@
 {
     switch (indexPath.row) {
         case 0:
+        case 1:
         {
             myClass = NSClassFromString(@"LoginViewController");
             identity =@"LoginViewController";

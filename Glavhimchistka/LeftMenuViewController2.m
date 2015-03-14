@@ -9,7 +9,7 @@
 #import "LeftMenuViewController2.h"
 #import "AppDelegate.h"
 #import "SlideNavigationController.h"
-
+#import "ChatViewController.h"
 @interface LeftMenuViewController2 ()
 {
     NSMutableArray*titleArray;
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     nvc=(UINavigationController *)[[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController];
     titleArray=[NSMutableArray arrayWithObjects:@"Задать вопрос",@"Контакты",@"Заказать выезд",@"Получить скидку",@"Услуги", nil];
     imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"question.png"],[UIImage imageNamed:@"map.png"],[UIImage imageNamed:@"delivery.png"],[UIImage imageNamed:@"sale.png"],[UIImage imageNamed:@"services_list.png"], nil];
     
@@ -85,9 +86,9 @@
     switch (indexPath.row) {
         case 0:
         {
-//            myClass = NSClassFromString(@"LoginViewController");
-//            identity =@"LoginViewController";
-//            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+            myClass = NSClassFromString(@"ChatViewController");
+            identity =@"ChatViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
             
             
         }

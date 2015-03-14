@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  Glavhimchistka
+//
+//  Created by Admin on 14.03.15.
+//  Copyright (c) 2015 NSedrakyan. All rights reserved.
+//
+
+#ifndef Glavhimchistka_PrefixHeader_pch
+#define Glavhimchistka_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UserInfo.h"
+#define USINFO [UserInfo sharedUserInfo]
+#endif
