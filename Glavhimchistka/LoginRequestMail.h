@@ -9,6 +9,6 @@
 #import "JSONModel.h"
 
 @interface LoginRequestMail : JSONModel
-@property(strong,nonatomic)NSString*LoginMail;
+@property(strong,nonatomic)NSString*Mail;
 @property(strong,nonatomic)NSString*Password;
 @end

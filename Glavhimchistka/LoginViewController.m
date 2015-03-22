@@ -21,7 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+   //hard code for test
+    
+    
     self.passwordRecoveryLabel.userInteractionEnabled=YES;
     self.loginTextField.placeholder=@"E-Mail";
     self.PasswordTextField.placeholder=@"PassWord";
@@ -32,6 +34,9 @@
     self.PasswordTextField.delegate=self;
     UITapGestureRecognizer*tapGestureRecoveryPassword=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(recoveryPassWordAction)];
     [self.passwordRecoveryLabel addGestureRecognizer:tapGestureRecoveryPassword];
+    
+    //self.loginTextField.text=@"mike-tm555@mail.ru";
+    //self.PasswordTextField.text=@"Z85";
     // Do any additional setup after loading the view.
 }
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -68,8 +73,12 @@
     if (self.switchE_mail.on)
     {
         LoginRequestMail*loginRequestMailObject=[[LoginRequestMail alloc]init];
-        loginRequestMailObject.LoginMail=self.loginTextField.text;
-        loginRequestMailObject.Password=self.PasswordTextField.text.sha1;
+       
+        //testing hard code
+        loginRequestMailObject.Mail=@"gurgen5968@mail.ru";//self.loginTextField.text;
+        loginRequestMailObject.Password=@"6412121C".sha1;//self.PasswordTextField.text.sha1;
+        //testing hard code
+        
         NSString*jsons=[loginRequestMailObject toJSONString];
         // NSDictionary*dict=[[NSDictionary alloc]init];
         NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -79,8 +88,10 @@
     else if (self.switchPhone.on)
     {
         LoginRequestPhone*loginRequestPhoneObject=[[LoginRequestPhone alloc]init];
-        loginRequestPhoneObject.Fone=self.loginTextField.text;
-        loginRequestPhoneObject.Password=self.PasswordTextField.text.sha1;
+        
+        loginRequestPhoneObject.Fone=@"+79859975990";//self.loginTextField.text;
+        loginRequestPhoneObject.Password=@"6412121C".sha1;//self.PasswordTextField.text.sha1;
+        
         NSString*jsons=[loginRequestPhoneObject toJSONString];
         // NSDictionary*dict=[[NSDictionary alloc]init];
         NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -128,7 +139,8 @@
         [self.loader removeFromSuperview];
         if ([loginResponseObject.error intValue]==0)
         {
-            [[NSUserDefaults standardUserDefaults] setObject:loginResponseObject.Session_id forKey:@"Session_id"];
+//            [[NSUserDefaults standardUserDefaults] setObject:loginResponseObject.Session_id forKey:@"Session_id"];
+            USINFO.sessionID=loginResponseObject.Session_id;
             [self.navigationController popToRootViewControllerAnimated:YES];
         }
         else

@@ -19,8 +19,9 @@
 
 - (void)viewDidLoad
 {
+     [UserInfo setUserInfo:nil];
     [super viewDidLoad];
-  
+   
 
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -32,12 +33,19 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.isRightMenuButtonHidden=YES;
      NSLog(@"height=%f",self.rootTableView.bounds.size.height);
+   // LeftMenuViewController1 *leftMenu =[[LeftMenuViewController1 alloc] init];
+//    [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"LeftMenuViewController1"];
+    
+    [SlideNavigationController sharedInstance].leftMenu = APPMENU.leftMenu1;
+
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    switch (indexPath.row) {
+    switch (indexPath.row)
+    {
         case 0:
         case 1:
         {
@@ -65,8 +73,10 @@
     return NO;
 }
 
+
+
 - (BOOL)slideNavigationControllerShouldDisplayRightMenu
 {
-    return NO;
+    return !self.rightMenuButton.hidden;
 }
 @end

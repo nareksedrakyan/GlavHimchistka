@@ -49,6 +49,16 @@
    
     [self.rightMenuButton addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
    [self.leftMenuButton addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleLeftMenu) forControlEvents:UIControlEventTouchUpInside];
+    NSLog(@"%@",USINFO.sessionID);
+    if (USINFO.sessionID)
+    {
+        self.isRightMenuButtonHidden=NO;
+    }
+    else
+    {
+        self.isRightMenuButtonHidden=YES;
+    }
+    
     // Do any additional setup after loading the view.
 }
 

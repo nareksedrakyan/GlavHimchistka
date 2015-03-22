@@ -25,8 +25,10 @@
 
 @implementation ServicesViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     arr=[[NSMutableArray alloc] init];
       indexOfSelectedCell=-1;
     mustOpen=NO;
@@ -46,6 +48,11 @@
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
 {
     return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return !self.rightMenuButton.hidden;
 }
 
 -(void)requestPriceList
@@ -199,7 +206,7 @@
         {
             indexOfSelectedCell=-1;
             titleGrupArray=nil;
-            NSArray*arr=[NSArray arrayWithObjects:indexPath, nil];
+            arr=[NSMutableArray arrayWithObjects:indexPath, nil];
             [self.servicesTableView reloadRowsAtIndexPaths:arr withRowAnimation:UITableViewRowAnimationFade];
         }
         else

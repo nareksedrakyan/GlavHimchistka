@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
 
-
+#import "CustomView.h"
 #import "NSString+findHeightForText.h"
 #import "RequestMessageList.h"
 #import "ResponseMessageList.h"
@@ -26,6 +26,9 @@
     NSMutableURLRequest* request;
     RequestSendMessage*requestSendMessageObject;
     UITapGestureRecognizer*tgr;
+    CustomView*customView;
+    CGSize keyboardSize;
+    CGSize size;
 }
 @end
 
@@ -33,8 +36,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
+    [self registerForKeyboardNotifications];
     
-    self.chatTextField.delegate=self;
+    //Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+   
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomView" owner:self options:nil];
+    customView=[nib objectAtIndex:0];
+    customView.frame=self.scrollView.bounds;
+    [self.scrollView addSubview:customView];
+    self.scrollView.contentSize=CGSizeMake(self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+    [customView.SendButton addTarget:self action:@selector(sendButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    customView.chatTextField.delegate=self;
     requestSendMessageObject=[[RequestSendMessage alloc] init];
     
     self.messageTypesTableView=[[UITableView alloc]init];
@@ -46,17 +64,16 @@
     isNewMessage=NO;
     isFirsCall=YES;
     heightArray=[[NSMutableArray alloc] init];
-    self.chatTableView.delegate=self;
-    self.chatTableView.dataSource=self;
+    customView.chatTableView.delegate=self;
+    customView.chatTableView.dataSource=self;
     [self requestMessageList];
     timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(requestMessageList) userInfo:nil repeats:YES];
-//    self.typeOfMessageTextField.userInteractionEnabled=YES;
-//    tgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTypesTable)];
-//    tgr.numberOfTapsRequired=1;
-//    [self.typeOfMessageTextField addGestureRecognizer:tgr];
-    // Do any additional setup after loading the view.
+    customView.typeOfMessageLabel.userInteractionEnabled=YES;
+   
+    tgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTypesTable)];
+    tgr.numberOfTapsRequired=1;
+    [customView.typeOfMessageLabel addGestureRecognizer:tgr];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -110,15 +127,15 @@
                       isNewMessage=YES;
                   }
                 }
-                CGSize size=[NSString
+                CGSize size_l=[NSString
                              findHeightForText:[responseMessageListObject.childNode_comments[i] comment]
                  havingWidth:(self.view.frame.size.width-153)
                              andFont:[UIFont systemFontOfSize:15]];
-                [heightArray addObject:[NSNumber numberWithFloat:size.height]];
+                [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
             }
             if (isNewMessage)
             {
-                [self.chatTableView reloadData];
+                [customView.chatTableView reloadData];
             }
         }
         else
@@ -131,7 +148,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([tableView isEqual:self.chatTableView])
+    if ([tableView isEqual:customView.chatTableView])
     {
         return responseMessageListObject.childNode_comments.count;
     }
@@ -143,7 +160,7 @@
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    if ([tableView isEqual:self.chatTableView])
+    if ([tableView isEqual:customView.chatTableView])
   {
     if([responseMessageListObject.childNode_comments[indexPath.row] user])
     {
@@ -247,9 +264,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView isEqual:self.chatTableView])
+    if ([tableView isEqual:customView.chatTableView])
     {
-        return  [heightArray[indexPath.row] floatValue];
+        return  ([heightArray[indexPath.row] floatValue]+111);
     }
     else
     {
@@ -295,7 +312,7 @@
             default:
                 break;
         }
-        self.typeOfMessageTextField.placeholder=[[[tableView cellForRowAtIndexPath:indexPath]textLabel]text];
+        customView.typeOfMessageLabel.text=[[[tableView cellForRowAtIndexPath:indexPath]textLabel]text];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -303,9 +320,25 @@
     
 }
 
-- (IBAction)sendButtonAction:(UIButton *)sender
+- (void)sendButtonAction
 {
-    requestSendMessageObject.comment=self.chatTextField.text;
+    requestSendMessageObject.comment=customView.chatTextField.text;
+    requestSendMessageObject.dttm=[self timeWithTimeZone:@"Europe/Moscow"];
+    [self requestSendMessage];
+}
+
+
+
+-(NSString*)timeWithTimeZone:(NSString*)timeZone
+{
+    NSDate* sourceDate = [NSDate date];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd-HH:mm:SS"];
+    
+    //Optionally for time zone conversions
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
+    return [formatter stringFromDate:sourceDate];
 }
 -(void)showTypesTable
 {
@@ -318,14 +351,96 @@
     [textField resignFirstResponder];
     return YES;
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInView:self.typeOfMessageTextField];
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
     
-    //Checks if the tap was inside the textview bounds
-    if (CGRectContainsPoint(self.typeOfMessageTextField.bounds, location))
-    {
-        [self showTypesTable];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
 }
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    [self.messageTypesTableView removeFromSuperview];
+    customView.SendButton.userInteractionEnabled=NO;
+    size=self.scrollView.contentSize;
+    NSDictionary* info = [aNotification userInfo];
+    keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    self.scrollView.contentSize=CGSizeMake(size.width,size.height+keyboardSize.height-self.buttonsView.frame.size.height);
+    
+    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+    [self.scrollView setContentOffset:bottomOffset animated:YES];
+    
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    customView.SendButton.userInteractionEnabled=YES;
+    self.scrollView.contentSize=size;
+}
+
+-(void)requestSendMessage
+{
+
+    
+        
+        NSString*jsons=[requestSendMessageObject toJSONString];
+        
+        NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        encodeStr=[encodeStr stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+        NSString*urlString=[NSString stringWithFormat:@"%@%@%@%@",@"http://xn--80aafc1aaodm5cl5a2a.xn--p1ai/api/v1/restAPI/SendMessage=",encodeStr,@"&SessionID=",USINFO.sessionID];
+        
+        NSURL* url = [NSURL URLWithString:urlString];
+        // NSError* error;
+        //    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
+        //                                                       options:NSJSONWritingPrettyPrinted
+        //                                                         error:&error];
+       NSMutableURLRequest* request1 = [NSMutableURLRequest requestWithURL:url];
+        [request1 setURL:url];
+        [request1 setHTTPMethod:@"GET"];
+        [request1 setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        //    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+        [request1 setHTTPBody:nil];
+        request1.timeoutInterval = 30;
+    
+    [NSURLConnection sendAsynchronousRequest:request1 queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!data)
+        {
+            
+            
+        }
+        NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+        
+        NSLog(@"responseString:%@",responseString);
+       ResponseSendMessage* responseSendMessageObject = [[ResponseSendMessage alloc] initWithString:responseString error:nil];
+        if (responseSendMessageObject && [responseSendMessageObject.error intValue]==0)
+        {
+            [customView.chatTableView reloadData];
+        }
+        else if(responseSendMessageObject.Msg)
+        {
+            [self showErrorAlertWithMessage:responseSendMessageObject.Msg];
+        }
+    
+    }];
+    
+
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+{
+    return YES;
+}
+
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return !self.rightMenuButton.hidden;
+}
+
 @end

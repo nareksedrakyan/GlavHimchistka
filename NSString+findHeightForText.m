@@ -19,4 +19,15 @@
     }
     return size;
 }
+
++(CGSize)findWidthForText:(NSString*)text havingHeight:(CGFloat)heightValue andFont:(UIFont*)font
+{
+    CGSize size = CGSizeZero;
+    if (text) {
+        //iOS 7
+        CGRect frame = [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, heightValue) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName:font } context:nil];
+        size = CGSizeMake(frame.size.width+1, frame.size.height);
+    }
+    return size;
+}
 @end

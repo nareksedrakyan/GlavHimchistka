@@ -11,4 +11,5 @@
 
 @interface NSString (findHeightForText)
 +(CGSize)findHeightForText:(NSString *)text havingWidth:(CGFloat)widthValue andFont:(UIFont *)font;
++(CGSize)findWidthForText:(NSString*)text havingHeight:(CGFloat)heightValue andFont:(UIFont*)font;
 @end

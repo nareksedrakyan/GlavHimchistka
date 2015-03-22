@@ -5,14 +5,23 @@
 //  Created by Admin on 21.02.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "OrdersViewController.h"
+#import "AppDelegate.h"
+#import "SlideNavigationController.h"
 #import "RightMenuViewController.h"
 #import "RightMenuTableViewCell.h"
+
 @interface RightMenuViewController ()
 {
-    NSMutableArray*titleArray;
+    NSMutableArray*titArray;
     NSMutableArray*imageArray;
     UILabel*messagesCountLabel;
+   
+    UINavigationController*nvc;
+    Class myClass;
+    NSString*identity;
+    BOOL ss;
+    
 }
 @end
 
@@ -21,26 +30,44 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    nvc=(UINavigationController *)[[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController];
    
+    titArray=[NSMutableArray arrayWithObjects:(NSString*)USINFO.userName,@"Текущие заказы",@"История заказов",@"Моя Почта",@"Мои данные",@"Выход",nil];
+    
+    imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"right_menu_user.png"],[UIImage imageNamed:@"current_orders.png"],[UIImage imageNamed:@"order_history.png"],[UIImage imageNamed:@"message_icon.png"],[UIImage imageNamed:@"user_edit.png"],[UIImage imageNamed:@"logout.png"], nil];
     self.rightTableView.delegate=self;
     self.rightTableView.dataSource=self;
-    titleArray=[NSMutableArray arrayWithObjects:@"Mike Tevan",@"Текущие заказы",@"История заказов",@"Моя Почта",@"Мои данные",@"Выход", nil];
-    imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"right_menu_user.png"],[UIImage imageNamed:@"current_orders.png"],[UIImage imageNamed:@"order_history.png"],[UIImage imageNamed:@"message_icon.png"],[UIImage imageNamed:@"user_edit.png"],[UIImage imageNamed:@"logout.png"], nil];
     self.rightTableView.scrollEnabled=NO;
     self.rightTableView.tableHeaderView.backgroundColor=[UIColor whiteColor];
     self.rightTableView.tableHeaderView.alpha=1.f;
     self.rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.rightTableView.tableHeaderView.backgroundColor=[UIColor whiteColor];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rightMenuOpened:) name:SlideNavigationControllerDidOpen object:nil];
+    
+ 
     // Do any additional setup after loading the view.
 }
-
+-(void)rightMenuOpened:(NSNotification*)note
+{
+    if ([note.userInfo[@"menu"] isEqualToString:@"right"])
+    {
+        [self.rightTableView reloadData];
+    }
+  
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return titleArray.count;
+    return titArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -58,7 +85,15 @@
         
         
         //        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
-        cell.cellTextLabel.text=titleArray[indexPath.row];
+        if (!indexPath.row)
+        {
+             cell.cellTextLabel.text=USINFO.userName;
+        }
+        else
+        {
+             cell.cellTextLabel.text=titArray[indexPath.row];
+        }
+      
         cell.cellImageView.image=imageArray[indexPath.row];
         if (!indexPath.row)
         {
@@ -84,11 +119,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    infoViewController* infoContorller = [self.storyboard instantiateViewControllerWithIdentifier:@"info"];
-    //    [self.navigationController pushViewController:infoContorller animated:NO];
-    //    infoContorller.id_mail = [[mailResponseObject.mail objectAtIndex:indexPath.row] id];
-    //    infoContorller.titleText = [[mailResponseObject.mail objectAtIndex:indexPath.row] getTitle];
+    switch (indexPath.row) {
+        case 1:
+        {
+            myClass = NSClassFromString(@"OrdersViewController");
+            identity =@"OrdersViewController";
+            ss=YES;
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+            
+            
+        }
+            break;
+        case 2:
+        {
+            ss=NO;
+            myClass = NSClassFromString(@"OrdersViewController");
+            identity =@"OrdersViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+            
+        case 5:
+        {
+            myClass = NSClassFromString(@"RootViewController");
+            identity =@"RootViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+        default:
+            break;
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -99,14 +161,70 @@
     return headerView;
 }
 
-/*
-#pragma mark - Navigation
+-(void)pushIfNoExistViewContrller:(Class)aClass andIdentity:(NSString*)identityString
+{
+   
+  
+    
+    
+    
+    
+    
+    BOOL b=NO;
+    id vc = [self.storyboard instantiateViewControllerWithIdentifier:identityString];
+    
+    if ([identityString isEqualToString:@"RootViewController"])
+    {
+        [(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
+        return;
+    }
+    if ([identityString isEqualToString:@"OrdersViewController"])
+    {
+        if (ss)
+        {
+            [(OrdersViewController*)vc setIsCurentOrders:YES];
+        }
+        else
+        {
+            [(OrdersViewController*)vc setIsCurentOrders:NO];
+        }
+    }
+    for (id controller in nvc.viewControllers)
+    {
+        if ((b=[controller isKindOfClass:[aClass class]]))
+        {
+            if ([identityString isEqualToString:@"OrdersViewController"])
+            {
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+                if (ss)
+                {
+                    [(OrdersViewController*)controller setIsCurentOrders:YES];
+                }
+                else
+                {
+                    [(OrdersViewController*)controller setIsCurentOrders:NO];
+                }
+               [(OrdersViewController*)controller viewDidAppear:NO];
+            
+            }
+            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
+            [nvc popToViewController:controller animated:YES];
+            
+            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
+            //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
+            //            [allViewControllers removeObjectIdenticalTo:controller];
+            //            nvc.viewControllers = allViewControllers;
+            break;
+            
+            
+        }
+    }
+    if (!b)
+    {
+        [nvc pushViewController:vc animated:NO];
+    }
+    
 }
-*/
+
 
 @end

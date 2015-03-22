@@ -9,10 +9,8 @@
 #import "BaseViewController.h"
 
 @interface ChatViewController : BaseViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(nonatomic,strong)UITableView*messageTypesTableView;
-@property (weak, nonatomic) IBOutlet UITextField *typeOfMessageTextField;
-- (IBAction)sendButtonAction:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UITextField *chatTextField;
-@property (weak, nonatomic) IBOutlet UITableView *chatTableView;
 
 @end

@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     self.headerLabel.text=self.title;
     self.objectArray=[[NSMutableArray alloc]init];
     self.priceListObject=[[PriceListObject alloc] init];
@@ -49,7 +50,10 @@
 {
     return YES;
 }
-
+- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+{
+    return !self.rightMenuButton.hidden;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   

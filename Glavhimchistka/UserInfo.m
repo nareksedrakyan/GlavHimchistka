@@ -21,7 +21,8 @@ static UserInfo* obj;
     {
         
         obj = [[super alloc] init];
-        obj.sessionID=[[NSUserDefaults standardUserDefaults]stringForKey:@"Session_id"];
+//        obj.sessionID=//@"E2E5C540-E7BD-407A-9EFD-32B5967BAB42";
+//        [[NSUserDefaults standardUserDefaults]stringForKey:@"Session_id"];
         
     }
     

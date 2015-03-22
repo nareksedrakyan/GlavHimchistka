@@ -35,9 +35,11 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    LeftMenuViewController2 *leftMenu =[self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"LeftMenuViewController2"];
+     self.isRightMenuButtonHidden=NO;
+    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
+//    LeftMenuViewController2 *leftMenu =[self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"LeftMenuViewController2"];
   
-    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
+    [SlideNavigationController sharedInstance].leftMenu = APPMENU.leftMenu2;
     if (isFirsCall)
     {
          [self getUserInformation];
@@ -110,7 +112,7 @@
 
 - (BOOL)slideNavigationControllerShouldDisplayRightMenu
 {
-    return YES;
+    return !self.rightMenuButton.hidden;
 }
 
 @end

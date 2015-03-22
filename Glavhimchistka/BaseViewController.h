@@ -15,6 +15,7 @@
 
 @interface BaseViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property(nonatomic,assign)BOOL isRightMenuButtonHidden;
 -(void)showErrorAlertWithMessage:(NSString*)messageText;
 @property(nonatomic,strong)UIImageView*loader;
 @property (weak, nonatomic) IBOutlet UIButton *leftMenuButton;
