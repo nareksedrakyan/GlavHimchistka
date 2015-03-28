@@ -10,6 +10,8 @@
 #import "ServicesViewController.h"
 #import "ChatViewController.h"
 #import "GetUserInformation.h"
+#import "MapViewController.h"
+#import "ContactsViewController.h"
 
 @interface MainViewController ()
 {
@@ -38,8 +40,12 @@
      self.isRightMenuButtonHidden=NO;
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
 //    LeftMenuViewController2 *leftMenu =[self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"LeftMenuViewController2"];
-  
-    [SlideNavigationController sharedInstance].leftMenu = APPMENU.leftMenu2;
+    
+    
+    
+ 
+    
+    [[SlideNavigationController sharedInstance] setLeftMenu: APPMENU.leftMenu2 ];
     if (isFirsCall)
     {
          [self getUserInformation];
@@ -93,6 +99,12 @@
         {
             ChatViewController* chvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
             [self.navigationController pushViewController:chvc animated:YES];
+        }
+            break;
+        case 1:
+        {
+            ContactsViewController* cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactsViewController"];
+            [self.navigationController pushViewController:cvc animated:YES];
         }
             break;
         case 4:

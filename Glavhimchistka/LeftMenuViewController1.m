@@ -9,6 +9,7 @@
 #import "LeftMenuViewController1.h"
 #import "AppDelegate.h"
 #import "SlideNavigationController.h"
+#import "MapViewController.h"
 @interface LeftMenuViewController1 ()
 {
     NSMutableArray*titleArray;
@@ -91,6 +92,13 @@
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
             
            
+        }
+            break;
+            case 2:
+        {
+            myClass = NSClassFromString(@"ContactsViewController");
+            identity =@"ContactsViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
             break;
         case 5:

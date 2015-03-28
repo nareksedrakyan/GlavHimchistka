@@ -33,7 +33,7 @@ static AppMenu *appMenu;
         appMenu.leftMenu2=(LeftMenuViewController2*)[mainStoryboard instantiateViewControllerWithIdentifier:@"Menu2"];
         
         appMenu.rightMenu=(RightMenuViewController*)[mainStoryboard
-                                                 instantiateViewControllerWithIdentifier: @"RightMenuViewController"];
+                                                 instantiateViewControllerWithIdentifier: @"RightMenu"];
     }
     
     return appMenu;

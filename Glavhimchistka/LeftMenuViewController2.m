@@ -95,6 +95,13 @@
             
         }
             break;
+        case 1:
+        {
+            myClass = NSClassFromString(@"ContactsViewController");
+            identity =@"ContactsViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
         case 4:
         {
             myClass = NSClassFromString(@"ServicesViewController");

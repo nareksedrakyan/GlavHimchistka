@@ -5,11 +5,12 @@
 //  Created by Admin on 18.02.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "MapViewController.h"
 #import "RootViewController.h"
 #import "LoginViewController.h"
 #import "ServicesViewController.h"
 #import "ChatViewController.h"
+#import "ContactsViewController.h"
 
 @interface RootViewController ()
 
@@ -53,7 +54,12 @@
             [self.navigationController pushViewController:lvc animated:YES];
         }
             break;
-        
+        case 2:
+        {
+            ContactsViewController* cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"ContactsViewController"];
+            [self.navigationController pushViewController:cvc animated:YES];
+        }
+            break;
         case 5:
         {
             ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];
@@ -68,15 +74,15 @@
    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
-{
-    return NO;
-}
+//- (BOOL)slideNavigationControllerShouldDisplayLeftMenu
+//{
+//    return NO;
+//}
 
 
 
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu
-{
-    return !self.rightMenuButton.hidden;
-}
+//- (BOOL)slideNavigationControllerShouldDisplayRightMenu
+//{
+//    return !self.rightMenuButton.hidden;
+//}
 @end

@@ -1,3 +1,4 @@
+
 //
 //  ServicesViewController.m
 //  Glavhimchistka
@@ -122,21 +123,13 @@
    
 }
 
-- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
-{
-
-    if ([tableView isEqual:self.servicesTableView])
-    {
-    
-    NSString* simpleTableIdentifier = [NSString stringWithFormat:@"SimpleTableViewCell_%ld" , (long)indexPath.row];
-    
-    ServicesCellTableViewCell *cell = (ServicesCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    
-    if( cell == nil )
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ServicesCellTableViewCell" owner:self options:nil];
-        cell =[nib objectAtIndex:0];
+- (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
+    if ([tableView isEqual:self.servicesTableView]) {
+        NSString* simpleTableIdentifier = [NSString stringWithFormat:@"SimpleTableViewCell_%ld" , (long)indexPath.row];
+        ServicesCellTableViewCell *cell = (ServicesCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if( cell == nil ) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ServicesCellTableViewCell" owner:self options:nil];
+            cell =[nib objectAtIndex:0];
         //cell.backgroundColor=[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1];
         
         //        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];

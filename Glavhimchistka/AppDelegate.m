@@ -9,7 +9,7 @@
 #import "LeftMenuViewController1.h"
 #import "SlideNavigationController.h"
 #import "AppDelegate.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 @interface AppDelegate ()
 
 @end
@@ -19,13 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    
+    [GMSServices provideAPIKey:@"AIzaSyB9evNROqnKH3mWUZ3vq7nvj9qxQf9Fmdk"];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                              bundle:nil];
     
     RightMenuViewController *rightMenu = (RightMenuViewController*)[mainStoryboard
-                                                                    instantiateViewControllerWithIdentifier: @"RightMenuViewController"];
+                                                                    instantiateViewControllerWithIdentifier: @"RightMenu"];
     
     [SlideNavigationController sharedInstance].rightMenu = rightMenu;
    
