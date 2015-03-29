@@ -429,8 +429,6 @@
         }
     
     }];
-    
-
 }
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu

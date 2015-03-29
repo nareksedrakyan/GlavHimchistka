@@ -10,6 +10,8 @@
 #import "ResponseGetContactsList.h"
 #import "ContactsCell.h"
 #import "NSString+findHeightForText.h"
+#import "MapViewController.h"
+
 @interface ContactsViewController ()
 {
     ResponseGetContactsList*responseGetContactsList;
@@ -189,12 +191,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     return 70;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MapViewController*mvc=[self.storyboard instantiateViewControllerWithIdentifier:@"MapViewController"];
+    mvc.addressName=[responseGetContactsList.list[indexPath.row] getAddress];
+    [self.navigationController pushViewController:mvc animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
