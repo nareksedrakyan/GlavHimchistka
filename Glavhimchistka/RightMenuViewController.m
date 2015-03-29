@@ -34,7 +34,7 @@
     nvc=(UINavigationController *)[[(AppDelegate *)[[UIApplication sharedApplication] delegate] window] rootViewController];
    
     
-    titArray=[NSMutableArray arrayWithObjects:(NSString*)USINFO.userName,@"Текущие заказы",@"История заказов",@"Моя Почта",@"Мои данные",@"Выход",nil];
+    titArray=[NSMutableArray arrayWithObjects:@"UserName",@"Текущие заказы",@"История заказов",@"Моя Почта",@"Мои данные",@"Выход",nil];
     
     imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"right_menu_user.png"],[UIImage imageNamed:@"current_orders.png"],[UIImage imageNamed:@"order_history.png"],[UIImage imageNamed:@"message_icon.png"],[UIImage imageNamed:@"user_edit.png"],[UIImage imageNamed:@"logout.png"], nil];
     self.rightTableView.delegate=self;
@@ -55,6 +55,7 @@
 {
     if ([note.userInfo[@"menu"] isEqualToString:@"right"])
     {
+        NSLog(@"%@",USINFO.userName);
         [self.rightTableView reloadData];
     }
   

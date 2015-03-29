@@ -56,7 +56,7 @@
 -(void)getUserInformation
 {
  
-       
+         [self.view addSubview:self.loader];
 
     
         NSString*urlString=[NSString stringWithFormat:@"%@%@",@"http://xn--80aafc1aaodm5cl5a2a.xn--p1ai/api/v1/restAPI/ContrInfo&SessionID=",[UserInfo sharedUserInfo].sessionID];
@@ -70,15 +70,14 @@
      
         [request setHTTPBody:nil];
         request.timeoutInterval = 30;
-     
+    
+    NSURLResponse* response;
+    NSError* error = nil;
+    
+    NSData*data=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
    
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (!data)
-        {
-            
-            
-        }
-        NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+           NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
         
         NSLog(@"responseString:%@",responseString);
@@ -89,8 +88,8 @@
             isFirsCall=NO;
             USINFO.userName=getUserInformationObject.name;
         }
-       
-    }];
+         [self.loader removeFromSuperview];
+    
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
