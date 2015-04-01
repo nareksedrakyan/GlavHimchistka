@@ -12,5 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(nonatomic,strong)UITableView*messageTypesTableView;
-
+@property(nonatomic,strong,getter=getId,setter=setTitleId:)NSString*id;
 @end

@@ -9,5 +9,5 @@
 #import "JSONModel.h"
 
 @interface RequestMessageList : JSONModel
-@property(strong,nonatomic,getter=getId)NSString*id;
+@property(strong,nonatomic,getter=getId,setter=setId:)NSString*id;
 @end

@@ -10,7 +10,9 @@
 #import <GoogleMaps/GoogleMaps.h>
 #define googleGeocodingAPI @"AIzaSyCK2Gs8BvoWVeoc4S2FGz-tURmfemldJtk"
 @interface MapViewController () <GMSMapViewDelegate>
-
+{
+    NSString*address;
+}
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) NSMutableArray *positionArray;
 @end
@@ -19,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    address=[self.addressName copy];
      self.addressName=[self.addressName stringByReplacingOccurrencesOfString:@" " withString:@""];
     self.addressName=[self.addressName stringByReplacingOccurrencesOfString:@"," withString:@",+"];
     
@@ -67,14 +70,13 @@
                                                             longitude:adressCoordinate.longitude
                                                                  zoom:15];
     
-    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-100) camera:camera];
+    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, 71, self.view.frame.size.width, self.view.frame.size.height-71) camera:camera];
     
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = adressCoordinate;
-    marker.title = self.addressName;
+    marker.title = address;
     marker.map=self.mapView;
 
-    
     self.mapView.myLocationEnabled = YES;
     self.mapView.delegate = self;
     [self.view addSubview:self.mapView];
@@ -153,7 +155,7 @@
     [self.view addSubview:self.loader];
     
     NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@,&sensor=true&language=ru",adress];
-   
+    urlString=[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setURL:url];
@@ -173,7 +175,6 @@
         NSLog(@"jsonDtring = %@",jsonString);
         NSError *error = nil;
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        
         NSString *str = [dict valueForKey:@"status"];
         if ([str isEqualToString:@"OK"])
         {
@@ -200,7 +201,9 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Your address is not found" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
+        
         [self.loader removeFromSuperview];
+        
     }];
 }
 

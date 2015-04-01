@@ -15,6 +15,9 @@
 @interface ContactsViewController ()
 {
     ResponseGetContactsList*responseGetContactsList;
+    NSMutableArray*markersArray;
+    NSMutableArray*positionArray;
+    NSMutableArray*addressArray;
 }
 @end
 
@@ -23,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    addressArray=[[NSMutableArray alloc] init];
+    markersArray=[[NSMutableArray alloc] init];
+    positionArray=[[NSMutableArray alloc] init];
     
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     self.contacsTableView.delegate=self;
@@ -130,9 +137,18 @@
         if ([responseGetContactsList.error intValue]==0)
         {
             [self filterArray];
+            for (int i=0; i<responseGetContactsList.list.count; i++)
+            {
+              NSString*addressText=[responseGetContactsList.list[i] getAddress];
+               addressText=[addressText stringByReplacingOccurrencesOfString:@" " withString:@""];
+               addressText=[addressText stringByReplacingOccurrencesOfString:@"," withString:@",+"];
+              [self requestGetLocationWithAdress:addressText];
+            }
             
             self.contacsTableView.hidden=NO;
             [self.contacsTableView reloadData];
+            
+           
         }
         else if (responseGetContactsList.Msg)
         {
@@ -158,9 +174,30 @@
 
 -(void)initializeMapView
 {
+    for (int i=0;i<positionArray.count;i++)
+    {
+        CLLocation*location=positionArray[i];
+        GMSMarker*marker = [[GMSMarker alloc] init];
+        marker.position = location.coordinate;
+        marker.title=[responseGetContactsList.list[i] getAddress];
+        marker.map=self.mapView;
+        [markersArray addObject:marker];
+    }
+    [self focusMapToShowAllMarkers];
     
 }
-
+- (void)focusMapToShowAllMarkers
+{
+    
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
+    
+    for (GMSMarker *marker in markersArray)
+        bounds = [bounds includingCoordinate:marker.position];
+    
+    [self.mapView animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:160.0f]];
+   
+    
+}
 #pragma mark-tableView metods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -202,6 +239,73 @@
     [self.navigationController pushViewController:mvc animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(void)requestGetLocationWithAdress:(NSString *)adress
+{
+    [self.view addSubview:self.loader];
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@,&sensor=true&language=ru",adress];
+    urlString=[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    [request setURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setHTTPBody:nil];
+    request.timeoutInterval = 30;
+    
+    NSURLResponse* response;
+    NSError* error = nil;
+    
+    NSData*data=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+
+    
+   
+         if (!data)
+         {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"No internet connection" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+             [alert show];
+             [self.loader removeFromSuperview];
+             return ;
+         }
+         NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+         NSLog(@"jsonDtring = %@",jsonString);
+    
+         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+         NSString *str = [dict valueForKey:@"status"];
+         if ([str isEqualToString:@"OK"])
+         {
+             NSRange latRange;
+             latRange.length = 10;
+             NSRange range = [jsonString rangeOfString:@"\"lat\" : "];
+             latRange.location = range.location + 8;
+             NSString *latStriing = [jsonString substringWithRange:latRange];
+             NSRange longRange;
+             longRange.length = 10;
+             range = [jsonString rangeOfString:@"\"lng\" : "];
+             latRange.location = range.location + 8;
+             NSString *lngStriing = [jsonString substringWithRange:latRange];
+             
+//             CLLocationCoordinate2D adressCoordinate;
+//             adressCoordinate.latitude = [latStriing doubleValue];
+//             adressCoordinate.longitude = [lngStriing doubleValue];
+             
+             CLLocation *adressCoordinate = [[CLLocation alloc] initWithLatitude:[latStriing doubleValue] longitude:[lngStriing doubleValue]];
+             [positionArray addObject:adressCoordinate];
+
+             
+             
+             
+             //NSLog(@"aaa = %f, %f",adressCoordinate.latitude, adressCoordinate.longitude);
+         }
+         else
+         {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Your address is not found" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+             [alert show];
+         }
+         
+         [self.loader removeFromSuperview];
+    
 }
 
 @end

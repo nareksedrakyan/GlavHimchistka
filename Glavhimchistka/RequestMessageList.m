@@ -9,13 +9,5 @@
 #import "RequestMessageList.h"
 
 @implementation RequestMessageList
--(instancetype)init
-{
-    self=[super init];
-    if (self)
-    {
-        [self setId:@""];
-    }
-    return self;
-}
+
 @end

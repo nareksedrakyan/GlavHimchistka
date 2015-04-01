@@ -12,5 +12,5 @@
 
 @property(strong,nonatomic)NSString*error;
 @property(strong,nonatomic)NSString*Msg;
-
+@property(strong,nonatomic,getter=getId)NSString*id;
 @end

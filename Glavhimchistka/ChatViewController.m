@@ -29,6 +29,8 @@
     CustomView*customView;
     CGSize keyboardSize;
     CGSize size;
+    RequestMessageList*requestMessageListObject;
+    NSInteger oldCount;
 }
 @end
 
@@ -36,6 +38,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     requestMessageListObject=[[RequestMessageList alloc]init];
+    if (self.getId==nil )
+    {
+        [requestMessageListObject setId:@""];
+    }
+    else
+    {
+    [requestMessageListObject setId:self.getId];
+    }
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     [self registerForKeyboardNotifications];
     
@@ -81,9 +92,8 @@
 
 -(void)requestMessageList
 {
-    if (isFirsCall)
-    {
-    RequestMessageList*requestMessageListObject=[[RequestMessageList alloc]init];
+
+   
     
     NSString*jsons=[requestMessageListObject toJSONString];
     
@@ -103,8 +113,7 @@
     //    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setHTTPBody:nil];
     request.timeoutInterval = 30;
-    isFirsCall=NO;
-    }
+   
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!data)
         {
@@ -115,27 +124,24 @@
         NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
         
         NSLog(@"responseString:%@",responseString);
+        
         responseMessageListObject = [[ResponseMessageList alloc] initWithString:responseString error:nil];
+        isNewMessage=oldCount!=responseMessageListObject.childNode_comments.count;
+        oldCount=responseMessageListObject.childNode_comments.count;
         if ([responseMessageListObject.error intValue]==0)
         {
-            for (int i=0; i<responseMessageListObject.childNode_comments.count; i++)
-            {
-                if (!isNewMessage)
-                {
-                  if  (![responseMessageListObject.childNode_comments[i] status_message])
-                  {
-                      isNewMessage=YES;
-                  }
-                }
-                CGSize size_l=[NSString
-                             findHeightForText:[responseMessageListObject.childNode_comments[i] comment]
-                 havingWidth:(self.view.frame.size.width-153)
-                             andFont:[UIFont systemFontOfSize:15]];
-                [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
-            }
             if (isNewMessage)
             {
-                [customView.chatTableView reloadData];
+                CGSize size_l=[NSString
+                               findHeightForText:[responseMessageListObject.childNode_comments.lastObject comment]
+                               havingWidth:(self.view.frame.size.width-153)
+                               andFont:[UIFont systemFontOfSize:15]];
+                [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
+                
+                [customView.chatTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+              
+                [customView.chatTableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
+            
             }
         }
         else
@@ -174,17 +180,19 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"cellUser" owner:self options:nil];
         cell =[nib objectAtIndex:0];
             
-        cell.infoView.layer.cornerRadius = 30;
+        cell.infoView.layer.cornerRadius = 15;
         cell.infoView.layer.borderWidth = 2;
         cell.infoView.layer.borderColor=[UIColor clearColor].CGColor;
         cell.infoView.layer.masksToBounds = YES;
         
         cell.userNameLabel.text=USINFO.userName;
+            cell.messageLabel.numberOfLines=0;
         cell.messageLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] comment];
         cell.timeLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] dttm];
         
         }
         cell.userInteractionEnabled=NO;
+        [tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
     return cell;
     }
       else
@@ -199,11 +207,12 @@
               NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"cellAdmin" owner:self options:nil];
               cell =[nib objectAtIndex:0];
               
-              cell.infoView.layer.cornerRadius = 30;
+              cell.infoView.layer.cornerRadius = 15;
               cell.infoView.layer.borderWidth = 2;
               cell.infoView.layer.borderColor=[UIColor clearColor].CGColor;
               cell.infoView.layer.masksToBounds = YES;
               cell.adminNameLabel.text=@"Главхимчистка";
+              cell.messageLabel.numberOfLines=0;
               cell.messageLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] comment];
               cell.timeLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] dttm];
               
@@ -256,6 +265,7 @@
             }
         }
 //        cell.backgroundColor=[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:0.5];
+        
         return cell;
 
     }
@@ -266,7 +276,15 @@
 {
     if ([tableView isEqual:customView.chatTableView])
     {
-        return  ([heightArray[indexPath.row] floatValue]+111);
+        if (!heightArray.count)
+        {
+            return 0;
+        }
+        else
+        {
+        CGFloat h=([heightArray[indexPath.row] floatValue]+111);
+        return h;
+        }
     }
     else
     {
@@ -421,13 +439,26 @@
        ResponseSendMessage* responseSendMessageObject = [[ResponseSendMessage alloc] initWithString:responseString error:nil];
         if (responseSendMessageObject && [responseSendMessageObject.error intValue]==0)
         {
-            [customView.chatTableView reloadData];
+            if (isFirsCall)
+            {
+                isFirsCall=NO;
+                [requestSendMessageObject setId:responseSendMessageObject.getId];
+                [requestMessageListObject setId:responseSendMessageObject.getId];
+                [self requestSendMessage];
+            }
+            else
+            {
+                customView.chatTextField.text=@"";
+                [self requestMessageList];
+                
+            }
+           //[customView.chatTableView reloadData];
         }
         else if(responseSendMessageObject.Msg)
         {
             [self showErrorAlertWithMessage:responseSendMessageObject.Msg];
         }
-    
+       
     }];
 }
 

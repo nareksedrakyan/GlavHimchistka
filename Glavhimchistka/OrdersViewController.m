@@ -106,6 +106,8 @@
     [request1 setHTTPBody:nil];
     request1.timeoutInterval = 30;
     
+    
+    
     [NSURLConnection sendAsynchronousRequest:request1 queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!data)
         {

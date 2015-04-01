@@ -10,10 +10,10 @@
 
 @interface RequestSendMessage : JSONModel
 
-@property(nonatomic,strong,getter=getId)NSString*id;
-@property(nonatomic,strong,getter=getId)NSString*dttm;
-@property(nonatomic,strong,getter=getId)NSString*mes_type;
-@property(nonatomic,strong,getter=getId)NSString*comment;
+@property(nonatomic,strong,getter=getId,setter=setId:)NSString*id;
+@property(nonatomic,strong)NSString*dttm;
+@property(nonatomic,strong)NSString*mes_type;
+@property(nonatomic,strong)NSString*comment;
 
 
 @end
