@@ -87,6 +87,14 @@
         {
             isFirsCall=NO;
             USINFO.userName=getUserInformationObject.name;
+            USINFO.phone=getUserInformationObject.fone;
+            USINFO.phone_cell=getUserInformationObject.fone_cell;
+            USINFO.email=getUserInformationObject.email;
+            USINFO.agree_to_receive_sms=getUserInformationObject.agree_to_receive_sms;
+            USINFO.agree_to_receive_adv_sms=getUserInformationObject.agree_to_receive_adv_sms;
+            USINFO.card_code=getUserInformationObject.barcode;
+            USINFO.address=getUserInformationObject.address;
+            USINFO.discount=getUserInformationObject.discount;
         }
          [self.loader removeFromSuperview];
     

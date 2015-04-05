@@ -13,7 +13,9 @@
 		8404B0E41A9508DE00050965 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8404B0E31A9508DE00050965 /* Images.xcassets */; };
 		8404B0E71A9508DE00050965 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8404B0E51A9508DE00050965 /* LaunchScreen.xib */; };
 		8404B0F31A9508DE00050965 /* GlavhimchistkaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8404B0F21A9508DE00050965 /* GlavhimchistkaTests.m */; };
-		8414CFBC1AC6C06800BB1978 /* mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8414CFBB1AC6C06800BB1978 /* mark.png */; };
+		840926FE1AD09155005E84BB /* bonus_x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840926FB1AD09155005E84BB /* bonus_x.png */; };
+		840926FF1AD09155005E84BB /* edit_x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840926FC1AD09155005E84BB /* edit_x.png */; };
+		840927001AD09155005E84BB /* sale_x.png in Resources */ = {isa = PBXBuildFile; fileRef = 840926FD1AD09155005E84BB /* sale_x.png */; };
 		8415D3E11AA3922400D03001 /* LoginRequestPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E01AA3922400D03001 /* LoginRequestPhone.m */; };
 		8415D3E41AA3923F00D03001 /* LoginRequestMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E31AA3923F00D03001 /* LoginRequestMail.m */; };
 		8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415D3E61AA3AB2C00D03001 /* NSString+Hashes.m */; };
@@ -65,12 +67,16 @@
 		84559F2E1AC6B5B7007BE447 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84559F2D1AC6B5B7007BE447 /* QuartzCore.framework */; };
 		84559F301AC6B5C7007BE447 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84559F2F1AC6B5C7007BE447 /* SystemConfiguration.framework */; };
 		84559F341AC6B757007BE447 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84559F331AC6B757007BE447 /* MapViewController.m */; };
+		8457F0561AD1E7B0003793D7 /* RequestSavePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457F0551AD1E7AF003793D7 /* RequestSavePassword.m */; };
+		8457F0591AD1E7C7003793D7 /* ResponseSavePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457F0581AD1E7C7003793D7 /* ResponseSavePassword.m */; };
 		845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */; };
 		845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E186E1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m */; };
 		845E18721AA4FF33001DFE1D /* RememberPasswordResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E18711AA4FF33001DFE1D /* RememberPasswordResponse.m */; };
 		845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845FD5D41AACD4B50098F47D /* CustomLabel.m */; };
 		845FD5D81AACD7110098F47D /* gone.png in Resources */ = {isa = PBXBuildFile; fileRef = 845FD5D61AACD7110098F47D /* gone.png */; };
 		845FD5D91AACD7110098F47D /* gone1.png in Resources */ = {isa = PBXBuildFile; fileRef = 845FD5D71AACD7110098F47D /* gone1.png */; };
+		846CA3221AD0A78600067E5A /* PersonalCabinetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846CA3211AD0A78600067E5A /* PersonalCabinetView.m */; };
+		846CA3241AD0A7A000067E5A /* PersonalCabinetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846CA3231AD0A7A000067E5A /* PersonalCabinetView.xib */; };
 		846F21471AB5CD6B00401283 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846F21461AB5CD6B00401283 /* CustomView.xib */; };
 		846F214A1AB5CF0000401283 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F21491AB5CF0000401283 /* CustomView.m */; };
 		847B30571ABDCA8000635D88 /* OrdersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B30551ABDCA8000635D88 /* OrdersCell.m */; };
@@ -129,6 +135,26 @@
 		84EF85091AAB4D7900D998E4 /* ServicesCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */; };
 		84EF85131AAB760300D998E4 /* RequestPriceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85121AAB760300D998E4 /* RequestPriceList.m */; };
 		84EF85161AAB762E00D998E4 /* ResponsePriceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EF85151AAB762E00D998E4 /* ResponsePriceList.m */; };
+		84F059981AD00319004310AD /* MyMailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059971AD00319004310AD /* MyMailViewController.m */; };
+		84F0599C1AD00B96004310AD /* MailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F0599A1AD00B96004310AD /* MailCell.m */; };
+		84F0599D1AD00B96004310AD /* MailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F0599B1AD00B96004310AD /* MailCell.xib */; };
+		84F059A11AD00FC1004310AD /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F0599F1AD00FC1004310AD /* plus.png */; };
+		84F059A21AD00FC1004310AD /* plus_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059A01AD00FC1004310AD /* plus_select.png */; };
+		84F059A61AD016D4004310AD /* ResponseTitleMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059A51AD016D4004310AD /* ResponseTitleMessages.m */; };
+		84F059A91AD0175F004310AD /* MessagesElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059A81AD0175F004310AD /* MessagesElements.m */; };
+		84F059B01AD01FB2004310AD /* jaloba.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059AB1AD01FB2004310AD /* jaloba.png */; };
+		84F059B11AD01FB2004310AD /* nekorektnie_dannie.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059AC1AD01FB2004310AD /* nekorektnie_dannie.png */; };
+		84F059B21AD01FB2004310AD /* otziv.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059AD1AD01FB2004310AD /* otziv.png */; };
+		84F059B31AD01FB2004310AD /* pojelania.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059AE1AD01FB2004310AD /* pojelania.png */; };
+		84F059B41AD01FB2004310AD /* vopros.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059AF1AD01FB2004310AD /* vopros.png */; };
+		84F059B81AD040AD004310AD /* PersonalCabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059B71AD040AD004310AD /* PersonalCabinetViewController.m */; };
+		84F059BA1AD04378004310AD /* user_x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F059B91AD04378004310AD /* user_x.png */; };
+		84F059C61AD05905004310AD /* BonusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059C51AD05905004310AD /* BonusView.m */; };
+		84F059C91AD05925004310AD /* SaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059C81AD05925004310AD /* SaleView.m */; };
+		84F059CC1AD05937004310AD /* EditUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F059CB1AD05937004310AD /* EditUserView.m */; };
+		84F059CE1AD0595D004310AD /* BonusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F059CD1AD0595D004310AD /* BonusView.xib */; };
+		84F059D01AD0596F004310AD /* SaleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F059CF1AD0596F004310AD /* SaleView.xib */; };
+		84F059D21AD05984004310AD /* EditUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F059D11AD05984004310AD /* EditUserView.xib */; };
 		84F23BC51A9A064800FE72C5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BC41A9A064800FE72C5 /* LoginViewController.m */; };
 		84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BC81A9A06AB00FE72C5 /* RegistrationViewController.m */; };
 		84F23BCD1A9A06F700FE72C5 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F23BCC1A9A06F700FE72C5 /* ForgotPasswordViewController.m */; };
@@ -149,6 +175,10 @@
 		84F33FC71AB4ABD500D1ED47 /* GetUserInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F33FC61AB4ABD500D1ED47 /* GetUserInformation.m */; };
 		84F33FCB1AB4C38400D1ED47 /* RequestSendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F33FCA1AB4C38400D1ED47 /* RequestSendMessage.m */; };
 		84F33FCE1AB4C3B800D1ED47 /* ResponseSendMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F33FCD1AB4C3B800D1ED47 /* ResponseSendMessage.m */; };
+		84F5369E1AD1BEAA00322399 /* ResponseGetDeposit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F5369D1AD1BEAA00322399 /* ResponseGetDeposit.m */; };
+		84F536A11AD1BEBD00322399 /* ResponseGetBonus.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F536A01AD1BEBD00322399 /* ResponseGetBonus.m */; };
+		84F536A61AD1D5E000322399 /* RequestSaveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F536A51AD1D5E000322399 /* RequestSaveInfo.m */; };
+		84F536A91AD1D5F800322399 /* ResponseSaveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F536A81AD1D5F800322399 /* ResponseSaveInfo.m */; };
 		84F83F0A1AC706870077783D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F83F091AC706870077783D /* ContactsViewController.m */; };
 		84FBDB2D1AAB829F000CCED1 /* PriceElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBDB2C1AAB829F000CCED1 /* PriceElements.m */; };
 		84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E31AAC999800C1627E /* PriceListViewController.m */; };
@@ -179,7 +209,9 @@
 		8404B0EC1A9508DE00050965 /* GlavhimchistkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GlavhimchistkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8404B0F11A9508DE00050965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8404B0F21A9508DE00050965 /* GlavhimchistkaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlavhimchistkaTests.m; sourceTree = "<group>"; };
-		8414CFBB1AC6C06800BB1978 /* mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mark.png; sourceTree = "<group>"; };
+		840926FB1AD09155005E84BB /* bonus_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonus_x.png; sourceTree = "<group>"; };
+		840926FC1AD09155005E84BB /* edit_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit_x.png; sourceTree = "<group>"; };
+		840926FD1AD09155005E84BB /* sale_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sale_x.png; sourceTree = "<group>"; };
 		8415D3DF1AA3922400D03001 /* LoginRequestPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestPhone.h; sourceTree = "<group>"; };
 		8415D3E01AA3922400D03001 /* LoginRequestPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestPhone.m; sourceTree = "<group>"; };
 		8415D3E21AA3923F00D03001 /* LoginRequestMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestMail.h; sourceTree = "<group>"; };
@@ -246,6 +278,10 @@
 		84559F2F1AC6B5C7007BE447 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		84559F321AC6B757007BE447 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		84559F331AC6B757007BE447 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		8457F0541AD1E7AF003793D7 /* RequestSavePassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSavePassword.h; sourceTree = "<group>"; };
+		8457F0551AD1E7AF003793D7 /* RequestSavePassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSavePassword.m; sourceTree = "<group>"; };
+		8457F0571AD1E7C7003793D7 /* ResponseSavePassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseSavePassword.h; sourceTree = "<group>"; };
+		8457F0581AD1E7C7003793D7 /* ResponseSavePassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseSavePassword.m; sourceTree = "<group>"; };
 		845E18691AA4FECC001DFE1D /* RememberPasswordRequestEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordRequestEmail.h; sourceTree = "<group>"; };
 		845E186A1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RememberPasswordRequestEmail.m; sourceTree = "<group>"; };
 		845E186D1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RememberPasswordRequestPhone.h; sourceTree = "<group>"; };
@@ -256,6 +292,9 @@
 		845FD5D41AACD4B50098F47D /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomLabel.m; path = Glavhimchistka/CustomLabel.m; sourceTree = "<group>"; };
 		845FD5D61AACD7110098F47D /* gone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gone.png; sourceTree = "<group>"; };
 		845FD5D71AACD7110098F47D /* gone1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gone1.png; sourceTree = "<group>"; };
+		846CA3201AD0A78600067E5A /* PersonalCabinetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCabinetView.h; sourceTree = "<group>"; };
+		846CA3211AD0A78600067E5A /* PersonalCabinetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCabinetView.m; sourceTree = "<group>"; };
+		846CA3231AD0A7A000067E5A /* PersonalCabinetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCabinetView.xib; sourceTree = "<group>"; };
 		846F21461AB5CD6B00401283 /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		846F21481AB5CF0000401283 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		846F21491AB5CF0000401283 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
@@ -355,6 +394,34 @@
 		84EF85121AAB760300D998E4 /* RequestPriceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestPriceList.m; sourceTree = "<group>"; };
 		84EF85141AAB762E00D998E4 /* ResponsePriceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponsePriceList.h; sourceTree = "<group>"; };
 		84EF85151AAB762E00D998E4 /* ResponsePriceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponsePriceList.m; sourceTree = "<group>"; };
+		84F059961AD00319004310AD /* MyMailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMailViewController.h; sourceTree = "<group>"; };
+		84F059971AD00319004310AD /* MyMailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMailViewController.m; sourceTree = "<group>"; };
+		84F059991AD00B96004310AD /* MailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailCell.h; sourceTree = "<group>"; };
+		84F0599A1AD00B96004310AD /* MailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailCell.m; sourceTree = "<group>"; };
+		84F0599B1AD00B96004310AD /* MailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailCell.xib; sourceTree = "<group>"; };
+		84F0599F1AD00FC1004310AD /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		84F059A01AD00FC1004310AD /* plus_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_select.png; sourceTree = "<group>"; };
+		84F059A41AD016D4004310AD /* ResponseTitleMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseTitleMessages.h; sourceTree = "<group>"; };
+		84F059A51AD016D4004310AD /* ResponseTitleMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseTitleMessages.m; sourceTree = "<group>"; };
+		84F059A71AD0175F004310AD /* MessagesElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesElements.h; sourceTree = "<group>"; };
+		84F059A81AD0175F004310AD /* MessagesElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesElements.m; sourceTree = "<group>"; };
+		84F059AB1AD01FB2004310AD /* jaloba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaloba.png; sourceTree = "<group>"; };
+		84F059AC1AD01FB2004310AD /* nekorektnie_dannie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nekorektnie_dannie.png; sourceTree = "<group>"; };
+		84F059AD1AD01FB2004310AD /* otziv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = otziv.png; sourceTree = "<group>"; };
+		84F059AE1AD01FB2004310AD /* pojelania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pojelania.png; sourceTree = "<group>"; };
+		84F059AF1AD01FB2004310AD /* vopros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vopros.png; sourceTree = "<group>"; };
+		84F059B61AD040AD004310AD /* PersonalCabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCabinetViewController.h; sourceTree = "<group>"; };
+		84F059B71AD040AD004310AD /* PersonalCabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCabinetViewController.m; sourceTree = "<group>"; };
+		84F059B91AD04378004310AD /* user_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_x.png; sourceTree = "<group>"; };
+		84F059C41AD05905004310AD /* BonusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusView.h; sourceTree = "<group>"; };
+		84F059C51AD05905004310AD /* BonusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusView.m; sourceTree = "<group>"; };
+		84F059C71AD05925004310AD /* SaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleView.h; sourceTree = "<group>"; };
+		84F059C81AD05925004310AD /* SaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleView.m; sourceTree = "<group>"; };
+		84F059CA1AD05937004310AD /* EditUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditUserView.h; sourceTree = "<group>"; };
+		84F059CB1AD05937004310AD /* EditUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditUserView.m; sourceTree = "<group>"; };
+		84F059CD1AD0595D004310AD /* BonusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BonusView.xib; sourceTree = "<group>"; };
+		84F059CF1AD0596F004310AD /* SaleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaleView.xib; sourceTree = "<group>"; };
+		84F059D11AD05984004310AD /* EditUserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditUserView.xib; sourceTree = "<group>"; };
 		84F23BC31A9A064800FE72C5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		84F23BC41A9A064800FE72C5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		84F23BC71A9A06AB00FE72C5 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
@@ -390,6 +457,14 @@
 		84F33FCA1AB4C38400D1ED47 /* RequestSendMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSendMessage.m; sourceTree = "<group>"; };
 		84F33FCC1AB4C3B800D1ED47 /* ResponseSendMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseSendMessage.h; sourceTree = "<group>"; };
 		84F33FCD1AB4C3B800D1ED47 /* ResponseSendMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseSendMessage.m; sourceTree = "<group>"; };
+		84F5369C1AD1BEAA00322399 /* ResponseGetDeposit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseGetDeposit.h; sourceTree = "<group>"; };
+		84F5369D1AD1BEAA00322399 /* ResponseGetDeposit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseGetDeposit.m; sourceTree = "<group>"; };
+		84F5369F1AD1BEBD00322399 /* ResponseGetBonus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseGetBonus.h; sourceTree = "<group>"; };
+		84F536A01AD1BEBD00322399 /* ResponseGetBonus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseGetBonus.m; sourceTree = "<group>"; };
+		84F536A41AD1D5E000322399 /* RequestSaveInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestSaveInfo.h; sourceTree = "<group>"; };
+		84F536A51AD1D5E000322399 /* RequestSaveInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestSaveInfo.m; sourceTree = "<group>"; };
+		84F536A71AD1D5F800322399 /* ResponseSaveInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseSaveInfo.h; sourceTree = "<group>"; };
+		84F536A81AD1D5F800322399 /* ResponseSaveInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseSaveInfo.m; sourceTree = "<group>"; };
 		84F83F081AC706870077783D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		84F83F091AC706870077783D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		84FBDB2B1AAB829F000CCED1 /* PriceElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceElements.h; sourceTree = "<group>"; };
@@ -437,7 +512,6 @@
 		8404B0CA1A9508DE00050965 = {
 			isa = PBXGroup;
 			children = (
-				8414CFBB1AC6C06800BB1978 /* mark.png */,
 				84F33FC01AB48D7500D1ED47 /* PrefixHeader.pch */,
 				842DCFD31AC739B5005EE56A /* CustomControls */,
 				84F33FBC1AB48D0200D1ED47 /* SingleTones */,
@@ -502,6 +576,10 @@
 		8404B0FC1A951BDA00050965 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				840926FA1AD09155005E84BB /* images */,
+				84F059B91AD04378004310AD /* user_x.png */,
+				84F059AA1AD01FB2004310AD /* Mes_type */,
+				84F0599E1AD00FC1004310AD /* plus */,
 				844F1D301AC7284D00F83403 /* arrow_right.png */,
 				847B30661ABE18A100635D88 /* down.png */,
 				847B30671ABE18A100635D88 /* up.png */,
@@ -523,6 +601,16 @@
 				8438E0C41A96855B00063D43 /* 36 */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		840926FA1AD09155005E84BB /* images */ = {
+			isa = PBXGroup;
+			children = (
+				840926FB1AD09155005E84BB /* bonus_x.png */,
+				840926FC1AD09155005E84BB /* edit_x.png */,
+				840926FD1AD09155005E84BB /* sale_x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		842DCFD21AC73966005EE56A /* Categories */ = {
@@ -552,13 +640,11 @@
 		8438DCDC1ABC97700056B11B /* OrdersViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBA91AD1F08B00E37AE6 /* OrdersCell */,
 				847B306A1ABE1A8200635D88 /* RequestServices */,
 				847B30591ABE0D2800635D88 /* RequestOrders */,
 				8438DCDD1ABC97D20056B11B /* OrdersViewController.h */,
 				8438DCDE1ABC97D20056B11B /* OrdersViewController.m */,
-				847B30541ABDCA8000635D88 /* OrdersCell.h */,
-				847B30551ABDCA8000635D88 /* OrdersCell.m */,
-				847B30561ABDCA8000635D88 /* OrdersCell.xib */,
 			);
 			name = OrdersViewController;
 			sourceTree = "<group>";
@@ -566,11 +652,9 @@
 		8438E08C1A96567F00063D43 /* RootViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBB21AD1F21400E37AE6 /* RootCell */,
 				8438E08D1A96567F00063D43 /* RootViewController.h */,
 				8438E08E1A96567F00063D43 /* RootViewController.m */,
-				8438E0BF1A96839200063D43 /* RootTableViewCell.h */,
-				8438E0C01A96839200063D43 /* RootTableViewCell.m */,
-				8438E0C21A9683D600063D43 /* RootTableViewCell.xib */,
 			);
 			name = RootViewController;
 			path = ViewControllers/RootViewController;
@@ -579,6 +663,8 @@
 		8438E0BE1A967D5400063D43 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84F059B51AD0407F004310AD /* PersonalCabinetViewController */,
+				84F059951AD002E9004310AD /* MyMailViewController */,
 				844F1D2A1AC716D900F83403 /* MapViewController */,
 				84559F311AC6B720007BE447 /* ContactsViewController */,
 				8438DCDC1ABC97700056B11B /* OrdersViewController */,
@@ -695,14 +781,23 @@
 		84559F311AC6B720007BE447 /* ContactsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBA81AD1F06C00E37AE6 /* ContactsCell */,
 				844F1D321AC72BF700F83403 /* RequestGetContactsList */,
 				84F83F081AC706870077783D /* ContactsViewController.h */,
 				84F83F091AC706870077783D /* ContactsViewController.m */,
-				844F1D2B1AC7250E00F83403 /* ContactsCell.h */,
-				844F1D2C1AC7250E00F83403 /* ContactsCell.m */,
-				844F1D2D1AC7250E00F83403 /* ContactsCell.xib */,
 			);
 			name = ContactsViewController;
+			sourceTree = "<group>";
+		};
+		8457F0531AD1E779003793D7 /* RequestSavePassword */ = {
+			isa = PBXGroup;
+			children = (
+				8457F0541AD1E7AF003793D7 /* RequestSavePassword.h */,
+				8457F0551AD1E7AF003793D7 /* RequestSavePassword.m */,
+				8457F0571AD1E7C7003793D7 /* ResponseSavePassword.h */,
+				8457F0581AD1E7C7003793D7 /* ResponseSavePassword.m */,
+			);
+			name = RequestSavePassword;
 			sourceTree = "<group>";
 		};
 		845E186C1AA4FEE5001DFE1D /* RememberPassword */ = {
@@ -757,6 +852,135 @@
 				8482B7461A991992007E0C32 /* user_edit.png */,
 			);
 			path = RightMenu36x36;
+			sourceTree = "<group>";
+		};
+		8487FBA61AD1EFF800E37AE6 /* PersonalCabinetView */ = {
+			isa = PBXGroup;
+			children = (
+				846CA3201AD0A78600067E5A /* PersonalCabinetView.h */,
+				846CA3211AD0A78600067E5A /* PersonalCabinetView.m */,
+				846CA3231AD0A7A000067E5A /* PersonalCabinetView.xib */,
+			);
+			name = PersonalCabinetView;
+			sourceTree = "<group>";
+		};
+		8487FBA71AD1F04B00E37AE6 /* MailCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F059991AD00B96004310AD /* MailCell.h */,
+				84F0599A1AD00B96004310AD /* MailCell.m */,
+				84F0599B1AD00B96004310AD /* MailCell.xib */,
+			);
+			name = MailCell;
+			sourceTree = "<group>";
+		};
+		8487FBA81AD1F06C00E37AE6 /* ContactsCell */ = {
+			isa = PBXGroup;
+			children = (
+				844F1D2B1AC7250E00F83403 /* ContactsCell.h */,
+				844F1D2C1AC7250E00F83403 /* ContactsCell.m */,
+				844F1D2D1AC7250E00F83403 /* ContactsCell.xib */,
+			);
+			name = ContactsCell;
+			sourceTree = "<group>";
+		};
+		8487FBA91AD1F08B00E37AE6 /* OrdersCell */ = {
+			isa = PBXGroup;
+			children = (
+				847B30541ABDCA8000635D88 /* OrdersCell.h */,
+				847B30551ABDCA8000635D88 /* OrdersCell.m */,
+				847B30561ABDCA8000635D88 /* OrdersCell.xib */,
+			);
+			name = OrdersCell;
+			sourceTree = "<group>";
+		};
+		8487FBAA1AD1F0A800E37AE6 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F33FA31AB4578900D1ED47 /* cellUser.h */,
+				84F33FA41AB4578900D1ED47 /* cellUser.m */,
+				84F33FA51AB4578900D1ED47 /* cellUser.xib */,
+			);
+			name = UserCell;
+			sourceTree = "<group>";
+		};
+		8487FBAB1AD1F0D500E37AE6 /* AdminCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F33FA81AB457A200D1ED47 /* cellAdmin.h */,
+				84F33FA91AB457A200D1ED47 /* cellAdmin.m */,
+				84F33FAA1AB457A200D1ED47 /* cellAdmin.xib */,
+			);
+			name = AdminCell;
+			sourceTree = "<group>";
+		};
+		8487FBAC1AD1F0EB00E37AE6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				846F21461AB5CD6B00401283 /* CustomView.xib */,
+				846F21481AB5CF0000401283 /* CustomView.h */,
+				846F21491AB5CF0000401283 /* CustomView.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		8487FBAD1AD1F12E00E37AE6 /* PriceListCell */ = {
+			isa = PBXGroup;
+			children = (
+				84FCA0E51AACAACD00C1627E /* PriceListCell.h */,
+				84FCA0E61AACAACD00C1627E /* PriceListCell.m */,
+				84FCA0E71AACAACD00C1627E /* PriceListCell.xib */,
+			);
+			name = PriceListCell;
+			sourceTree = "<group>";
+		};
+		8487FBAE1AD1F14700E37AE6 /* PriceListObject */ = {
+			isa = PBXGroup;
+			children = (
+				84FCA0EA1AACBE2500C1627E /* PriceListObject.h */,
+				84FCA0EB1AACBE2500C1627E /* PriceListObject.m */,
+			);
+			name = PriceListObject;
+			sourceTree = "<group>";
+		};
+		8487FBAF1AD1F16B00E37AE6 /* ServicesCell */ = {
+			isa = PBXGroup;
+			children = (
+				84EF85051AAB4D7900D998E4 /* ServicesCellTableViewCell.h */,
+				84EF85061AAB4D7900D998E4 /* ServicesCellTableViewCell.m */,
+				84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */,
+			);
+			name = ServicesCell;
+			sourceTree = "<group>";
+		};
+		8487FBB01AD1F1B500E37AE6 /* RegistrationCell */ = {
+			isa = PBXGroup;
+			children = (
+				844A23901A9BC60F005335E4 /* RegistrationTableViewCell.h */,
+				844A23911A9BC60F005335E4 /* RegistrationTableViewCell.m */,
+				844A23931A9BC636005335E4 /* RegistrationTableViewCell.xib */,
+			);
+			name = RegistrationCell;
+			sourceTree = "<group>";
+		};
+		8487FBB11AD1F1D600E37AE6 /* RightMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				8482B73A1A990F79007E0C32 /* RightMenuTableViewCell.h */,
+				8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */,
+				8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */,
+			);
+			name = RightMenuCell;
+			sourceTree = "<group>";
+		};
+		8487FBB21AD1F21400E37AE6 /* RootCell */ = {
+			isa = PBXGroup;
+			children = (
+				8438E0BF1A96839200063D43 /* RootTableViewCell.h */,
+				8438E0C01A96839200063D43 /* RootTableViewCell.m */,
+				8438E0C21A9683D600063D43 /* RootTableViewCell.xib */,
+			);
+			name = RootCell;
 			sourceTree = "<group>";
 		};
 		84AEC2441A97FE8500E66B95 /* Drawer */ = {
@@ -819,11 +1043,9 @@
 		84AEC2661A9811E100E66B95 /* RightMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBB11AD1F1D600E37AE6 /* RightMenuCell */,
 				84AEC2671A98121500E66B95 /* RightMenuViewController.h */,
 				84AEC2681A98121500E66B95 /* RightMenuViewController.m */,
-				8482B73A1A990F79007E0C32 /* RightMenuTableViewCell.h */,
-				8482B73B1A990F79007E0C32 /* RightMenuTableViewCell.m */,
-				8482B73D1A990F87007E0C32 /* RightMenuTableViewCell.xib */,
 			);
 			name = RightMenuViewController;
 			sourceTree = "<group>";
@@ -917,19 +1139,13 @@
 		84B8F0E61AB2070C0074FE77 /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBAC1AD1F0EB00E37AE6 /* CustomView */,
+				8487FBAB1AD1F0D500E37AE6 /* AdminCell */,
+				8487FBAA1AD1F0A800E37AE6 /* UserCell */,
 				84F33FC81AB4C32E00D1ED47 /* RequestSendMessage */,
 				84F33FB11AB4838D00D1ED47 /* RequestMessageList */,
 				84B8F0E71AB207520074FE77 /* ChatViewController.h */,
 				84B8F0E81AB207520074FE77 /* ChatViewController.m */,
-				84F33FA31AB4578900D1ED47 /* cellUser.h */,
-				84F33FA41AB4578900D1ED47 /* cellUser.m */,
-				84F33FA51AB4578900D1ED47 /* cellUser.xib */,
-				84F33FA81AB457A200D1ED47 /* cellAdmin.h */,
-				84F33FA91AB457A200D1ED47 /* cellAdmin.m */,
-				84F33FAA1AB457A200D1ED47 /* cellAdmin.xib */,
-				846F21461AB5CD6B00401283 /* CustomView.xib */,
-				846F21481AB5CF0000401283 /* CustomView.h */,
-				846F21491AB5CF0000401283 /* CustomView.m */,
 			);
 			name = ChatViewController;
 			sourceTree = "<group>";
@@ -937,12 +1153,10 @@
 		84EF85011AAB42F000D998E4 /* ServicesViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBAF1AD1F16B00E37AE6 /* ServicesCell */,
 				84EF85101AAB75BC00D998E4 /* RequestPriceList */,
 				84EF85021AAB432700D998E4 /* ServicesViewController.h */,
 				84EF85031AAB432700D998E4 /* ServicesViewController.m */,
-				84EF85051AAB4D7900D998E4 /* ServicesCellTableViewCell.h */,
-				84EF85061AAB4D7900D998E4 /* ServicesCellTableViewCell.m */,
-				84EF85071AAB4D7900D998E4 /* ServicesCellTableViewCell.xib */,
 			);
 			name = ServicesViewController;
 			sourceTree = "<group>";
@@ -960,6 +1174,93 @@
 			name = RequestPriceList;
 			sourceTree = "<group>";
 		};
+		84F059951AD002E9004310AD /* MyMailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8487FBA71AD1F04B00E37AE6 /* MailCell */,
+				84F059A31AD016A0004310AD /* RequestTitleMessages */,
+				84F059961AD00319004310AD /* MyMailViewController.h */,
+				84F059971AD00319004310AD /* MyMailViewController.m */,
+			);
+			name = MyMailViewController;
+			sourceTree = "<group>";
+		};
+		84F0599E1AD00FC1004310AD /* plus */ = {
+			isa = PBXGroup;
+			children = (
+				84F0599F1AD00FC1004310AD /* plus.png */,
+				84F059A01AD00FC1004310AD /* plus_select.png */,
+			);
+			path = plus;
+			sourceTree = "<group>";
+		};
+		84F059A31AD016A0004310AD /* RequestTitleMessages */ = {
+			isa = PBXGroup;
+			children = (
+				84F059A41AD016D4004310AD /* ResponseTitleMessages.h */,
+				84F059A51AD016D4004310AD /* ResponseTitleMessages.m */,
+				84F059A71AD0175F004310AD /* MessagesElements.h */,
+				84F059A81AD0175F004310AD /* MessagesElements.m */,
+			);
+			name = RequestTitleMessages;
+			sourceTree = "<group>";
+		};
+		84F059AA1AD01FB2004310AD /* Mes_type */ = {
+			isa = PBXGroup;
+			children = (
+				84F059AB1AD01FB2004310AD /* jaloba.png */,
+				84F059AC1AD01FB2004310AD /* nekorektnie_dannie.png */,
+				84F059AD1AD01FB2004310AD /* otziv.png */,
+				84F059AE1AD01FB2004310AD /* pojelania.png */,
+				84F059AF1AD01FB2004310AD /* vopros.png */,
+			);
+			path = Mes_type;
+			sourceTree = "<group>";
+		};
+		84F059B51AD0407F004310AD /* PersonalCabinetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84F536A21AD1BEC700322399 /* Requests */,
+				8487FBA61AD1EFF800E37AE6 /* PersonalCabinetView */,
+				84F059C31AD058BD004310AD /* Bonus */,
+				84F059C21AD058B1004310AD /* Sale */,
+				84F059C11AD0589F004310AD /* EditUser */,
+				84F059B61AD040AD004310AD /* PersonalCabinetViewController.h */,
+				84F059B71AD040AD004310AD /* PersonalCabinetViewController.m */,
+			);
+			name = PersonalCabinetViewController;
+			sourceTree = "<group>";
+		};
+		84F059C11AD0589F004310AD /* EditUser */ = {
+			isa = PBXGroup;
+			children = (
+				84F059CA1AD05937004310AD /* EditUserView.h */,
+				84F059CB1AD05937004310AD /* EditUserView.m */,
+				84F059D11AD05984004310AD /* EditUserView.xib */,
+			);
+			name = EditUser;
+			sourceTree = "<group>";
+		};
+		84F059C21AD058B1004310AD /* Sale */ = {
+			isa = PBXGroup;
+			children = (
+				84F059C71AD05925004310AD /* SaleView.h */,
+				84F059C81AD05925004310AD /* SaleView.m */,
+				84F059CF1AD0596F004310AD /* SaleView.xib */,
+			);
+			name = Sale;
+			sourceTree = "<group>";
+		};
+		84F059C31AD058BD004310AD /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				84F059C41AD05905004310AD /* BonusView.h */,
+				84F059C51AD05905004310AD /* BonusView.m */,
+				84F059CD1AD0595D004310AD /* BonusView.xib */,
+			);
+			name = Bonus;
+			sourceTree = "<group>";
+		};
 		84F23BC21A9A05D200FE72C5 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,12 +1274,10 @@
 		84F23BC61A9A066E00FE72C5 /* RegistrationViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBB01AD1F1B500E37AE6 /* RegistrationCell */,
 				84B1FBED1AA0E1B200DFF90E /* RegisterNewRequest */,
 				84F23BC71A9A06AB00FE72C5 /* RegistrationViewController.h */,
 				84F23BC81A9A06AB00FE72C5 /* RegistrationViewController.m */,
-				844A23901A9BC60F005335E4 /* RegistrationTableViewCell.h */,
-				844A23911A9BC60F005335E4 /* RegistrationTableViewCell.m */,
-				844A23931A9BC636005335E4 /* RegistrationTableViewCell.xib */,
 			);
 			name = RegistrationViewController;
 			sourceTree = "<group>";
@@ -1038,16 +1337,53 @@
 			name = RequestSendMessage;
 			sourceTree = "<group>";
 		};
+		84F5369A1AD1BE5400322399 /* RequestGetBonus */ = {
+			isa = PBXGroup;
+			children = (
+				84F5369F1AD1BEBD00322399 /* ResponseGetBonus.h */,
+				84F536A01AD1BEBD00322399 /* ResponseGetBonus.m */,
+			);
+			name = RequestGetBonus;
+			sourceTree = "<group>";
+		};
+		84F5369B1AD1BE6A00322399 /* RequestGetDeposit */ = {
+			isa = PBXGroup;
+			children = (
+				84F5369C1AD1BEAA00322399 /* ResponseGetDeposit.h */,
+				84F5369D1AD1BEAA00322399 /* ResponseGetDeposit.m */,
+			);
+			name = RequestGetDeposit;
+			sourceTree = "<group>";
+		};
+		84F536A21AD1BEC700322399 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8457F0531AD1E779003793D7 /* RequestSavePassword */,
+				84F536A31AD1D5B600322399 /* RequestSaveInfo */,
+				84F5369A1AD1BE5400322399 /* RequestGetBonus */,
+				84F5369B1AD1BE6A00322399 /* RequestGetDeposit */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		84F536A31AD1D5B600322399 /* RequestSaveInfo */ = {
+			isa = PBXGroup;
+			children = (
+				84F536A41AD1D5E000322399 /* RequestSaveInfo.h */,
+				84F536A51AD1D5E000322399 /* RequestSaveInfo.m */,
+				84F536A71AD1D5F800322399 /* ResponseSaveInfo.h */,
+				84F536A81AD1D5F800322399 /* ResponseSaveInfo.m */,
+			);
+			name = RequestSaveInfo;
+			sourceTree = "<group>";
+		};
 		84FCA0E11AAC994C00C1627E /* PriceListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8487FBAE1AD1F14700E37AE6 /* PriceListObject */,
+				8487FBAD1AD1F12E00E37AE6 /* PriceListCell */,
 				84FCA0E21AAC999800C1627E /* PriceListViewController.h */,
 				84FCA0E31AAC999800C1627E /* PriceListViewController.m */,
-				84FCA0E51AACAACD00C1627E /* PriceListCell.h */,
-				84FCA0E61AACAACD00C1627E /* PriceListCell.m */,
-				84FCA0E71AACAACD00C1627E /* PriceListCell.xib */,
-				84FCA0EA1AACBE2500C1627E /* PriceListObject.h */,
-				84FCA0EB1AACBE2500C1627E /* PriceListObject.m */,
 			);
 			name = PriceListViewController;
 			sourceTree = "<group>";
@@ -1132,30 +1468,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F059CE1AD0595D004310AD /* BonusView.xib in Resources */,
+				84F0599D1AD00B96004310AD /* MailCell.xib in Resources */,
+				84F059B01AD01FB2004310AD /* jaloba.png in Resources */,
 				844A23941A9BC636005335E4 /* RegistrationTableViewCell.xib in Resources */,
+				84F059B21AD01FB2004310AD /* otziv.png in Resources */,
 				84D8C1B71A9E5B2D00D21AD3 /* left_menu_button.png in Resources */,
+				846CA3241AD0A7A000067E5A /* PersonalCabinetView.xib in Resources */,
 				844A78331A97C7CA0001121F /* google_plus.png in Resources */,
 				8482B73E1A990F87007E0C32 /* RightMenuTableViewCell.xib in Resources */,
+				84F059D21AD05984004310AD /* EditUserView.xib in Resources */,
 				8438E0CB1A96855B00063D43 /* delivery.png in Resources */,
 				846F21471AB5CD6B00401283 /* CustomView.xib in Resources */,
 				84EF85091AAB4D7900D998E4 /* ServicesCellTableViewCell.xib in Resources */,
 				8482B74B1A991992007E0C32 /* right_menu_user.png in Resources */,
 				84D8C1B51A9E45A500D21AD3 /* keyboard.png in Resources */,
 				847B30691ABE18A100635D88 /* up.png in Resources */,
+				84F059D01AD0596F004310AD /* SaleView.xib in Resources */,
 				844A78341A97C7CA0001121F /* google_plus_on_selected.png in Resources */,
 				844F1D311AC7284D00F83403 /* arrow_right.png in Resources */,
 				8482B7471A991992007E0C32 /* current_orders.png in Resources */,
 				847B30681ABE18A100635D88 /* down.png in Resources */,
 				8438E0CE1A96855B00063D43 /* sale.png in Resources */,
 				84F23BD31A9A334000FE72C5 /* password.png in Resources */,
+				84F059BA1AD04378004310AD /* user_x.png in Resources */,
 				8438E0CF1A96855B00063D43 /* services_list.png in Resources */,
 				84B1FBFC1AA0FD5200DFF90E /* loader.gif in Resources */,
-				8414CFBC1AC6C06800BB1978 /* mark.png in Resources */,
 				84F33FB01AB4758600D1ED47 /* admin.png in Resources */,
 				844A783A1A97C7CA0001121F /* vkontakte.png in Resources */,
 				84559F181AC6B4C9007BE447 /* GoogleMaps.bundle in Resources */,
+				840927001AD09155005E84BB /* sale_x.png in Resources */,
+				84F059B41AD01FB2004310AD /* vopros.png in Resources */,
 				844A78321A97C7CA0001121F /* facebook_on_selected.png in Resources */,
 				8438E0D21A96996A00063D43 /* launch_logo.png in Resources */,
+				84F059A21AD00FC1004310AD /* plus_select.png in Resources */,
 				8482B74D1A991992007E0C32 /* user_edit.png in Resources */,
 				844F1D2F1AC7250E00F83403 /* ContactsCell.xib in Resources */,
 				84D8C1B91A9E655E00D21AD3 /* login_forgot.png in Resources */,
@@ -1166,10 +1512,13 @@
 				8482B7481A991992007E0C32 /* logout.png in Resources */,
 				8438E0CC1A96855B00063D43 /* map.png in Resources */,
 				8482B7491A991992007E0C32 /* message_icon.png in Resources */,
+				840926FF1AD09155005E84BB /* edit_x.png in Resources */,
 				84F23BD11A9A331100FE72C5 /* login.png in Resources */,
+				84F059B11AD01FB2004310AD /* nekorektnie_dannie.png in Resources */,
 				84F33FAF1AB4758600D1ED47 /* user.png in Resources */,
 				8438E0CD1A96855B00063D43 /* question.png in Resources */,
 				844A783B1A97C7CA0001121F /* vkontakte_on_select.png in Resources */,
+				840926FE1AD09155005E84BB /* bonus_x.png in Resources */,
 				845FD5D81AACD7110098F47D /* gone.png in Resources */,
 				84FCA0E91AACAACD00C1627E /* PriceListCell.xib in Resources */,
 				8438E0D01A96855B00063D43 /* user_login.png in Resources */,
@@ -1181,6 +1530,8 @@
 				8438E0C31A9683D600063D43 /* RootTableViewCell.xib in Resources */,
 				845FD5D91AACD7110098F47D /* gone1.png in Resources */,
 				8404B0E71A9508DE00050965 /* LaunchScreen.xib in Resources */,
+				84F059A11AD00FC1004310AD /* plus.png in Resources */,
+				84F059B31AD01FB2004310AD /* pojelania.png in Resources */,
 				844A78311A97C7CA0001121F /* facebook.png in Resources */,
 				844A78381A97C7CA0001121F /* twitter.png in Resources */,
 				8404B0E41A9508DE00050965 /* Images.xcassets in Resources */,
@@ -1209,6 +1560,7 @@
 				84B1FBEA1AA0E10100DFF90E /* JSONModel+networking.m in Sources */,
 				84AEC2581A97FE8500E66B95 /* SlideNavigationContorllerAnimatorScaleAndFade.m in Sources */,
 				84FCA0E81AACAACD00C1627E /* PriceListCell.m in Sources */,
+				846CA3221AD0A78600067E5A /* PersonalCabinetView.m in Sources */,
 				84AEC2691A98121500E66B95 /* RightMenuViewController.m in Sources */,
 				84F33FBF1AB48D3600D1ED47 /* UserInfo.m in Sources */,
 				84F83F0A1AC706870077783D /* ContactsViewController.m in Sources */,
@@ -1222,8 +1574,11 @@
 				847B305F1ABE0EDB00635D88 /* RequestOrdersHistory.m in Sources */,
 				84B1FBE41AA0E10100DFF90E /* JSONModelArray.m in Sources */,
 				84B1FBFA1AA0EE8100DFF90E /* LoginRequestOrder.m in Sources */,
+				84F059A91AD0175F004310AD /* MessagesElements.m in Sources */,
+				8457F0591AD1E7C7003793D7 /* ResponseSavePassword.m in Sources */,
 				84FBDB2D1AAB829F000CCED1 /* PriceElements.m in Sources */,
 				84B1FBE71AA0E10100DFF90E /* NSArray+JSONModel.m in Sources */,
+				84F059CC1AD05937004310AD /* EditUserView.m in Sources */,
 				84EF85081AAB4D7900D998E4 /* ServicesCellTableViewCell.m in Sources */,
 				84F33FC31AB49A9C00D1ED47 /* NSString+findHeightForText.m in Sources */,
 				84AEC2561A97FE8500E66B95 /* SlideNavigationContorllerAnimatorFade.m in Sources */,
@@ -1237,6 +1592,7 @@
 				84B1FBE31AA0E10100DFF90E /* JSONModel.m in Sources */,
 				845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */,
 				84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */,
+				84F536A61AD1D5E000322399 /* RequestSaveInfo.m in Sources */,
 				84EF85131AAB760300D998E4 /* RequestPriceList.m in Sources */,
 				84F23BC51A9A064800FE72C5 /* LoginViewController.m in Sources */,
 				844A23921A9BC60F005335E4 /* RegistrationTableViewCell.m in Sources */,
@@ -1248,19 +1604,24 @@
 				84EF85161AAB762E00D998E4 /* ResponsePriceList.m in Sources */,
 				84559F341AC6B757007BE447 /* MapViewController.m in Sources */,
 				84EF85041AAB432700D998E4 /* ServicesViewController.m in Sources */,
+				84F0599C1AD00B96004310AD /* MailCell.m in Sources */,
 				844A78431A97D61C0001121F /* MainViewController.m in Sources */,
 				84F33FA61AB4578900D1ED47 /* cellUser.m in Sources */,
 				84F23BCD1A9A06F700FE72C5 /* ForgotPasswordViewController.m in Sources */,
+				84F059C91AD05925004310AD /* SaleView.m in Sources */,
 				84B1FBF91AA0EE8100DFF90E /* loginResponse.m in Sources */,
 				8482B73C1A990F79007E0C32 /* RightMenuTableViewCell.m in Sources */,
 				84FCA0EC1AACBE2500C1627E /* PriceListObject.m in Sources */,
 				84F23BD61A9A3A3900FE72C5 /* LabelUnderLine.m in Sources */,
+				84F059C61AD05905004310AD /* BonusView.m in Sources */,
 				847B306D1ABE1AD200635D88 /* RequestServices.m in Sources */,
+				84F536A91AD1D5F800322399 /* ResponseSaveInfo.m in Sources */,
 				84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */,
 				84B1FBE51AA0E10100DFF90E /* JSONModelClassProperty.m in Sources */,
 				845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */,
 				84B1FBE81AA0E10100DFF90E /* JSONAPI.m in Sources */,
 				84B1FBEC1AA0E10100DFF90E /* JSONValueTransformer.m in Sources */,
+				84F536A11AD1BEBD00322399 /* ResponseGetBonus.m in Sources */,
 				84AEC26F1A9813A400E66B95 /* LeftMenuViewController2.m in Sources */,
 				844F1D3B1AC72CE300F83403 /* ContactsListElements.m in Sources */,
 				84F33FBB1AB485BF00D1ED47 /* MessageListElements.m in Sources */,
@@ -1270,19 +1631,24 @@
 				84AEC2571A97FE8500E66B95 /* SlideNavigationContorllerAnimatorScale.m in Sources */,
 				84F33FB81AB484BD00D1ED47 /* ResponseMessageList.m in Sources */,
 				844A783F1A97D0010001121F /* BaseViewController.m in Sources */,
+				84F059A61AD016D4004310AD /* ResponseTitleMessages.m in Sources */,
 				847B30651ABE113100635D88 /* OrdersElements.m in Sources */,
+				8457F0561AD1E7B0003793D7 /* RequestSavePassword.m in Sources */,
 				847B30621ABE0FF500635D88 /* ResponseOrders.m in Sources */,
 				8438E0C11A96839200063D43 /* RootTableViewCell.m in Sources */,
 				84F33FCB1AB4C38400D1ED47 /* RequestSendMessage.m in Sources */,
 				84B1FBF31AA0E22200DFF90E /* RegisterNewResponse.m in Sources */,
 				847B305C1ABE0D5A00635D88 /* RequestCurentOrders.m in Sources */,
+				84F059B81AD040AD004310AD /* PersonalCabinetViewController.m in Sources */,
 				8404B0D91A9508DE00050965 /* main.m in Sources */,
+				84F059981AD00319004310AD /* MyMailViewController.m in Sources */,
 				84F33FC71AB4ABD500D1ED47 /* GetUserInformation.m in Sources */,
 				8438E08F1A96567F00063D43 /* RootViewController.m in Sources */,
 				844F1D351AC72C4400F83403 /* RequestGetContactsList.m in Sources */,
 				8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */,
 				845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */,
 				847B30571ABDCA8000635D88 /* OrdersCell.m in Sources */,
+				84F5369E1AD1BEAA00322399 /* ResponseGetDeposit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

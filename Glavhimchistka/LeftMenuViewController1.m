@@ -100,6 +100,11 @@
             identity =@"ContactsViewController";
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
+        case 3:
+        {
+        
+        }
+        
             break;
         case 5:
         {

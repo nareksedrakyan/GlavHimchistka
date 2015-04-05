@@ -27,7 +27,7 @@
     self.passwordRecoveryLabel.userInteractionEnabled=YES;
     self.loginTextField.placeholder=@"E-Mail";
     self.PasswordTextField.placeholder=@"PassWord";
-    
+     self.PasswordTextField.secureTextEntry = YES;
     self.loginTextField.returnKeyType=UIReturnKeyNext;
     self.PasswordTextField.returnKeyType=UIReturnKeyDone;
     self.loginTextField.delegate=self;
@@ -137,7 +137,7 @@
         NSLog(@"responseString:%@",responseString);
         loginResponse*loginResponseObject = [[loginResponse alloc] initWithString:responseString error:nil];
         [self.loader removeFromSuperview];
-        if ([loginResponseObject.error intValue]==0)
+        if (loginResponseObject && [loginResponseObject.error intValue]==0)
         {
 //            [[NSUserDefaults standardUserDefaults] setObject:loginResponseObject.Session_id forKey:@"Session_id"];
             USINFO.sessionID=loginResponseObject.Session_id;

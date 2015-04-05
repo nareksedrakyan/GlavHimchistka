@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fsj-9d-Mub" customClass="SaleView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Остаток вашего депозита составляет" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4B-Kd-DMj">
+                    <rect key="frame" x="10" y="20" width="580" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="bNG-g8-K4b"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <color key="textColor" red="0.011764705882352941" green="0.59999999999999998" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYc-gM-dkF">
+                    <rect key="frame" x="10" y="60" width="580" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="G2F-zU-vcD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="G4B-Kd-DMj" secondAttribute="trailing" constant="10" id="37N-Ur-87h"/>
+                <constraint firstItem="G4B-Kd-DMj" firstAttribute="top" secondItem="fsj-9d-Mub" secondAttribute="top" constant="20" id="PIX-IC-OeI"/>
+                <constraint firstAttribute="trailing" secondItem="fYc-gM-dkF" secondAttribute="trailing" constant="10" id="RFf-oC-lDl"/>
+                <constraint firstItem="G4B-Kd-DMj" firstAttribute="leading" secondItem="fsj-9d-Mub" secondAttribute="leading" constant="10" id="RHA-pp-216"/>
+                <constraint firstItem="fYc-gM-dkF" firstAttribute="leading" secondItem="fsj-9d-Mub" secondAttribute="leading" constant="10" id="hUH-LJ-uJd"/>
+                <constraint firstItem="fYc-gM-dkF" firstAttribute="top" secondItem="G4B-Kd-DMj" secondAttribute="bottom" constant="20" id="jII-QX-jin"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <connections>
+                <outlet property="depositLabel" destination="fYc-gM-dkF" id="QOT-i6-iZK"/>
+            </connections>
+            <point key="canvasLocation" x="356" y="344"/>
+        </view>
+    </objects>
+</document>

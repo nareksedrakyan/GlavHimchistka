@@ -55,6 +55,7 @@
             <connections>
                 <outlet property="cellImageView" destination="YNs-VS-HDz" id="Pgn-Zg-cr2"/>
                 <outlet property="cellTextLabel" destination="UPk-Ru-roH" id="pU2-at-Xde"/>
+                <outlet property="underView" destination="H4o-Iv-vbh" id="Z55-6m-Vub"/>
             </connections>
             <point key="canvasLocation" x="454" y="151.5"/>
         </tableViewCell>

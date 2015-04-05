@@ -35,7 +35,7 @@
                                                        @"Квартира",@"Оффис",@"Комментарий",@"Промо-код",@"Адрес промо-код",nil];
     
   
-    
+    self.registrationTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.registrationTableView.delegate=self;
     self.registrationTableView.dataSource=self;
   
@@ -161,7 +161,7 @@ return cell;
             [self.registrationTableView setContentOffset:bottomOffset animated:YES];
 
         }
-        else
+        else if(self.registrationTableView.contentSize.height>self.registrationTableView.bounds.size.height)
         {
             CGPoint bottomOffset = CGPointMake(0, self.registrationTableView.contentSize.height - self.registrationTableView.bounds.size.height);
             [self.registrationTableView setContentOffset:bottomOffset animated:YES];

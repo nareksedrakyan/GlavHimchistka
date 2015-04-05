@@ -23,6 +23,7 @@
     NSMutableArray*heightArray;
     BOOL isNewMessage;
     BOOL isFirsCall;
+    BOOL isFirstCallAndExistId;
     NSMutableURLRequest* request;
     RequestSendMessage*requestSendMessageObject;
     UITapGestureRecognizer*tgr;
@@ -39,13 +40,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      requestMessageListObject=[[RequestMessageList alloc]init];
+     requestSendMessageObject=[[RequestSendMessage alloc] init];
     if (self.getId==nil )
     {
         [requestMessageListObject setId:@""];
+        [requestSendMessageObject setId:@""];
+        isFirstCallAndExistId=NO;
     }
     else
     {
     [requestMessageListObject setId:self.getId];
+    [requestSendMessageObject setId:self.getId];
+        isFirstCallAndExistId=YES;
     }
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     [self registerForKeyboardNotifications];
@@ -64,7 +70,7 @@
     [customView.SendButton addTarget:self action:@selector(sendButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     customView.chatTextField.delegate=self;
-    requestSendMessageObject=[[RequestSendMessage alloc] init];
+   
     
     self.messageTypesTableView=[[UITableView alloc]init];
     self.messageTypesTableView.bounds=CGRectMake(0, 0, 300, 220);
@@ -78,7 +84,7 @@
     customView.chatTableView.delegate=self;
     customView.chatTableView.dataSource=self;
     [self requestMessageList];
-    timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(requestMessageList) userInfo:nil repeats:YES];
+    timer=[NSTimer scheduledTimerWithTimeInterval:15.f target:self selector:@selector(requestMessageList) userInfo:nil repeats:YES];
     customView.typeOfMessageLabel.userInteractionEnabled=YES;
    
     tgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTypesTable)];
@@ -93,8 +99,6 @@
 -(void)requestMessageList
 {
 
-   
-    
     NSString*jsons=[requestMessageListObject toJSONString];
     
     NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -126,10 +130,28 @@
         NSLog(@"responseString:%@",responseString);
         
         responseMessageListObject = [[ResponseMessageList alloc] initWithString:responseString error:nil];
-        isNewMessage=oldCount!=responseMessageListObject.childNode_comments.count;
-        oldCount=responseMessageListObject.childNode_comments.count;
+      
         if ([responseMessageListObject.error intValue]==0)
         {
+            if (isFirstCallAndExistId)
+            {
+                isFirstCallAndExistId=NO;
+                for (int i=0; i<responseMessageListObject.childNode_comments.count; i++)
+                {
+                    CGSize size_l=[NSString
+                    findHeightForText:[responseMessageListObject.childNode_comments[i] comment]
+                    havingWidth:(self.view.frame.size.width-153)
+                    andFont:[UIFont systemFontOfSize:15]];
+                    
+                    [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
+                }
+               [customView.chatTableView reloadData];
+            }
+            else
+            {
+                isNewMessage=oldCount!=responseMessageListObject.childNode_comments.count;
+                oldCount=responseMessageListObject.childNode_comments.count;
+            }
             if (isNewMessage)
             {
                 CGSize size_l=[NSString
@@ -138,9 +160,18 @@
                                andFont:[UIFont systemFontOfSize:15]];
                 [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
                 
-                [customView.chatTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                   [customView.chatTableView reloadData];
+                    
+                    NSIndexPath* indexPath = [NSIndexPath
+                    indexPathForRow: ([customView.chatTableView numberOfRowsInSection:([customView.chatTableView numberOfSections]-1)]-1)
+                    inSection: ([customView.chatTableView numberOfSections]-1)];
+                    
+                    [customView.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+                });
               
-                [customView.chatTableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
+             
             
             }
         }
@@ -338,6 +369,16 @@
     
 }
 
+
+//-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if ([tableView isEqual:customView.chatTableView]&&([indexPath row] == ((NSIndexPath*)[[tableView indexPathsForVisibleRows] lastObject]).row))
+//    {
+//           [customView.chatTableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//    }
+//
+//}
+
 - (void)sendButtonAction
 {
     requestSendMessageObject.comment=customView.chatTextField.text;
@@ -439,7 +480,7 @@
        ResponseSendMessage* responseSendMessageObject = [[ResponseSendMessage alloc] initWithString:responseString error:nil];
         if (responseSendMessageObject && [responseSendMessageObject.error intValue]==0)
         {
-            if (isFirsCall)
+            if (isFirsCall && !isFirstCallAndExistId)
             {
                 isFirsCall=NO;
                 [requestSendMessageObject setId:responseSendMessageObject.getId];
@@ -472,4 +513,9 @@
     return !self.rightMenuButton.hidden;
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [timer invalidate];
+}
 @end

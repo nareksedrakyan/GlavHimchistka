@@ -45,13 +45,13 @@
     self.rightTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.rightTableView.tableHeaderView.backgroundColor=[UIColor whiteColor];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rightMenuOpened:) name:SlideNavigationControllerDidOpen object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(rightMenuWillOpen:) name:SlideNavigationControllerDidReveal object:nil];
     
  
     // Do any additional setup after loading the view.
 }
 
--(void)rightMenuOpened:(NSNotification*)note
+-(void)rightMenuWillOpen:(NSNotification*)note
 {
     if ([note.userInfo[@"menu"] isEqualToString:@"right"])
     {
@@ -92,6 +92,27 @@
         {
              cell.cellTextLabel.text=USINFO.userName;
         }
+//        else if (indexPath.row==3)
+//        {
+//            if (YES)
+//            {
+//                messagesCountLabel=[[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width-30, 18, 20, 20)];
+//                messagesCountLabel.backgroundColor=[UIColor orangeColor];
+//                messagesCountLabel.textColor=[UIColor whiteColor];
+//                
+//                messagesCountLabel.text=@"1";
+//                
+//                messagesCountLabel.layer.cornerRadius = 15;
+//                messagesCountLabel.layer.borderWidth = 2;
+//                messagesCountLabel.layer.borderColor=[UIColor clearColor].CGColor;
+//                messagesCountLabel.layer.masksToBounds = YES;
+//                [cell.underView addSubview:messagesCountLabel];
+//            }
+//            else
+//            {
+//                [messagesCountLabel removeFromSuperview];
+//            }
+//        }
         else
         {
              cell.cellTextLabel.text=titArray[indexPath.row];
@@ -142,12 +163,28 @@
         }
             break;
             
+        case 3:
+        {
+            myClass = NSClassFromString(@"MyMailViewController");
+            identity =@"MyMailViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+            
+        case 4:
+        {
+            myClass = NSClassFromString(@"PersonalCabinetViewController");
+            identity =@"PersonalCabinetViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
         case 5:
         {
             myClass = NSClassFromString(@"RootViewController");
             identity =@"RootViewController";
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
+            break;
         default:
             break;
     }

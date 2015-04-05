@@ -1,20 +1,20 @@
 //
-//  RequestSendMessage.m
+//  RequestSaveInfo.m
 //  Glavhimchistka
 //
-//  Created by Admin on 14.03.15.
+//  Created by Admin on 05.04.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
 
-#import "RequestSendMessage.h"
+#import "RequestSaveInfo.h"
 
-@implementation RequestSendMessage
+@implementation RequestSaveInfo
 -(instancetype)init
 {
     self=[super init];
     if (self)
     {
-        self.mes_type=@"6";
+        self.sourse=@"IOS";
     }
     return self;
 }
