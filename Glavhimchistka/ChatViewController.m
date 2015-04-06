@@ -24,6 +24,8 @@
     BOOL isNewMessage;
     BOOL isFirsCall;
     BOOL isFirstCallAndExistId;
+    BOOL isExistId;
+    BOOL fff;
     NSMutableURLRequest* request;
     RequestSendMessage*requestSendMessageObject;
     UITapGestureRecognizer*tgr;
@@ -32,6 +34,7 @@
     CGSize size;
     RequestMessageList*requestMessageListObject;
     NSInteger oldCount;
+   
 }
 @end
 
@@ -39,20 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     requestMessageListObject=[[RequestMessageList alloc]init];
-     requestSendMessageObject=[[RequestSendMessage alloc] init];
-    if (self.getId==nil )
-    {
-        [requestMessageListObject setId:@""];
-        [requestSendMessageObject setId:@""];
-        isFirstCallAndExistId=NO;
-    }
-    else
-    {
-    [requestMessageListObject setId:self.getId];
-    [requestSendMessageObject setId:self.getId];
-        isFirstCallAndExistId=YES;
-    }
+  
+
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     [self registerForKeyboardNotifications];
     
@@ -61,11 +52,72 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-   
+    fff=NO;
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomView" owner:self options:nil];
     customView=[nib objectAtIndex:0];
     customView.frame=self.scrollView.bounds;
     [self.scrollView addSubview:customView];
+    
+    requestMessageListObject=[[RequestMessageList alloc]init];
+    requestSendMessageObject=[[RequestSendMessage alloc] init];
+    
+    
+    
+    
+    
+    if (self.getId==nil )
+    {
+        [requestMessageListObject setId:@""];
+        [requestSendMessageObject setId:@""];
+        isFirstCallAndExistId=NO;
+        isExistId=NO;
+        customView.typeOfMessageLabel.userInteractionEnabled=YES;
+    }
+    else
+    {
+        customView.typeOfMessageLabel.userInteractionEnabled=NO;
+        switch ([self.message_type intValue])
+        {
+            case 1:
+            {
+                customView.typeOfMessageLabel.text=@"Отзыв";
+                
+            }
+                break;
+            case 2:
+            {
+                customView.typeOfMessageLabel.text=@"Жалоба";
+            }
+                break;
+            case 3:
+            {
+                customView.typeOfMessageLabel.text=@"Пожелания";
+            }
+                break;
+            case 4:
+            {
+                customView.typeOfMessageLabel.text=@"Некорректные данные";
+            }
+                break;
+                
+            case 5:
+            {
+                customView.typeOfMessageLabel.text=@"Вопрос";
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+        requestSendMessageObject.mes_type=self.message_type;
+        [requestMessageListObject setId:self.getId];
+        [requestSendMessageObject setId:self.getId];
+        isFirstCallAndExistId=YES;
+        isExistId=YES;
+    }
+    
+    
     self.scrollView.contentSize=CGSizeMake(self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
     [customView.SendButton addTarget:self action:@selector(sendButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -85,7 +137,7 @@
     customView.chatTableView.dataSource=self;
     [self requestMessageList];
     timer=[NSTimer scheduledTimerWithTimeInterval:15.f target:self selector:@selector(requestMessageList) userInfo:nil repeats:YES];
-    customView.typeOfMessageLabel.userInteractionEnabled=YES;
+  
    
     tgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showTypesTable)];
     tgr.numberOfTapsRequired=1;
@@ -160,9 +212,10 @@
                                andFont:[UIFont systemFontOfSize:15]];
                 [heightArray addObject:[NSNumber numberWithFloat:size_l.height]];
                 
+                [customView.chatTableView reloadData];
                 dispatch_async(dispatch_get_main_queue(), ^
                 {
-                   [customView.chatTableView reloadData];
+                    
                     
                     NSIndexPath* indexPath = [NSIndexPath
                     indexPathForRow: ([customView.chatTableView numberOfRowsInSection:([customView.chatTableView numberOfSections]-1)]-1)
@@ -210,7 +263,7 @@
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"cellUser" owner:self options:nil];
         cell =[nib objectAtIndex:0];
-            
+        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
         cell.infoView.layer.cornerRadius = 15;
         cell.infoView.layer.borderWidth = 2;
         cell.infoView.layer.borderColor=[UIColor clearColor].CGColor;
@@ -223,7 +276,6 @@
         
         }
         cell.userInteractionEnabled=NO;
-        [tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionBottom animated:YES];
     return cell;
     }
       else
@@ -237,7 +289,7 @@
               
               NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"cellAdmin" owner:self options:nil];
               cell =[nib objectAtIndex:0];
-              
+              [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
               cell.infoView.layer.cornerRadius = 15;
               cell.infoView.layer.borderWidth = 2;
               cell.infoView.layer.borderColor=[UIColor clearColor].CGColor;
@@ -246,7 +298,7 @@
               cell.messageLabel.numberOfLines=0;
               cell.messageLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] comment];
               cell.timeLabel.text=[responseMessageListObject.childNode_comments[indexPath.row] dttm];
-              
+             
           }
           cell.userInteractionEnabled=NO;
           return cell;
@@ -254,6 +306,8 @@
     }
     else
     {
+        tableView.separatorColor=[UIColor clearColor];
+        tableView.backgroundColor=[UIColor clearColor];
         NSString* simpleTableIdentifier = [NSString stringWithFormat:@"SimpleTableViewCell_%ld" , (long)indexPath.row];
         
         UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -261,6 +315,19 @@
         if( cell == nil )
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+            cell.textLabel.backgroundColor=[UIColor clearColor];
+            cell.textLabel.textColor=[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1.f];
+            cell.textLabel.textAlignment=NSTextAlignmentCenter;
+            CAGradientLayer* gradientLayer=[CAGradientLayer layer];
+            gradientLayer.frame = CGRectMake(0, 0, 300, 44);
+            
+            [gradientLayer setColors:[NSArray arrayWithObjects:
+                                      (id)([UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1.f].CGColor),
+                                       (id)([UIColor whiteColor].CGColor),
+                                      (id)([UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1.f].CGColor),
+                                      nil]];
+            [cell.contentView.layer insertSublayer:gradientLayer atIndex:0];
+           
             switch (indexPath.row)
             {
                 case 0:
@@ -294,8 +361,9 @@
                 default:
                     break;
             }
+            
         }
-//        cell.backgroundColor=[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:0.5];
+
         
         return cell;
 
@@ -354,7 +422,7 @@
                 
             case 4:
             {
-                requestSendMessageObject.mes_type=@"6";
+                requestSendMessageObject.mes_type=@"5";
             }
                 break;
                 
@@ -393,7 +461,7 @@
     NSDate* sourceDate = [NSDate date];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd-HH:mm:SS"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:SS"];
     
     //Optionally for time zone conversions
     [formatter setTimeZone:[NSTimeZone timeZoneWithName:timeZone]];
@@ -401,9 +469,33 @@
 }
 -(void)showTypesTable
 {
-    [self.view addSubview:self.messageTypesTableView];
-    [self.messageTypesTableView reloadData];
+  
+    if (!fff)
+    {
+        [self.view addSubview:self.messageTypesTableView];
+        [self.messageTypesTableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^
+                       {
+                          
+                           CATransition *animation = [CATransition animation];
+                           [animation setDelegate:self];
+                           [animation setDuration:1.0f];
+                           [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+                           [animation setType:@"rippleEffect" ];
+                           [self.messageTypesTableView.layer addAnimation:animation forKey:NULL];
+                           fff=YES;
+                          
+                       });
+       
+    }
+    else
+    {
+        fff=NO;
+        [self.messageTypesTableView removeFromSuperview];
+    }
+    
 }
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -480,7 +572,7 @@
        ResponseSendMessage* responseSendMessageObject = [[ResponseSendMessage alloc] initWithString:responseString error:nil];
         if (responseSendMessageObject && [responseSendMessageObject.error intValue]==0)
         {
-            if (isFirsCall && !isFirstCallAndExistId)
+            if (isFirsCall && !isExistId)
             {
                 isFirsCall=NO;
                 [requestSendMessageObject setId:responseSendMessageObject.getId];
@@ -489,6 +581,7 @@
             }
             else
             {
+                customView.typeOfMessageLabel.userInteractionEnabled=NO;
                 customView.chatTextField.text=@"";
                 [self requestMessageList];
                 

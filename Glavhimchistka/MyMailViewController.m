@@ -148,7 +148,7 @@
             }
                 break;
                 
-            case 6:
+            case 5:
             {
                 cell.userImageView.image=[UIImage imageNamed:@"vopros.png"];//Вопрос
             }
@@ -175,6 +175,7 @@
 {
     ChatViewController*cvc=[self.storyboard instantiateViewControllerWithIdentifier:@"ChatViewController"];
     [cvc setTitleId:[responseTitleMessagesObject.Messages[indexPath.row] getId]];
+    cvc.message_type=[responseTitleMessagesObject.Messages[indexPath.row] message_type];
     [self.navigationController pushViewController:cvc animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

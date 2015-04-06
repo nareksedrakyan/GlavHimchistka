@@ -14,7 +14,7 @@
     self=[super init];
     if (self)
     {
-        self.mes_type=@"6";
+        self.mes_type=@"5";
     }
     return self;
 }
