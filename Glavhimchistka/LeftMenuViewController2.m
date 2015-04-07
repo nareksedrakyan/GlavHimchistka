@@ -121,28 +121,40 @@
 
 -(void)pushIfNoExistViewContrller:(Class)aClass andIdentity:(NSString*)identityString
 {
-    BOOL b=NO;
+    
     id vc = [self.storyboard instantiateViewControllerWithIdentifier:identityString];
-    for (id controller in nvc.viewControllers)
+    if ([nvc.visibleViewController isEqual:vc])
     {
-        if ((b=[controller isKindOfClass:[aClass class]]))
-        {
-            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
-            [nvc popToViewController:controller animated:YES];
-            
-            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
-            //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
-            //            [allViewControllers removeObjectIdenticalTo:controller];
-            //            nvc.viewControllers = allViewControllers;
-            break;
-            
-            
-        }
+        [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
     }
-    if (!b)
+    else
     {
-        [nvc pushViewController:vc animated:NO];
+        [(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
     }
+    
+    
+//    BOOL b=NO;
+//    id vc = [self.storyboard instantiateViewControllerWithIdentifier:identityString];
+//    for (id controller in nvc.viewControllers)
+//    {
+//        if ((b=[controller isKindOfClass:[aClass class]]))
+//        {
+//            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
+//            [nvc popToViewController:controller animated:YES];
+//            
+//            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
+//            //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
+//            //            [allViewControllers removeObjectIdenticalTo:controller];
+//            //            nvc.viewControllers = allViewControllers;
+//            break;
+//            
+//            
+//        }
+//    }
+//    if (!b)
+//    {
+//        [nvc pushViewController:vc animated:NO];
+//    }
     
 }
 @end

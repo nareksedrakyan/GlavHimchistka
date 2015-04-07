@@ -5,7 +5,7 @@
 //  Created by Admin on 04.04.15.
 //  Copyright (c) 2015 NSedrakyan. All rights reserved.
 //
-
+#import "NSString+Hashes.h"
 #import "PersonalCabinetViewController.h"
 #import "EditUserView.h"
 #import "SaleView.h"
@@ -354,7 +354,7 @@
         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Изменить пароль" style:UIAlertActionStyleDefault
          handler:^(UIAlertAction * action)
             {
-                requestSavePasswordObject.old=[[alert.textFields objectAtIndex:0] text];
+                requestSavePasswordObject.old=[[alert.textFields objectAtIndex:0] text].sha1;
                 [requestSavePasswordObject setNew:[[alert.textFields objectAtIndex:0] text]];
                 [self requestSavePassword];
             }];
@@ -437,7 +437,7 @@
     NSString*jsons=[requestSaveInfoObjet toJSONString];
     
     NSString *encodeStr =[jsons stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    encodeStr=[encodeStr stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+   encodeStr=[encodeStr stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
     NSString*urlString=[NSString stringWithFormat:@"%@%@%@%@",@"http://xn--80aafc1aaodm5cl5a2a.xn--p1ai/api/v1/restAPI/SaveInfo=",encodeStr,@"&SessionID=",[UserInfo sharedUserInfo].sessionID];
     
     NSURL* url = [NSURL URLWithString:urlString];
@@ -504,7 +504,7 @@
     
     
     NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+    NSString*responseString=[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSLog(@"responseString:%@",responseString);
     GetUserInformation*getUserInformationObject = [[GetUserInformation alloc] initWithString:responseString error:nil];

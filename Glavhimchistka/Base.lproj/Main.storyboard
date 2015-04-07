@@ -1591,7 +1591,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-sj-ZSz">
-                                <rect key="frame" x="155" y="285" width="290" height="30"/>
+                                <rect key="frame" x="155" y="132" width="290" height="30"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_forgot.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ogc-b1-MTl">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -1680,7 +1680,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9c-OF-bwQ">
-                                <rect key="frame" x="195" y="345" width="250" height="40"/>
+                                <rect key="frame" x="175" y="192" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.74901960784313726" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CJ7-ic-7AM"/>
@@ -1703,7 +1703,8 @@
                             <constraint firstAttribute="centerX" secondItem="us0-Ki-vLh" secondAttribute="centerX" id="JQT-2Y-Yuy"/>
                             <constraint firstAttribute="trailing" secondItem="vox-Ii-TDw" secondAttribute="trailing" id="MWG-Qc-ef4"/>
                             <constraint firstItem="vox-Ii-TDw" firstAttribute="leading" secondItem="Ypz-jh-QPA" secondAttribute="leading" id="Nlo-Fg-eVP"/>
-                            <constraint firstAttribute="centerX" secondItem="r9c-OF-bwQ" secondAttribute="centerX" constant="-20" id="YdF-8g-7B1"/>
+                            <constraint firstItem="0eZ-sj-ZSz" firstAttribute="top" secondItem="us0-Ki-vLh" secondAttribute="bottom" constant="20" id="TZ0-m2-37s"/>
+                            <constraint firstAttribute="centerX" secondItem="r9c-OF-bwQ" secondAttribute="centerX" id="YdF-8g-7B1"/>
                             <constraint firstItem="vox-Ii-TDw" firstAttribute="top" secondItem="c2h-JY-r8p" secondAttribute="bottom" id="aDO-Er-6dj"/>
                             <constraint firstItem="r9c-OF-bwQ" firstAttribute="top" secondItem="0eZ-sj-ZSz" secondAttribute="bottom" constant="30" id="rxA-5d-CeE"/>
                             <constraint firstAttribute="centerY" secondItem="0eZ-sj-ZSz" secondAttribute="centerY" id="vJ1-vb-AVc"/>
@@ -1711,6 +1712,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="6A2-7U-vKi"/>
+                                <exclude reference="vJ1-vb-AVc"/>
                             </mask>
                         </variation>
                     </view>

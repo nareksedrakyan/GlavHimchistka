@@ -78,7 +78,7 @@
 
    
            NSString* jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSString*responseString=[[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]stringByReplacingOccurrencesOfString:@"+" withString:@" "];
+        NSString*responseString=[jsonString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         NSLog(@"responseString:%@",responseString);
         GetUserInformation*getUserInformationObject = [[GetUserInformation alloc] initWithString:responseString error:nil];

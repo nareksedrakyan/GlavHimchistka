@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.mailTableView.hidden=YES;
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     // Do any additional setup after loading the view.
 }
@@ -73,9 +74,14 @@
         
         if (responseTitleMessagesObject&&[responseTitleMessagesObject.error intValue]==0)
         {
-            self.mailTableView.delegate=self;
-            self.mailTableView.dataSource=self;
-            [self.mailTableView reloadData];
+            if (responseTitleMessagesObject.Messages.count)
+            {
+                self.mailTableView.hidden=NO;
+                self.mailTableView.delegate=self;
+                self.mailTableView.dataSource=self;
+                [self.mailTableView reloadData];
+            }
+            
         }
         else if (responseTitleMessagesObject.Msg)
         {

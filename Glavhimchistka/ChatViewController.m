@@ -44,7 +44,7 @@
     [super viewDidLoad];
   
 
-    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
+     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     [self registerForKeyboardNotifications];
     
     //Do any additional setup after loading the view.
@@ -52,6 +52,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    oldCount=0;
     fff=NO;
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomView" owner:self options:nil];
     customView=[nib objectAtIndex:0];
@@ -125,8 +126,8 @@
    
     
     self.messageTypesTableView=[[UITableView alloc]init];
-    self.messageTypesTableView.bounds=CGRectMake(0, 0, 300, 220);
-    self.messageTypesTableView.center=self.view.center;
+    self.messageTypesTableView.frame=CGRectMake((self.view.bounds.size.width-300)/2, 81, 300, 220);
+   // self.messageTypesTableView.center=self.view.center;
     self.messageTypesTableView.delegate=self;
     self.messageTypesTableView.dataSource=self;
     
@@ -182,7 +183,7 @@
         NSLog(@"responseString:%@",responseString);
         
         responseMessageListObject = [[ResponseMessageList alloc] initWithString:responseString error:nil];
-      
+     
         if ([responseMessageListObject.error intValue]==0)
         {
             if (isFirstCallAndExistId)
@@ -449,6 +450,7 @@
 
 - (void)sendButtonAction
 {
+    customView.SendButton.enabled=NO;
     requestSendMessageObject.comment=customView.chatTextField.text;
     requestSendMessageObject.dttm=[self timeWithTimeZone:@"Europe/Moscow"];
     [self requestSendMessage];
@@ -518,7 +520,7 @@
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
     [self.messageTypesTableView removeFromSuperview];
-    customView.SendButton.userInteractionEnabled=NO;
+    customView.SendButton.enabled=NO;
     size=self.scrollView.contentSize;
     NSDictionary* info = [aNotification userInfo];
     keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -531,7 +533,7 @@
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
-    customView.SendButton.userInteractionEnabled=YES;
+    customView.SendButton.enabled=YES;
     self.scrollView.contentSize=size;
 }
 
@@ -570,6 +572,7 @@
         
         NSLog(@"responseString:%@",responseString);
        ResponseSendMessage* responseSendMessageObject = [[ResponseSendMessage alloc] initWithString:responseString error:nil];
+        
         if (responseSendMessageObject && [responseSendMessageObject.error intValue]==0)
         {
             if (isFirsCall && !isExistId)
@@ -584,6 +587,7 @@
                 customView.typeOfMessageLabel.userInteractionEnabled=NO;
                 customView.chatTextField.text=@"";
                 [self requestMessageList];
+               
                 
             }
            //[customView.chatTableView reloadData];
@@ -592,7 +596,7 @@
         {
             [self showErrorAlertWithMessage:responseSendMessageObject.Msg];
         }
-       
+       customView.SendButton.enabled=YES;
     }];
 }
 

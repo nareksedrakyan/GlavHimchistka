@@ -90,7 +90,10 @@
         //        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
         if (!indexPath.row)
         {
+            cell.cellTextLabel.numberOfLines=0;
              cell.cellTextLabel.text=USINFO.userName;
+            cell.cellTextLabel.font=[UIFont boldSystemFontOfSize:18];
+            cell.userInteractionEnabled=NO;
         }
 //        else if (indexPath.row==3)
 //        {
@@ -119,11 +122,7 @@
         }
       
         cell.cellImageView.image=imageArray[indexPath.row];
-        if (!indexPath.row)
-        {
-            cell.cellTextLabel.font=[UIFont boldSystemFontOfSize:20];
-            cell.userInteractionEnabled=NO;
-        }
+      
     }
     UIView *selectedView = [[UIView alloc]initWithFrame:cell.frame];
     selectedView.backgroundColor =[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1];
@@ -204,64 +203,42 @@
 -(void)pushIfNoExistViewContrller:(Class)aClass andIdentity:(NSString*)identityString
 {
    
-  
-    
-    
-    
-    
-    
-    BOOL b=NO;
     id vc = [self.storyboard instantiateViewControllerWithIdentifier:identityString];
-    
-    if ([identityString isEqualToString:@"RootViewController"])
+    if ([nvc.visibleViewController.class isEqual:[(UIViewController*)vc class]])
     {
-        [(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
-        return;
-    }
-    if ([identityString isEqualToString:@"OrdersViewController"])
-    {
-        if (ss)
+        [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
+        
+        if ([identityString isEqualToString:@"OrdersViewController"])
         {
-            [(OrdersViewController*)vc setIsCurentOrders:YES];
-        }
-        else
-        {
-            [(OrdersViewController*)vc setIsCurentOrders:NO];
-        }
-    }
-    for (id controller in nvc.viewControllers)
-    {
-        if ((b=[controller isKindOfClass:[aClass class]]))
-        {
-            if ([identityString isEqualToString:@"OrdersViewController"])
+            
+            if (ss)
             {
-
-                if (ss)
-                {
-                    [(OrdersViewController*)controller setIsCurentOrders:YES];
-                }
-                else
-                {
-                    [(OrdersViewController*)controller setIsCurentOrders:NO];
-                }
-               [(OrdersViewController*)controller viewDidAppear:NO];
-            
+                [(OrdersViewController*)nvc.visibleViewController setIsCurentOrders:YES];
             }
-            [[SlideNavigationController sharedInstance] closeMenuWithCompletion:nil];
-            [nvc popToViewController:controller animated:YES];
-            
-            //[(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
-            //            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:nvc.viewControllers];
-            //            [allViewControllers removeObjectIdenticalTo:controller];
-            //            nvc.viewControllers = allViewControllers;
-            break;
-            
+            else
+            {
+                [(OrdersViewController*)nvc.visibleViewController setIsCurentOrders:NO];
+            }
+            [(OrdersViewController*)nvc.visibleViewController viewDidAppear:NO];
             
         }
     }
-    if (!b)
+    else
+        
     {
-        [nvc pushViewController:vc animated:NO];
+        if ([identityString isEqualToString:@"OrdersViewController"])
+        {
+            
+            if (ss)
+            {
+                [(OrdersViewController*)vc setIsCurentOrders:YES];
+            }
+            else
+            {
+                [(OrdersViewController*)vc setIsCurentOrders:NO];
+            }
+        }
+        [(SlideNavigationController*)nvc popToRootAndSwitchToViewController:vc withCompletion:nil];
     }
     
 }
