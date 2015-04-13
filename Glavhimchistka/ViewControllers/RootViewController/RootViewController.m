@@ -11,7 +11,8 @@
 #import "ServicesViewController.h"
 #import "ChatViewController.h"
 #import "ContactsViewController.h"
-
+#import "StockViewController.h"
+#import "DepartureViewController.h"
 @interface RootViewController ()
 
 @end
@@ -60,6 +61,21 @@
             [self.navigationController pushViewController:cvc animated:YES];
         }
             break;
+            
+        case 3:
+        {
+            DepartureViewController* dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DepartureViewController"];
+            [self.navigationController pushViewController:dvc animated:YES];
+        }
+            break;
+            
+        case 4:
+        {
+            StockViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"StockViewController"];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
+            break;
+            
         case 5:
         {
             ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];

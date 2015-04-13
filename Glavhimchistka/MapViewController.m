@@ -27,27 +27,15 @@
     
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
   
-    [self requestGetLocationWithAdress:self.addressName];
-    //_positionArray = [[NSMutableArray alloc] init];
-    
-    
-    // Creates a marker in the center of the map.
-    
-    
-    
-//    CGPoint point = [self.mapView.projection pointForCoordinate:CLLocationCoordinate2DMake(-33.86, 151.25)];
+   
+
     
 }
 
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    [self createMapView];
-//    [self createMarkers:5];
-//    
-//    [self performSelector:@selector(aaa) withObject:nil afterDelay:6];
-//    
-//    [self requestGetLocationWithAdress:@"Armenia Erevan"];
+  [self requestGetLocationWithAdress:self.addressName];
 }
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu
@@ -60,9 +48,7 @@
     return !self.rightMenuButton.hidden;
 }
 
-//- (void)aaa {
-//    [self focusMap];
-//}
+
 
 - (void)createMapViewWithCoordinate:(CLLocationCoordinate2D) adressCoordinate
 {
@@ -70,7 +56,7 @@
                                                             longitude:adressCoordinate.longitude
                                                                  zoom:15];
     
-    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, 71, self.view.frame.size.width, self.view.frame.size.height-71) camera:camera];
+    _mapView = [GMSMapView mapWithFrame:CGRectMake(0, 71, self.view.frame.size.width, self.view.frame.size.height-71-self.buttonsView.frame.size.height) camera:camera];
     
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = adressCoordinate;
@@ -85,7 +71,8 @@
 - (void)focusMapToShowAllMarkers:(NSMutableArray *) positionArray {
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
     NSMutableArray *markerArray = [[NSMutableArray alloc] init];
-    for (CLLocation *location in positionArray) {
+    for (CLLocation *location in positionArray)
+    {
         GMSMarker *marker = [GMSMarker markerWithPosition:location.coordinate];
         [markerArray addObject:marker];
     }

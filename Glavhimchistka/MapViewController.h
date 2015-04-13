@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MapViewController :BaseViewController
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
 
 @property(nonatomic,strong)NSString*addressName;
 

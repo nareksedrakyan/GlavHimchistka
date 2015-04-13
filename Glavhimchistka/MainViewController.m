@@ -12,6 +12,8 @@
 #import "GetUserInformation.h"
 #import "MapViewController.h"
 #import "ContactsViewController.h"
+#import "StockViewController.h"
+#import "DepartureViewController.h"
 
 @interface MainViewController ()
 {
@@ -24,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     isFirsCall=YES;
     rvc=[self.storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
     [self.navigationController pushViewController:rvc animated:NO];
@@ -114,6 +117,21 @@
             [self.navigationController pushViewController:cvc animated:YES];
         }
             break;
+            
+        case 2:
+        {
+            DepartureViewController* dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DepartureViewController"];
+            [self.navigationController pushViewController:dvc animated:YES];
+        }
+            break;
+            
+        case 3:
+        {
+            StockViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"StockViewController"];
+            [self.navigationController pushViewController:svc animated:YES];
+        }
+            break;
+            
         case 4:
         {
             ServicesViewController* svc = [self.storyboard instantiateViewControllerWithIdentifier:@"ServicesViewController"];

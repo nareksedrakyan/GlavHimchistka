@@ -226,7 +226,7 @@
         PriceListViewController*pvc=[self.storyboard instantiateViewControllerWithIdentifier:@"PriceListViewController"];
         pvc.headerLabel.text=[tableView cellForRowAtIndexPath:indexPath].textLabel.text;
         pvc.title=[tableView cellForRowAtIndexPath:indexPath].textLabel.text;;
-        pvc.myArray=[[NSMutableArray alloc] initWithArray:responsePriceListObject.price_list];
+        pvc.myArray=(NSMutableArray<PriceElements>*)[[NSMutableArray alloc] initWithArray:responsePriceListObject.price_list];
         [self.navigationController pushViewController:pvc animated:YES];
     }
      [tableView deselectRowAtIndexPath:indexPath animated:YES];

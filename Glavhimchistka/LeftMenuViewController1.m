@@ -59,7 +59,8 @@
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"RootTableViewCell" owner:self options:nil];
         cell =[nib objectAtIndex:0];
-        cell.backgroundColor=[UIColor colorWithRed:30.f/255 green:192.f/255 blue:225.f/255 alpha:1];
+  
+        cell.backgroundColor=[UIColor colorWithRed:0.f/255 green:172.f/255 blue:242.f/255 alpha:1];
         
         //        [cell  setValue:simpleTableIdentifier forKey:@"reuseIdentifier"];
         cell.cellTextLabel.text=titleArray[indexPath.row];
@@ -94,18 +95,31 @@
            
         }
             break;
-            case 2:
+            
+        case 2:
         {
             myClass = NSClassFromString(@"ContactsViewController");
             identity =@"ContactsViewController";
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
+            break;
+            
         case 3:
         {
-        
+            myClass = NSClassFromString(@"DepartureViewController");
+            identity =@"DepartureViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
-        
             break;
+            
+        case 4:
+        {
+            myClass = NSClassFromString(@"StockViewController");
+            identity =@"StockViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+            
         case 5:
         {
             myClass = NSClassFromString(@"ServicesViewController");
@@ -113,6 +127,7 @@
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
             break;
+            
         default:
             break;
     }

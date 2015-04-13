@@ -102,6 +102,23 @@
             [self pushIfNoExistViewContrller:myClass andIdentity:identity];
         }
             break;
+        
+        case 2:
+        {
+            myClass = NSClassFromString(@"DepartureViewController");
+            identity =@"DepartureViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+            
+        case 3:
+        {
+            myClass = NSClassFromString(@"StockViewController");
+            identity =@"StockViewController";
+            [self pushIfNoExistViewContrller:myClass andIdentity:identity];
+        }
+            break;
+            
         case 4:
         {
             myClass = NSClassFromString(@"ServicesViewController");

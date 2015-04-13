@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     self.headerLabel.text=self.title;
-    self.objectArray=[[NSMutableArray alloc]init];
+    self.objectArray=(NSMutableArray<PriceListObject>*)[[NSMutableArray alloc]init];
     self.priceListObject=[[PriceListObject alloc] init];
     [self calculateObjectArray];
     self.priceListTableView.delegate=self;

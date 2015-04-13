@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.segmentedControll.userInteractionEnabled=NO;
     addressArray=[[NSMutableArray alloc] init];
     markersArray=[[NSMutableArray alloc] init];
     positionArray=[[NSMutableArray alloc] init];
@@ -37,27 +37,28 @@
     self.contacsTableView.hidden=YES;
     self.contacsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
-                                                            longitude:151.20
-                                                                 zoom:6];
     
-    self.mapView=[[GMSMapView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-100)];
-    self.mapView.camera=camera;
-//    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height-80) camera:camera];
-    
-    self.mapView.myLocationEnabled = YES;
-    self.mapView.delegate = self;
+     [self requestGetContactsList];
+ 
     
     
-    [self requestGetContactsList];
+   
     
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.86
+                                                            longitude:151.20
+                                                                 zoom:15];
+    self.mapView=[[GMSMapView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-100-self.buttonsView.frame.size.height)];
+    self.mapView.camera=camera;
     
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.delegate = self;
 
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -87,8 +88,14 @@
             
         case 1:
         {
+            static int i=0;
             [self.view addSubview:self.mapView];
-            [self initializeMapView];
+            if (!i)
+            {
+                [self initializeMapView];
+            }
+            [self focusMapToShowAllMarkers];
+            i=1;
         }
         default:
             break;
@@ -147,7 +154,7 @@
             
             self.contacsTableView.hidden=NO;
             [self.contacsTableView reloadData];
-            
+            self.segmentedControll.userInteractionEnabled=YES;
            
         }
         else if (responseGetContactsList.Msg)
@@ -183,18 +190,18 @@
         marker.map=self.mapView;
         [markersArray addObject:marker];
     }
-    [self focusMapToShowAllMarkers];
+    //[self focusMapToShowAllMarkers];
     
 }
 - (void)focusMapToShowAllMarkers
 {
-    
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] init];
     
     for (GMSMarker *marker in markersArray)
+    {
         bounds = [bounds includingCoordinate:marker.position];
-    
-    [self.mapView animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:160.0f]];
+    }
+    [self.mapView animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withPadding:500]];
    
     
 }
@@ -292,7 +299,7 @@
              
              CLLocation *adressCoordinate = [[CLLocation alloc] initWithLatitude:[latStriing doubleValue] longitude:[lngStriing doubleValue]];
              [positionArray addObject:adressCoordinate];
-
+         
              
              
              

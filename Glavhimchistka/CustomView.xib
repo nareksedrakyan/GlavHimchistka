@@ -47,7 +47,7 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hQ-g7-kkD">
                                     <rect key="frame" x="490" y="60" width="100" height="40"/>
-                                    <color key="backgroundColor" red="0.11764705882352941" green="0.75294117647058822" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="0aH-QL-IbR"/>
                                         <constraint firstAttribute="width" constant="100" id="LWl-kb-1o3"/>
@@ -84,9 +84,9 @@
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DOp-er-rUE">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="490"/>
-                            <color key="backgroundColor" red="0.11764705882352941" green="0.75294117647058822" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.0" green="0.67450980392156867" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="sectionIndexBackgroundColor" red="0.11764705882352941" green="0.75294117647058822" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.0" green="0.67450980392156867" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -11,6 +11,8 @@
 #import <GoogleMaps/GoogleMaps.h>
 
 @interface ContactsViewController :BaseViewController <GMSMapViewDelegate>
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControll;
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
 
 - (IBAction)ActionSegmentedControl:(UISegmentedControl *)sender;
 
