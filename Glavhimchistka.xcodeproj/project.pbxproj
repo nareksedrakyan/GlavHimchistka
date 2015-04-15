@@ -636,13 +636,13 @@
 		8404B0FC1A951BDA00050965 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				8429201B1ADA992E008D1750 /* launch_logo.png */,
 				840926FA1AD09155005E84BB /* images */,
-				84F059B91AD04378004310AD /* user_x.png */,
 				84F059AA1AD01FB2004310AD /* Mes_type */,
 				84F0599E1AD00FC1004310AD /* plus */,
 				844F1D301AC7284D00F83403 /* arrow_right.png */,
+				84F059B91AD04378004310AD /* user_x.png */,
 				847B30661ABE18A100635D88 /* down.png */,
+				8429201B1ADA992E008D1750 /* launch_logo.png */,
 				847B30671ABE18A100635D88 /* up.png */,
 				84F33FAD1AB4758600D1ED47 /* user.png */,
 				84F33FAE1AB4758600D1ED47 /* admin.png */,
