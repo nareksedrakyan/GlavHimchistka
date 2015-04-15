@@ -10,7 +10,7 @@
 #import "DatePickerView.h"
 #import "BaseViewController.h"
 
-@interface DepartureViewController : BaseViewController<DepartureViewDelegate,AddressViewDelegate,DatePickerViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface DepartureViewController : BaseViewController<DepartureViewDelegate,AddressViewDelegate,DatePickerViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;

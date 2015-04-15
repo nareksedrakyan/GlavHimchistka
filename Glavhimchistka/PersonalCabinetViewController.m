@@ -511,7 +511,7 @@
     
     if ([getUserInformationObject.error intValue]==0)
     {
-        USINFO.userName=getUserInformationObject.name;
+        USINFO.userName=[getUserInformationObject.name stringByReplacingOccurrencesOfString:@"+" withString:@" "];
         USINFO.phone=getUserInformationObject.fone;
         USINFO.phone_cell=getUserInformationObject.fone_cell;
         USINFO.email=getUserInformationObject.email;

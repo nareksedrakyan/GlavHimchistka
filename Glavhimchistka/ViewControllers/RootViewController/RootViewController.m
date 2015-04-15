@@ -50,6 +50,7 @@
     {
         case 0:
         case 1:
+        case 3:
         {
             LoginViewController* lvc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
             [self.navigationController pushViewController:lvc animated:YES];
@@ -62,12 +63,12 @@
         }
             break;
             
-        case 3:
-        {
-            DepartureViewController* dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DepartureViewController"];
-            [self.navigationController pushViewController:dvc animated:YES];
-        }
-            break;
+//        case 3:
+//        {
+//            DepartureViewController* dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DepartureViewController"];
+//            [self.navigationController pushViewController:dvc animated:YES];
+//        }
+//            break;
             
         case 4:
         {

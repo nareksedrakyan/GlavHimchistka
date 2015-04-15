@@ -40,11 +40,11 @@
 
 @implementation ChatViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-  
-
-     self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
+    
+    self.rightMenuButton.hidden=self.isRightMenuButtonHidden;
     [self registerForKeyboardNotifications];
     
     //Do any additional setup after loading the view.

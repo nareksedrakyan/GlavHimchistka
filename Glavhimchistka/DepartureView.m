@@ -20,7 +20,7 @@
 
 - (IBAction)mySwitchAction:(UISwitch *)sender
 {
-    [self.delegate actionSwitch:(!sender.on)];
+    [self.delegate actionSwitch:(sender.on)];
 }
 - (IBAction)toOrderAction:(UIButton *)sender
 {

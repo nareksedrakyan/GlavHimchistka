@@ -140,6 +140,11 @@
 		84B1FBFA1AA0EE8100DFF90E /* LoginRequestOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBF81AA0EE8100DFF90E /* LoginRequestOrder.m */; };
 		84B1FBFC1AA0FD5200DFF90E /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84B1FBFB1AA0FD5200DFF90E /* loader.gif */; };
 		84B1FBFF1AA1018600DFF90E /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B1FBFE1AA1018600DFF90E /* UIImage+animatedGIF.m */; };
+		84B2B5F71ADE9F0000E8595C /* RequestGetTimeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5F61ADE9F0000E8595C /* RequestGetTimeList.m */; };
+		84B2B5FA1ADE9F2300E8595C /* ResponseGetTimeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5F91ADE9F2300E8595C /* ResponseGetTimeList.m */; };
+		84B2B5FD1ADEA1EE00E8595C /* TripsElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B5FC1ADEA1EE00E8595C /* TripsElements.m */; };
+		84B2B6011ADEB61600E8595C /* RequestToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B6001ADEB61600E8595C /* RequestToOrder.m */; };
+		84B2B6041ADEB62D00E8595C /* ResponseToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2B6031ADEB62D00E8595C /* ResponseToOrder.m */; };
 		84B8F0E91AB207520074FE77 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8F0E81AB207520074FE77 /* ChatViewController.m */; };
 		84D8C1B51A9E45A500D21AD3 /* keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B41A9E45A500D21AD3 /* keyboard.png */; };
 		84D8C1B71A9E5B2D00D21AD3 /* left_menu_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D8C1B61A9E5B2D00D21AD3 /* left_menu_button.png */; };
@@ -194,6 +199,8 @@
 		84F536A61AD1D5E000322399 /* RequestSaveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F536A51AD1D5E000322399 /* RequestSaveInfo.m */; };
 		84F536A91AD1D5F800322399 /* ResponseSaveInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F536A81AD1D5F800322399 /* ResponseSaveInfo.m */; };
 		84F83F0A1AC706870077783D /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F83F091AC706870077783D /* ContactsViewController.m */; };
+		84F960731ADD908300DC0D3A /* ResponseGetAddressList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F960721ADD908300DC0D3A /* ResponseGetAddressList.m */; };
+		84F960761ADD90F200DC0D3A /* AddressListElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F960751ADD90F200DC0D3A /* AddressListElements.m */; };
 		84FBDB2D1AAB829F000CCED1 /* PriceElements.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FBDB2C1AAB829F000CCED1 /* PriceElements.m */; };
 		84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E31AAC999800C1627E /* PriceListViewController.m */; };
 		84FCA0E81AACAACD00C1627E /* PriceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E61AACAACD00C1627E /* PriceListCell.m */; };
@@ -419,6 +426,16 @@
 		84B1FBFB1AA0FD5200DFF90E /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
 		84B1FBFD1AA1018600DFF90E /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		84B1FBFE1AA1018600DFF90E /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		84B2B5F51ADE9F0000E8595C /* RequestGetTimeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestGetTimeList.h; sourceTree = "<group>"; };
+		84B2B5F61ADE9F0000E8595C /* RequestGetTimeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestGetTimeList.m; sourceTree = "<group>"; };
+		84B2B5F81ADE9F2300E8595C /* ResponseGetTimeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseGetTimeList.h; sourceTree = "<group>"; };
+		84B2B5F91ADE9F2300E8595C /* ResponseGetTimeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseGetTimeList.m; sourceTree = "<group>"; };
+		84B2B5FB1ADEA1EE00E8595C /* TripsElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripsElements.h; sourceTree = "<group>"; };
+		84B2B5FC1ADEA1EE00E8595C /* TripsElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripsElements.m; sourceTree = "<group>"; };
+		84B2B5FF1ADEB61600E8595C /* RequestToOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestToOrder.h; sourceTree = "<group>"; };
+		84B2B6001ADEB61600E8595C /* RequestToOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestToOrder.m; sourceTree = "<group>"; };
+		84B2B6021ADEB62D00E8595C /* ResponseToOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseToOrder.h; sourceTree = "<group>"; };
+		84B2B6031ADEB62D00E8595C /* ResponseToOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseToOrder.m; sourceTree = "<group>"; };
 		84B8F0E71AB207520074FE77 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		84B8F0E81AB207520074FE77 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		84D8C1B41A9E45A500D21AD3 /* keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keyboard.png; sourceTree = "<group>"; };
@@ -506,6 +523,10 @@
 		84F536A81AD1D5F800322399 /* ResponseSaveInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseSaveInfo.m; sourceTree = "<group>"; };
 		84F83F081AC706870077783D /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		84F83F091AC706870077783D /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		84F960711ADD908300DC0D3A /* ResponseGetAddressList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseGetAddressList.h; sourceTree = "<group>"; };
+		84F960721ADD908300DC0D3A /* ResponseGetAddressList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseGetAddressList.m; sourceTree = "<group>"; };
+		84F960741ADD90F200DC0D3A /* AddressListElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListElements.h; sourceTree = "<group>"; };
+		84F960751ADD90F200DC0D3A /* AddressListElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListElements.m; sourceTree = "<group>"; };
 		84FBDB2B1AAB829F000CCED1 /* PriceElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceElements.h; sourceTree = "<group>"; };
 		84FBDB2C1AAB829F000CCED1 /* PriceElements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceElements.m; sourceTree = "<group>"; };
 		84FCA0E21AAC999800C1627E /* PriceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListViewController.h; sourceTree = "<group>"; };
@@ -1052,8 +1073,8 @@
 		848D45B01ADAC02B001AF424 /* DepartureViewController  */ = {
 			isa = PBXGroup;
 			children = (
-				84A52DD41ADC5757000FF13F /* DatePickerView */,
 				84AAF8C31ADB034100722F5A /* Requests */,
+				84A52DD41ADC5757000FF13F /* DatePickerView */,
 				848D45BA1ADAE7DD001AF424 /* AddressView */,
 				848D45B41ADACAB3001AF424 /* DepartureView */,
 				848D45B11ADAC07F001AF424 /* DepartureViewController.h */,
@@ -1095,6 +1116,9 @@
 		84AAF8C31ADB034100722F5A /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				84B2B5FE1ADEB5EC00E8595C /* RequestToOrder */,
+				84B2B5F41ADE9EE000E8595C /* RequestGetTimeList */,
+				84F960701ADD905000DC0D3A /* RequestGetAddressList */,
 				84AAF8C41ADB034A00722F5A /* RequestGetRegions */,
 			);
 			name = Requests;
@@ -1262,6 +1286,30 @@
 				8415D3E31AA3923F00D03001 /* LoginRequestMail.m */,
 			);
 			name = LoginRequest;
+			sourceTree = "<group>";
+		};
+		84B2B5F41ADE9EE000E8595C /* RequestGetTimeList */ = {
+			isa = PBXGroup;
+			children = (
+				84B2B5F51ADE9F0000E8595C /* RequestGetTimeList.h */,
+				84B2B5F61ADE9F0000E8595C /* RequestGetTimeList.m */,
+				84B2B5F81ADE9F2300E8595C /* ResponseGetTimeList.h */,
+				84B2B5F91ADE9F2300E8595C /* ResponseGetTimeList.m */,
+				84B2B5FB1ADEA1EE00E8595C /* TripsElements.h */,
+				84B2B5FC1ADEA1EE00E8595C /* TripsElements.m */,
+			);
+			name = RequestGetTimeList;
+			sourceTree = "<group>";
+		};
+		84B2B5FE1ADEB5EC00E8595C /* RequestToOrder */ = {
+			isa = PBXGroup;
+			children = (
+				84B2B5FF1ADEB61600E8595C /* RequestToOrder.h */,
+				84B2B6001ADEB61600E8595C /* RequestToOrder.m */,
+				84B2B6021ADEB62D00E8595C /* ResponseToOrder.h */,
+				84B2B6031ADEB62D00E8595C /* ResponseToOrder.m */,
+			);
+			name = RequestToOrder;
 			sourceTree = "<group>";
 		};
 		84B8F0E61AB2070C0074FE77 /* ChatViewController */ = {
@@ -1505,6 +1553,17 @@
 			name = RequestSaveInfo;
 			sourceTree = "<group>";
 		};
+		84F960701ADD905000DC0D3A /* RequestGetAddressList */ = {
+			isa = PBXGroup;
+			children = (
+				84F960711ADD908300DC0D3A /* ResponseGetAddressList.h */,
+				84F960721ADD908300DC0D3A /* ResponseGetAddressList.m */,
+				84F960741ADD90F200DC0D3A /* AddressListElements.h */,
+				84F960751ADD90F200DC0D3A /* AddressListElements.m */,
+			);
+			name = RequestGetAddressList;
+			sourceTree = "<group>";
+		};
 		84FCA0E11AAC994C00C1627E /* PriceListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1713,6 +1772,7 @@
 				84AAF8CA1ADB03F000722F5A /* RegionsElements.m in Sources */,
 				84B1FBE71AA0E10100DFF90E /* NSArray+JSONModel.m in Sources */,
 				84F059CC1AD05937004310AD /* EditUserView.m in Sources */,
+				84B2B5F71ADE9F0000E8595C /* RequestGetTimeList.m in Sources */,
 				84EF85081AAB4D7900D998E4 /* ServicesCellTableViewCell.m in Sources */,
 				84F33FC31AB49A9C00D1ED47 /* NSString+findHeightForText.m in Sources */,
 				840967461AD93EFD004D246E /* ResponseGetImages.m in Sources */,
@@ -1727,6 +1787,7 @@
 				844F1D2E1AC7250E00F83403 /* ContactsCell.m in Sources */,
 				84B1FBE31AA0E10100DFF90E /* JSONModel.m in Sources */,
 				845E186F1AA4FF0C001DFE1D /* RememberPasswordRequestPhone.m in Sources */,
+				84B2B6041ADEB62D00E8595C /* ResponseToOrder.m in Sources */,
 				84F23BC91A9A06AB00FE72C5 /* RegistrationViewController.m in Sources */,
 				84F536A61AD1D5E000322399 /* RequestSaveInfo.m in Sources */,
 				84EF85131AAB760300D998E4 /* RequestPriceList.m in Sources */,
@@ -1756,6 +1817,7 @@
 				84F059C61AD05905004310AD /* BonusView.m in Sources */,
 				847B306D1ABE1AD200635D88 /* RequestServices.m in Sources */,
 				84F536A91AD1D5F800322399 /* ResponseSaveInfo.m in Sources */,
+				84B2B5FD1ADEA1EE00E8595C /* TripsElements.m in Sources */,
 				84FCA0E41AAC999800C1627E /* PriceListViewController.m in Sources */,
 				84B1FBE51AA0E10100DFF90E /* JSONModelClassProperty.m in Sources */,
 				845E186B1AA4FECC001DFE1D /* RememberPasswordRequestEmail.m in Sources */,
@@ -1764,6 +1826,7 @@
 				84F536A11AD1BEBD00322399 /* ResponseGetBonus.m in Sources */,
 				840967491AD941DC004D246E /* AdvertismetsElements.m in Sources */,
 				84AEC26F1A9813A400E66B95 /* LeftMenuViewController2.m in Sources */,
+				84F960731ADD908300DC0D3A /* ResponseGetAddressList.m in Sources */,
 				844F1D3B1AC72CE300F83403 /* ContactsListElements.m in Sources */,
 				84F33FBB1AB485BF00D1ED47 /* MessageListElements.m in Sources */,
 				84B1FBEB1AA0E10100DFF90E /* JSONKeyMapper.m in Sources */,
@@ -1779,6 +1842,7 @@
 				847B30621ABE0FF500635D88 /* ResponseOrders.m in Sources */,
 				8438E0C11A96839200063D43 /* RootTableViewCell.m in Sources */,
 				84F33FCB1AB4C38400D1ED47 /* RequestSendMessage.m in Sources */,
+				84B2B5FA1ADE9F2300E8595C /* ResponseGetTimeList.m in Sources */,
 				84B1FBF31AA0E22200DFF90E /* RegisterNewResponse.m in Sources */,
 				847B305C1ABE0D5A00635D88 /* RequestCurentOrders.m in Sources */,
 				84F059B81AD040AD004310AD /* PersonalCabinetViewController.m in Sources */,
@@ -1788,7 +1852,9 @@
 				8438E08F1A96567F00063D43 /* RootViewController.m in Sources */,
 				844F1D351AC72C4400F83403 /* RequestGetContactsList.m in Sources */,
 				8415D3E71AA3AB2C00D03001 /* NSString+Hashes.m in Sources */,
+				84B2B6011ADEB61600E8595C /* RequestToOrder.m in Sources */,
 				845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */,
+				84F960761ADD90F200DC0D3A /* AddressListElements.m in Sources */,
 				847B30571ABDCA8000635D88 /* OrdersCell.m in Sources */,
 				84F5369E1AD1BEAA00322399 /* ResponseGetDeposit.m in Sources */,
 			);

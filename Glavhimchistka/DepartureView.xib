@@ -55,7 +55,7 @@
                     <color key="textColor" red="0.0078431372549019607" green="0.32941176470588235" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Выбрать из имеющихся" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-Cr-B7U">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите новый адрес" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fpP-Cr-B7U">
                     <rect key="frame" x="20" y="153" width="560" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="TaY-kQ-A6a"/>
