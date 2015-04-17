@@ -41,12 +41,12 @@
     self.rootTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     if (self.rootTableView.tag==100)
     {
-        titleArray=[NSMutableArray arrayWithObjects:@"Задать вопрос",@"Контакты",@"Заказать выезд",@"Получить скидку",@"Услуги", nil];
+        titleArray=[NSMutableArray arrayWithObjects:@"Задать вопрос",@"Контакты",@"Заказать выезд",@"Акции",@"Услуги", nil];
         imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"question.png"],[UIImage imageNamed:@"map.png"],[UIImage imageNamed:@"delivery.png"],[UIImage imageNamed:@"sale.png"],[UIImage imageNamed:@"services_list.png"], nil];
     }
     else if (self.rootTableView.tag==101)
     {
-        titleArray=[NSMutableArray arrayWithObjects:@"Вход",@"Задать вопрос",@"Контакты",@"Заказать выезд",@"Получить скидку",@"Услуги", nil];
+        titleArray=[NSMutableArray arrayWithObjects:@"Вход",@"Задать вопрос",@"Контакты",@"Заказать выезд",@"Акции",@"Услуги", nil];
         imageArray=[NSMutableArray arrayWithObjects:[UIImage imageNamed:@"user_login.png"],[UIImage imageNamed:@"question.png"],[UIImage imageNamed:@"map.png"],[UIImage imageNamed:@"delivery.png"],[UIImage imageNamed:@"sale.png"],[UIImage imageNamed:@"services_list.png"], nil];
     }
    
