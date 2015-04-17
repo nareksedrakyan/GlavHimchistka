@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [GMSServices provideAPIKey:@"AIzaSyB9evNROqnKH3mWUZ3vq7nvj9qxQf9Fmdk"];
+    [GMSServices provideAPIKey:@"AIzaSyAt_oAOXN-L4foqom_-12BfdJm-b4_NWs0"];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                              bundle:nil];
     

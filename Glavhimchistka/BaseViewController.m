@@ -12,7 +12,8 @@
 {
     NSMutableArray*titleArray;
     NSMutableArray*imageArray;
-    
+    NSString*urlString;
+    NSString* authLink;
 }
 @end
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    urlString=@"https://itunes.apple.com/us/app/glavhimchistka/id986310493?ls=1&mt=8";
+    
     NSURL*url = [[NSBundle mainBundle] URLForResource:@"loader" withExtension:@"gif"];
     self.loader=[[UIImageView alloc] init];
     self.loader.image = [UIImage animatedImageWithAnimatedGIFURL:url];
@@ -108,28 +111,38 @@
 
 - (IBAction)actionVK:(UIButton *)sender
 {
-    
+    authLink = [NSString stringWithFormat:@"http://vkontakte.ru/share.php?url=%@",urlString];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authLink]];
 }
 
 - (IBAction)actionInstagram:(UIButton *)sender
 {
-    
+   authLink=@"https://instagram.com/glavhimchistka/";
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authLink]];
 }
 
 - (IBAction)actionTwitter:(UIButton *)sender
 {
-    
+    authLink = [NSString stringWithFormat:@"http://twitter.com/intent/tweet?source=sharethiscom&url=%@", urlString];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authLink]];
 }
 
 - (IBAction)actionGooglePlus:(UIButton *)sender
 {
-    
+    authLink = [NSString stringWithFormat:@"https://plus.google.com/share?url=%@", urlString];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authLink]];
 }
 
 - (IBAction)actionFacebook:(UIButton *)sender
 {
-    
+     authLink = [NSString stringWithFormat:@"https://m.facebook.com/sharer.php?u=%@&t=Message", urlString];
+      [[UIApplication sharedApplication] openURL:[NSURL URLWithString:authLink]];
 }
+
+
+// authLink=[authLink stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+
 -(void)showErrorAlertWithMessage:(NSString*)messageText
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@ "" message:messageText preferredStyle:UIAlertControllerStyleAlert];

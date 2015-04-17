@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,7 +17,9 @@
                             <rect key="frame" x="0.0" y="260" width="149" height="40"/>
                             <color key="backgroundColor" red="0.0" green="0.67450980390000004" blue="0.94901960780000005" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="149" id="1ba-FX-qRv"/>
+                                <constraint firstAttribute="width" constant="149" id="1ba-FX-qRv">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="199"/>
+                                </constraint>
                                 <constraint firstAttribute="height" constant="40" id="dWg-cy-eig"/>
                             </constraints>
                             <state key="normal" title="Отмена">
@@ -33,7 +35,9 @@
                             <color key="backgroundColor" red="0.0" green="0.67450980390000004" blue="0.94901960780000005" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="hbC-Gw-q8d"/>
-                                <constraint firstAttribute="width" constant="149" id="z9Z-TK-Pln"/>
+                                <constraint firstAttribute="width" constant="149" id="z9Z-TK-Pln">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="199"/>
+                                </constraint>
                             </constraints>
                             <state key="normal" title="ОК">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +76,9 @@
                         <constraint firstAttribute="trailing" secondItem="4us-1w-H6O" secondAttribute="trailing" id="XBX-5y-Yba"/>
                         <constraint firstAttribute="height" constant="300" id="XNQ-vN-wYp"/>
                         <constraint firstItem="1qm-ZD-5Gm" firstAttribute="top" secondItem="07M-L7-au8" secondAttribute="bottom" constant="2" id="fN0-hk-LXp"/>
-                        <constraint firstAttribute="width" constant="300" id="kjn-d0-nJU"/>
+                        <constraint firstAttribute="width" constant="300" id="kjn-d0-nJU">
+                            <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                        </constraint>
                         <constraint firstAttribute="bottom" secondItem="1qm-ZD-5Gm" secondAttribute="bottom" id="qpj-xQ-tWc"/>
                         <constraint firstItem="4us-1w-H6O" firstAttribute="leading" secondItem="VRB-XT-tIF" secondAttribute="leading" id="wLW-hf-aOh"/>
                     </constraints>

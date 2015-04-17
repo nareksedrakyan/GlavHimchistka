@@ -206,6 +206,7 @@
 		84FCA0E81AACAACD00C1627E /* PriceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0E61AACAACD00C1627E /* PriceListCell.m */; };
 		84FCA0E91AACAACD00C1627E /* PriceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FCA0E71AACAACD00C1627E /* PriceListCell.xib */; };
 		84FCA0EC1AACBE2500C1627E /* PriceListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FCA0EB1AACBE2500C1627E /* PriceListObject.m */; };
+		97FC612F1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FC612E1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -536,6 +537,8 @@
 		84FCA0E71AACAACD00C1627E /* PriceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceListCell.xib; sourceTree = "<group>"; };
 		84FCA0EA1AACBE2500C1627E /* PriceListObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListObject.h; sourceTree = "<group>"; };
 		84FCA0EB1AACBE2500C1627E /* PriceListObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceListObject.m; sourceTree = "<group>"; };
+		97FC612D1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+UINavigationController_shouldAutorotate.h"; sourceTree = "<group>"; };
+		97FC612E1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+UINavigationController_shouldAutorotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,6 +704,8 @@
 		842DCFD21AC73966005EE56A /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				97FC612D1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.h */,
+				97FC612E1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.m */,
 				84F33FC11AB49A9C00D1ED47 /* NSString+findHeightForText.h */,
 				84F33FC21AB49A9C00D1ED47 /* NSString+findHeightForText.m */,
 				8415D3E51AA3AB2C00D03001 /* NSString+Hashes.h */,
@@ -1856,6 +1861,7 @@
 				845FD5D51AACD4B50098F47D /* CustomLabel.m in Sources */,
 				84F960761ADD90F200DC0D3A /* AddressListElements.m in Sources */,
 				847B30571ABDCA8000635D88 /* OrdersCell.m in Sources */,
+				97FC612F1AE0F25200A206B5 /* UINavigationController+UINavigationController_shouldAutorotate.m in Sources */,
 				84F5369E1AD1BEAA00322399 /* ResponseGetDeposit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
