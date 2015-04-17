@@ -75,8 +75,8 @@
         LoginRequestMail*loginRequestMailObject=[[LoginRequestMail alloc]init];
        
         //testing hard code
-        loginRequestMailObject.Mail=@"batiste-parfume.ru@mail.ru";//self.loginTextField.text;
-        loginRequestMailObject.Password=@"4392E631".sha1;//self.PasswordTextField.text.sha1;
+        loginRequestMailObject.Mail=self.loginTextField.text;//@"batiste-parfume.ru@mail.ru";
+        loginRequestMailObject.Password=self.PasswordTextField.text.sha1;//@"4392E631".sha1;
         //testing hard code
         
         NSString*jsons=[loginRequestMailObject toJSONString];
@@ -89,8 +89,8 @@
     {
         LoginRequestPhone*loginRequestPhoneObject=[[LoginRequestPhone alloc]init];
         
-        loginRequestPhoneObject.Fone=@"+79445298999";//self.loginTextField.text;
-        loginRequestPhoneObject.Password=@"4392E631".sha1;//self.PasswordTextField.text.sha1;
+        loginRequestPhoneObject.Fone=self.loginTextField.text;//@"+79445298999";
+        loginRequestPhoneObject.Password=self.PasswordTextField.text.sha1;//@"4392E631".sha1;
         
         NSString*jsons=[loginRequestPhoneObject toJSONString];
         // NSDictionary*dict=[[NSDictionary alloc]init];
