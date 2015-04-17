@@ -126,8 +126,8 @@
    
     
     self.messageTypesTableView=[[UITableView alloc]init];
-    self.messageTypesTableView.frame=CGRectMake((self.view.bounds.size.width-300)/2, 81, 300, 220);
-   // self.messageTypesTableView.center=self.view.center;
+    self.messageTypesTableView.bounds=CGRectMake(0, 0, 300, 220);
+    self.messageTypesTableView.center=self.view.center;
     self.messageTypesTableView.delegate=self;
     self.messageTypesTableView.dataSource=self;
     
